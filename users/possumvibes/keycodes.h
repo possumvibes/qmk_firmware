@@ -6,6 +6,7 @@ enum layers {
     _COMBOREF,
     _APT,
     _GAMENAV,
+    _NETHACK,
     _FUNC,
     _NUM,
     _SYM,
@@ -27,7 +28,7 @@ enum custom_keycodes {
     // Layer modes
     NUMMODE,  // activates a "num-word" smart layer toggle
     FUNMODE,  // activates a smart layer toggle for func
-
+    NAVMODE,  // activates a smart nav layer
     // Custom Punctuation
     COM_EXC,  // , !
     DOT_QUE,  // . ?
@@ -85,9 +86,13 @@ enum custom_keycodes {
 #define NUM_TO      TO(_NUM)
 #define FUN_OSL     OSL(_FUNC)
 #define SYS_OSL     OSL(_SYSTEM)
-#define SYS_TG      TG(_SYSTEM)
+#define SYS_TO      TO(_SYSTEM)
 #define GAMENAV     TG(_GAMENAV)
+#define NETHACK     TG(_NETHACK)
 #define ALPHA       TO(_QWERTY)
+
+#define KY_6        LT(_SYM, KC_6)
+#define KY_7        LT(_SYM, KC_7)
 
 // Default Layer States
 #define QWERTY      DF(_QWERTY)
@@ -105,7 +110,9 @@ enum custom_keycodes {
 #define S_FWD       A(KC_RIGHT)
 #define C_BSPC      C(KC_BSPC)
 #define SCREEN      S(C(KC_PSCR))
+#define CTL_U       C(KC_U)
 
+#define F3_TH       TH(KC_F3)
 #define F5_TH       TH(KC_F5)
 #define F6_TH       TH(KC_F6)
 #define F11_TH      TH(KC_F11)
@@ -132,13 +139,13 @@ enum custom_keycodes {
 #define KY_L        LALT_T(KC_L)
 #define KY_QUOT     LT(_SYM, KC_QUOT)
 
-#define KY_C        LT(_NUM, KC_C)
+#define KY_V        LT(_NUM, KC_V)
 
 /* -------------- */
 #define KH_R        LT(_SYM, KC_R)
 #define KH_S        LALT_T(KC_S)
 #define KH_T        LCTL_T(KC_T)
-#define KH_L        LSFT_T(KC_L)
+#define KH_H        LSFT_T(KC_H)
 
 #define KH_D        LGUI_T(KC_D)
 #define KH_U        RGUI_T(KC_U)
@@ -148,7 +155,7 @@ enum custom_keycodes {
 #define KH_A        LALT_T(KC_A)
 #define KH_I        LT(_SYM, KC_I)
 
-#define KH_B        LT(_NUM, KC_B)
+#define KH_P        LT(_NUM, KC_P)
 
 
 /*-------tap dance-------*/

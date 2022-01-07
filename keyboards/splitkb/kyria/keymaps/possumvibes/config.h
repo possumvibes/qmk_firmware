@@ -19,3 +19,5 @@
 #define EE_HANDS
 
 #define ENCODER_DIRECTION_FLIP      // Flips encoder direction so "clockwise" is clockwise.
+#define COMBO_ONLY_FROM_LAYER 1     // compare only with the COMBOREF layer.
+#define VERTICAL_THUMB_COMBO

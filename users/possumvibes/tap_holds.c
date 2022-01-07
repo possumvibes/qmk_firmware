@@ -15,8 +15,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
     switch (keycode) {
         case KY_A:
         case KY_QUOT:
+        case KY_6:
+        case KY_7:
             // Pinky
-            return TAPPING_TERM + 15;
+            return TAPPING_TERM + 10;
 
         case KY_S:
         case KY_L:
@@ -38,7 +40,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
             return TAPPING_TERM - 10;
         case KY_F:
         case KY_J:
-        case KH_L:
+        case KH_H:
         case KH_N:
             // Index
             return TAPPING_TERM -15;

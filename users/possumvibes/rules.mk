@@ -2,7 +2,6 @@ VPATH += keyboards/gboards/ # using gboards combo code: see https://combos.gboar
 
 # let's save some space
 LTO_ENABLE 				= yes   # Longer compile, smaller file; disables deprecated functionality
-CONSOLE_ENABLE 			= no	# Console for debugging.
 
 SPACE_CADET_ENABLE 		= no	# Enable space cadet shift
 GRAVE_ESC_ENABLE   		= no	# Enable grave escape
@@ -30,5 +29,4 @@ ifeq ($(strip $(APPLY_USERSPACE)), yes)
 	SRC += features/nshot_mod.c
 	SRC += features/smart_layer.c
 	SRC += features/swapper.c
-
 endif

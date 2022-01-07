@@ -2,7 +2,7 @@
 
 This keymap uses my 34 key [userspace layout](../../../../../users/possumvibes) with the addition of an encoder and one 6th column key per side, for a grand total of 38 keys.
 
-See the userspace readme linked above for the main alpha details.
+KLE of the layout is available [here](http://www.keyboard-layout-editor.com/#/gists/ec4d75158da89c2ade1725c0da413f9e).
 
 ![Keyboard](../../../../../users/possumvibes/pics/possumvibes_kyria.jpg)
 
@@ -26,4 +26,7 @@ Yep, this is a six-column build, and yep, I'm only using one key in each 6th col
 The rest of the 6th column keycaps are for aesthetic purposes only, which is to say, the highest possible keycap calling.
 
 # Alphas and layers
-Check out the [userspace readme]([userspace layout](../../../../../users/possumvibes/readme.md)
+Check out the [userspace readme](../../../../../users/possumvibes/readme.md) for feature details.
+
+
+My current keymap visualization is available [here](http://www.keyboard-layout-editor.com/#/gists/ec4d75158da89c2ade1725c0da413f9e).

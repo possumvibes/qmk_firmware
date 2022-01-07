@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, ___________________NUM_L1__________________,                                     ___________________NUM_R1__________________, _______,
         XXXXXXX, ___________________NUM_L2__________________,                                     ___________________NUM_R2__________________, _______,
         XXXXXXX, ___________________NUM_L3__________________, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, ___________________NUM_R3__________________, XXXXXXX,
-                                   _______, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, _______, KC_0,    XXXXXXX, _______
+                                   _______, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, _______, _______,    XXXXXXX, _______
     )
 
     ,[_SYM] = LAYOUT_kyria_wrapper(
@@ -62,14 +62,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, ___________________NAV_L1__________________,                                     ___________________NAV_R1__________________, _______,
         XXXXXXX, ___________________NAV_L2__________________,                                     ___________________NAV_R2__________________, _______,
         XXXXXXX, ___________________NAV_L3__________________, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, ___________________NAV_R3__________________, XXXXXXX,
-                                   _______, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, _______, THM_RH0, XXXXXXX, _______
+                                   _______, XXXXXXX, __ALPHATHUMB_L__, XXXXXXX, XXXXXXX, __ALPHATHUMB_R__, XXXXXXX, _______
     )
 
     ,[_SYSTEM] = LAYOUT_kyria_wrapper(
         XXXXXXX, ___________________SYS_L1__________________,                                      ___________________SYS_R1__________________, XXXXXXX,
         XXXXXXX, ___________________SYS_L2__________________,                                      ___________________SYS_R2__________________, XXXXXXX,
         XXXXXXX, ___________________SYS_L3__________________, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  ___________________SYS_R3__________________, XXXXXXX,
-                                   _______, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, _______, QMKCOMP, XXXXXXX, _______
+                                   _______, XXXXXXX, __ALPHATHUMB_L__, XXXXXXX, XXXXXXX, __ALPHATHUMB_R__, XXXXXXX, _______
     )
 };
 

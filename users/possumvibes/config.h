@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef APPLY_USERSPACE
+
 #define IGNORE_MOD_TAP_INTERRUPT    // Lets you roll mod-tap keys
 #define TAPPING_FORCE_HOLD          // Allows mod use immediately after tap use
 #define TAPPING_FORCE_HOLD_PER_KEY  // BUT NOT EVERYWHERE.
@@ -16,7 +18,6 @@
 
 // Combos!
 #define COMBO_TERM 38               // Gotta combo fast.
-#define COMBO_ONLY_FROM_LAYER 1     // compare only with the COMBOREF layer.
 #define COMBO_MUST_TAP_PER_COMBO    // Set whether combos can be held to repeat.
 #define COMBO_MUST_HOLD_PER_COMBO   // Set whether combos have to be held to function. probably don't need both of these.
 #define COMBO_TERM_PER_COMBO        // Adjust combo term for ease of combo.
@@ -39,3 +40,5 @@
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 #define LAYER_STATE_16BIT
+
+#endif

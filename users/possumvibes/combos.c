@@ -34,7 +34,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case underscore_rthm:
             return COMBO_TERM - 12;
         case nummode:
-        case symmode:
+        case funmode:
         case turbonav:
             return COMBO_TERM - 15;
         // case os_num:

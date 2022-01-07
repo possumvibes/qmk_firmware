@@ -11,9 +11,7 @@
 #include "features/smart_layer.h"
 #include "features/swapper.h"
 
-
 // Interfaces
-
 bool override_shift(bool is_shifted,
     uint16_t tap_keycode,
     uint16_t shift_override,

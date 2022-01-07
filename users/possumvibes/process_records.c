@@ -9,6 +9,11 @@ __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *
 uint8_t mod_state;
 bool is_windows = false;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#ifdef CONSOLE_ENABLE
+    if(record->event.pressed)
+        uprintf("KL: kc: 0x%04X, col: %u, row: %u, pressed: %b, time: %u, interrupt: %b, count: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
+#endif
+
     mod_state = get_mods();
 
     bool is_shifted = (
@@ -29,6 +34,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     switch (keycode) {
         // Custom Tap/Holds
+        case F3_TH:
+            return override_th_hold(S(KC_F3), record);
         case F5_TH:
             return override_th_hold(S(KC_F5), record);
         case F6_TH:
@@ -79,6 +86,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case FUNMODE:
             func_mode_enable();
+            return false;
+        case NAVMODE:
+            nav_mode_enable();
             return false;
 
         // Funky Symbol Shifts

@@ -1,17 +1,13 @@
 /*    COMBO NAME       | OUTPUT    | PARAMS    */
 
 /*---- TOP ROW ----*/
-COMB(turbonav,          NAV_TG,     KC_W, KC_R)         // Nav access
+COMB(turbonav,          NAVMODE,    KC_W, KC_R)         // Nav access
 COMB(save,              S_SAVE,     KC_E, KC_R)         // Save
 COMB(back_fwd,          BCK_FWD,    KC_R, KC_T)         // Back/Fwd (shifted)
 
 COMB(undo_redo,         UND_RED,    KC_Y, KC_U)         // Undo/Redo (shifted)
 COMB(esc,               KC_ESC,     KC_U, KC_O)         // Esc
-
-#ifdef IS_PINKY_CLUSTER
-COMB(delete,            KC_DEL,     KC_A, KC_SCLN)
-COMB(caps,              KC_CAPS,    KC_Q, KC_P)
-#endif
+COMB(panic2,            PANIC,      KY_I, KC_O)         // one-handed panic
 
 /*---- HOME ROW ----*/
 COMB(cut,               S_CUT,      KC_S, KC_F)         // Shift+Del (cut)
@@ -20,7 +16,7 @@ COMB(paste,             S_PASTE,    KC_D, KC_F)         // Shift+Del (paste)
 COMB(panic,             PANIC,      KC_D, KC_K)         // panic!
 
 COMB(nummode,           NUMMODE,    KC_J, KC_K)         // Nummode toggle
-COMB(symmode,           SYM_TG,     KC_K, KC_L)         // Sym layer
+COMB(funmode,           FUNMODE,    KC_K, KC_L)         // Funmode toggle
 COMB(tab,               KC_TAB,     KC_K, KC_M)         // Tab
 
 
@@ -32,15 +28,13 @@ COMB(dash,              KC_MINS,    KC_M, KC_COMM)      // -
 COMB(asterisk,          KC_ASTR,    KC_COMM, KC_DOT)    // *
 COMB(at,                KC_AT,      KC_M, KC_DOT)       // @
 
-
 /*---- THUMBS ----*/
+#ifdef VERTICAL_THUMB_COMBO
 COMB(sys_lthm,          SYS_OSL,    KC_B, KC_ENT)       // Sys OSL
+COMB(underscore_rthm,   KC_UNDS,    KC_SPC, KC_N)       // _
+#else
+COMB(sys_lthm,          SYS_OSL,    KC_ENT, KC_TAB)    // Sys OSL
+COMB(underscore_rthm,   KC_UNDS,    KC_SPC, KC_BSPC)   // _
+#endif
 
 COMB(space_shift,       SPC_SFT,    KC_TAB, KC_SPC)     // space and activate oss
-
-COMB(underscore_rthm,   KC_UNDS,    KC_SPC, KC_N)       // _
-
-/*---- THUMB+ALPHAS ----*/
-// COMB(os_fun,            FUN_OSL,    KC_ENT, KC_C)       // OS Func
-// COMB(os_num,            NUM_OSL,    KC_A, KC_F)         // OSL num
-// COMB(os_sym,            SYM_OSL,    KC_SPC, KC_M)       // OSL sym
