@@ -1,0 +1,1 @@
+COMB(reset,      RESET,      PGU_MOR, PGD_LOW) // Home layer combo sends RESET

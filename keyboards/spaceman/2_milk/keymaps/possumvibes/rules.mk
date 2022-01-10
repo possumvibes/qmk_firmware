@@ -1,6 +1,7 @@
+VPATH += keyboards/gboards/ # using gboards combo code: see https://combos.gboards.ca/
 APPLY_USERSPACE			= no	# Don't apply the userspace keymap
 
-COMBO_ENABLE 			= no 	# Enables use of combos
+COMBO_ENABLE 			= yes 	# Enables use of combos
 MOUSEKEY_ENABLE 		= no	# Enables mouse keys
 LEADER_ENABLE 			= no	# Enables leader key
 SPACE_CADET_ENABLE 		= no	# Enable space cadet shift

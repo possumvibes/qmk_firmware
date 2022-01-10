@@ -2,32 +2,34 @@
 
 #include "keycodes.h"
 
+#ifdef COMBO_ENABLE
+#include "g/keymap_combo.h"
+#endif
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
-        QMKFLSH,  ENT_LWR
-    ),
-    [_MORSE] = LAYOUT(
-        _______, KC_MORSE
+        PGU_MOR,
+        PGD_LOW
     ),
     [_LOWER] = LAYOUT(
-        RESET, _______
+        KC_LOCKS,
+        _______
+    ),
+    [_MORSE] = LAYOUT(
+        _______,
+        KC_MORSE
     )
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch(keycode) {
-        case QMKFLSH:
-            if(record->event.pressed && record->tap.count){
-                if(host_keyboard_led_state().caps_lock){
-                    tap_code16(KC_CAPS);
-                }
-                SEND_STRING("qmk flash");
-                tap_code16(KC_ENT);
-                return false;
+        case KC_LOCKS: {
+            uint16_t lock_key = record->tap.count ? KC_ESC : KC_L;
+            if(record ->event.pressed) {
+                tap_code16(G(lock_key));
             }
-            break;
-        case RESET:
-            break;
+            return false;
+        }
         case KC_MORSE: return override_th_hold(KC_MINS, record);
     }
 
