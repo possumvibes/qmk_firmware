@@ -29,18 +29,17 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case undo_redo:
             return COMBO_TERM - 10;
         // right hand home/upper combos gotta be faster than left?
+        case caps:
+        case kc_z:
+        case delete:
         case esc:
-        case tab:
-        case underscore_rthm:
-            return COMBO_TERM - 12;
-        case nummode:
         case funmode:
+        case nummode:
+        case numosl:
+        case tab:
         case turbonav:
+        case underscore_rthm:
             return COMBO_TERM - 15;
-        // case os_num:
-        // case os_sym:
-        // case os_fun:
-            // return COMBO_TERM - 5;
         default:
             return COMBO_TERM;
     }

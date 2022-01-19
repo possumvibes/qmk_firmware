@@ -4,7 +4,7 @@
 
 /*
    Wrappers approach is from users/drashna.
-   By defining row sections in blocks like this,EWUI
+   By defining row sections in blocks like this,
    they are easily reusable in very different keyboard layouts.
 */
 
@@ -29,13 +29,21 @@
 #define ________________COMBOREF_R3________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
 
 
-#define ___________________APT_L1__________________       KC_W,    KC_C,    KH_D,    KC_F,    KC_B
+#define ___________________APT_L1__________________       KC_X,    KC_C,    KH_Y,    KC_D,    KC_B
 #define ___________________APT_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
-#define ___________________APT_L3__________________       KC_X,    KC_G,    KC_M,    KH_P,    KC_V
+#define ___________________APT_L3__________________       KC_W,    KC_F,    KC_G,    KC_P,    KC_V
 
-#define ___________________APT_R1__________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
+#define ___________________APT_R1__________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
 #define ___________________APT_R2__________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define ___________________APT_R3__________________       KC_Z,    KC_QUOT, COM_EXC, DOT_QUE, KC_SCLN
+#define ___________________APT_R3__________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, KC_SCLN
+
+#define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
+#define __________________APTv3_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+#define __________________APTv3_L3_________________       KC_X,    KC_C,    KC_M,    KH_P,    KC_V
+
+#define __________________APTv3_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
+#define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
+#define __________________APTv3_R3_________________       KC_Z,    KC_QUOT, COM_EXC, DOT_QUE, KC_SCLN
 
 
 #define __________________FUNC_L1__________________       KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX
@@ -47,28 +55,35 @@
 #define __________________FUNC_R3__________________       XXXXXXX, OS_LSFT, OS_LCTL, OS_LALT, OS_LGUI
 
 #define ___________________NUM_L1__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define ___________________NUM_L2__________________       KY_6,    KC_4,    KC_2,    KC_0,    XXXXXXX
-#define ___________________NUM_L3__________________       KC_X,    KC_QUOT, KC_DQUO, KC_9,    XXXXXXX
+#define ___________________NUM_L2__________________       KY_6,    KC_4,    KC_0,    KC_2,    XXXXXXX
+#define ___________________NUM_L3__________________       KC_X,    KC_QUOT, KC_DQUO, KC_8,    XXXXXXX
 
 #define ___________________NUM_R1__________________       XXXXXXX, KC_J,    KC_K,    S(KC_G), XXXXXXX
-#define ___________________NUM_R2__________________       XXXXXXX, KC_1,    KC_3,    KC_5,    KY_7
-#define ___________________NUM_R3__________________       XXXXXXX, KC_9,    COM_EXC, DOT_QUE, KC_SCLN
+#define ___________________NUM_R2__________________       XXXXXXX, KC_3,    KC_1,    KC_5,    KY_7
+#define ___________________NUM_R3__________________       XXXXXXX, KC_9,    KC_COMM, KC_DOT, KC_SCLN
 
 
-#define __________________NUMPAD_L1________________       KC_1,    KC_2,    KC_3,    KC_4,    KC_5
-#define __________________NUMPAD_L2________________       SYM_MO,  KC_COLN, KC_COMM, KC_0,    XXXXXXX
-#define __________________NUMPAD_L3________________       KC_X,    KC_DOT,  KC_COMM, KC_DQUO, XXXXXXX
+#define _________________NUMPADR_L1________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________NUMPADR_L2________________       SYM_MO,  KC_COLN, KC_DOT,  KC_COMM, XXXXXXX
+#define _________________NUMPADR_L3________________       KC_X,    KC_QUOT, KC_DQUO, KC_DQUO, XXXXXXX
 
-#define __________________NUMPAD_R1________________       KC_6,    KC_7,    KC_8,    KC_9,    KC_0
-#define __________________NUMPAD_R2________________       XXXXXXX, KC_4,    KC_5,    KC_6,    KY_QUOT
-#define __________________NUMPAD_R3________________       XXXXXXX, KC_1,    KC_2,    KC_3,    KC_SCLN
+#define _________________NUMPADR_R1________________       XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX
+#define _________________NUMPADR_R2________________       XXXXXXX, KC_1,    KC_2,    KC_3,    KY_0
+#define _________________NUMPADR_R3________________       XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX
 
+#define _________________NUMPADL_L1________________       XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX
+#define _________________NUMPADL_L2________________       KY_0,    KC_1,    KC_2,    KC_3,    XXXXXXX
+#define _________________NUMPADL_L3________________       KC_X,    KC_4,    KC_5,    KC_6,    XXXXXXX
+
+#define _________________NUMPADL_R1________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________NUMPADL_R2________________       XXXXXXX, KC_J,    KC_K,    S(KC_G), SYM_MO
+#define _________________NUMPADL_R3________________       XXXXXXX, KC_QUOT, KC_COMM, KC_DOT,  KC_DQUO
 
 #define ___________________SYM_L1__________________       KC_BSLS, LABK_TH, KC_RABK, KC_QUES, KC_DLR
 #define ___________________SYM_L2__________________       KC_COLN, LPRN_TH, RPRN_TH, KC_SCLN, KC_PERC
 #define ___________________SYM_L3__________________       KC_RCBR, LBRC_TH, RBRC_TH, LCBR_TH, XXXXXXX
 
-#define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_RGHT, KC_EXLM, KC_GRV
+#define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_RABK, KC_EXLM, KC_GRV
 #define ___________________SYM_R2__________________       KC_DOT,  KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
 #define ___________________SYM_R3__________________       KC_COMM, KC_CIRC, KC_PIPE, KC_MINS, KC_SLSH
 
@@ -87,7 +102,7 @@
 #define ___________________SYS_L3__________________       _______, _______, _______, SYS_TO,  XXXXXXX
 
 #define ___________________SYS_R1__________________       RESET,   _______, ALT_F4,  APT,     QWERTY
-#define ___________________SYS_R2__________________       XXXXXXX, QMKCOMP, COMMENT, XXXXXXX, XXXXXXX
+#define ___________________SYS_R2__________________       XXXXXXX, QMKCOMP, COMMENT, SCREEN, XXXXXXX
 #define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, XXXXXXX, _______
 
 

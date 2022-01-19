@@ -45,9 +45,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 
     ,[_NUM] = LAYOUT_kyria_wrapper(
-        XXXXXXX, ___________________NUM_L1__________________,                                     ___________________NUM_R1__________________, _______,
-        XXXXXXX, ___________________NUM_L2__________________,                                     ___________________NUM_R2__________________, _______,
-        XXXXXXX, ___________________NUM_L3__________________, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, ___________________NUM_R3__________________, XXXXXXX,
+        XXXXXXX, _________________NUMPADL_L1________________,                                     _________________NUMPADL_R1________________, _______,
+        XXXXXXX, _________________NUMPADL_L2________________,                                     _________________NUMPADL_R2________________, _______,
+        XXXXXXX, _________________NUMPADL_L3________________, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _________________NUMPADL_R3________________, XXXXXXX,
                                    _______, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, _______, _______,    XXXXXXX, _______
     )
 

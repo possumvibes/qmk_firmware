@@ -33,6 +33,7 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record) {
         case KC_BSPC:
         case KC_X:
         case SYM_MO:
+        case KY_0:
         case KY_6:
         case KY_7:
         case OS_LSFT ... TS_LCTL:

@@ -69,6 +69,7 @@ enum custom_keycodes {
 
 #define TH(k)       LT(0,k)
 #define LTH(l,k)    LT(l,k)
+#define SYM(k)      LT(_SYM, k)
 
 // Thumb Keys
 #define THM_LH0     LT(_NAV, KC_ENT)
@@ -91,8 +92,9 @@ enum custom_keycodes {
 #define NETHACK     TG(_NETHACK)
 #define ALPHA       TO(_QWERTY)
 
-#define KY_6        LT(_SYM, KC_6)
-#define KY_7        LT(_SYM, KC_7)
+#define KY_0        SYM(KC_0)
+#define KY_6        SYM(KC_6)
+#define KY_7        SYM(KC_7)
 
 // Default Layer States
 #define QWERTY      DF(_QWERTY)
@@ -129,7 +131,7 @@ enum custom_keycodes {
 #define KY_E        LGUI_T(KC_E)
 #define KY_I        RGUI_T(KC_I)
 
-#define KY_A        LT(_SYM, KC_A)
+#define KY_A        SYM(KC_A)
 #define KY_S        LALT_T(KC_S)
 #define KY_D        LCTL_T(KC_D)
 #define KY_F        LSFT_T(KC_F)
@@ -137,26 +139,24 @@ enum custom_keycodes {
 #define KY_J        RSFT_T(KC_J)
 #define KY_K        RCTL_T(KC_K)
 #define KY_L        LALT_T(KC_L)
-#define KY_QUOT     LT(_SYM, KC_QUOT)
+#define KY_QUOT     SYM(KC_QUOT)
 
 #define KY_V        LT(_NUM, KC_V)
 
 /* -------------- */
-#define KH_R        LT(_SYM, KC_R)
+#define KH_R        SYM(KC_R)
 #define KH_S        LALT_T(KC_S)
 #define KH_T        LCTL_T(KC_T)
 #define KH_H        LSFT_T(KC_H)
 
 #define KH_D        LGUI_T(KC_D)
+#define KH_Y        LGUI_T(KC_Y)
 #define KH_U        RGUI_T(KC_U)
 
 #define KH_N        RSFT_T(KC_N)
 #define KH_E        RCTL_T(KC_E)
 #define KH_A        LALT_T(KC_A)
-#define KH_I        LT(_SYM, KC_I)
-
-#define KH_P        LT(_NUM, KC_P)
-
+#define KH_I        SYM(KC_I)
 
 /*-------tap dance-------*/
 #ifdef TAP_DANCE_ENABLE
