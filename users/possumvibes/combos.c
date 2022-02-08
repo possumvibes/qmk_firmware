@@ -30,6 +30,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
             return COMBO_TERM - 10;
         // right hand home/upper combos gotta be faster than left?
         case caps:
+        case kc_qu:
         case kc_z:
         case delete:
         case esc:

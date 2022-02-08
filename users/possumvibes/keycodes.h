@@ -2,9 +2,9 @@
 #include QMK_KEYBOARD_H
 
 enum layers {
-    _QWERTY = 0,
+    _APT = 0,
     _COMBOREF,
-    _APT,
+    _QWERTY,
     _GAMENAV,
     _NETHACK,
     _FUNC,
@@ -36,6 +36,7 @@ enum custom_keycodes {
     // custom strings
     SPC_SFT,  // Space and OSS
     GET_SET,  // { get; set; }
+    KC_QU,    // qu, Qu, QU
 
     // macros
     ALT_F4,   // per is_windows Close Application
@@ -90,7 +91,7 @@ enum custom_keycodes {
 #define SYS_TO      TO(_SYSTEM)
 #define GAMENAV     TG(_GAMENAV)
 #define NETHACK     TG(_NETHACK)
-#define ALPHA       TO(_QWERTY)
+#define ALPHA       TO(0)
 
 #define KY_0        SYM(KC_0)
 #define KY_6        SYM(KC_6)

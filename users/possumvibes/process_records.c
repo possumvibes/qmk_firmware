@@ -204,6 +204,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
 
+        case KC_QU: {
+            if (record->event.pressed){
+                if(is_shifted){
+                    del_mods(MOD_MASK_SHIFT);
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    SEND_STRING("Qu");
+                } else {
+                    SEND_STRING("qu");
+                }
+            }
+            return false;
+        }
+
         case ALT_F4: {
             if(record->event.pressed){
                 if(is_windows){

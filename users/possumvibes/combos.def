@@ -7,9 +7,9 @@ COMB(back_fwd,          BCK_FWD,    KC_R, KC_T)         // Back/Fwd (shifted)
 
 COMB(undo_redo,         UND_RED,    KC_Y, KC_U)         // Undo/Redo (shifted)
 COMB(esc,               KC_ESC,     KC_U, KC_O)         // Esc
+COMB(qu,                KC_QU,      KC_U, KC_I)
 COMB(delete,            KC_DEL,     KC_I, KC_O)         // Delete
-COMB(kc_z,              KC_Z,       KY_I, KC_O)         // what if z combo
-
+COMB(kc_z,              KC_Z,       KC_W, KC_S)         // what if z combo
 
 /*---- HOME ROW ----*/
 COMB(cut,               S_CUT,      KC_S, KC_F)         // Shift+Del (cut)

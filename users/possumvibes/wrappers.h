@@ -29,13 +29,13 @@
 #define ________________COMBOREF_R3________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
 
 
-#define ___________________APT_L1__________________       KC_X,    KC_C,    KH_Y,    KC_D,    KC_B
-#define ___________________APT_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
-#define ___________________APT_L3__________________       KC_W,    KC_F,    KC_G,    KC_P,    KC_V
+#define ___________________APT_L1__________________       KC_W,    KC_C,    KH_Y,    KC_D,    KC_B
+#define ___________________APT_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_P
+#define ___________________APT_L3__________________       KC_Z,    KC_V,    KC_G,    KC_F,    KC_K
 
 #define ___________________APT_R1__________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
 #define ___________________APT_R2__________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define ___________________APT_R3__________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, KC_SCLN
+#define ___________________APT_R3__________________       KC_X,    KC_M,    COM_EXC, DOT_QUE, KC_SCLN
 
 #define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
 #define __________________APTv3_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
@@ -83,8 +83,8 @@
 #define ___________________SYM_L2__________________       KC_COLN, LPRN_TH, RPRN_TH, KC_SCLN, KC_PERC
 #define ___________________SYM_L3__________________       KC_RCBR, LBRC_TH, RBRC_TH, LCBR_TH, XXXXXXX
 
-#define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_RABK, KC_EXLM, KC_GRV
-#define ___________________SYM_R2__________________       KC_DOT,  KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
+#define ___________________SYM_R1__________________       KC_DOT,  GET_SET, KC_RABK, KC_EXLM, KC_GRV
+#define ___________________SYM_R2__________________       KC_QUOT, KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
 #define ___________________SYM_R3__________________       KC_COMM, KC_CIRC, KC_PIPE, KC_MINS, KC_SLSH
 
 
