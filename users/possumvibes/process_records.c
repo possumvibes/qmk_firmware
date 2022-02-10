@@ -73,7 +73,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (get_oneshot_layer() != 0) {
                 clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
             }
-            layer_move(_QWERTY);
+            layer_move(0);
             return false;
         }
         case UND_RED: {
