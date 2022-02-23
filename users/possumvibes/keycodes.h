@@ -10,6 +10,7 @@ enum layers {
     _FUNC,
     _NUM,
     _SYM,
+    _MOUSE,
     _NAV,
     _SYSTEM
 };
@@ -83,6 +84,7 @@ enum custom_keycodes {
 #define SYM_OSL     OSL(_SYM)
 #define SYM_TG      TG(_SYM)
 #define SYM_MO      MO(_SYM)
+#define MOUS_TG     TG(_MOUSE)
 #define NAV_TG      TG(_NAV)
 #define NUM_OSL     OSL(_NUM)
 #define NUM_TO      TO(_NUM)
