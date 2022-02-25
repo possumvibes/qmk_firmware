@@ -29,17 +29,17 @@
 #define ________________COMBOREF_R3________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
 
 
-#define ___________________APT_L1__________________       KC_W,    KC_C,    KH_Y,    KC_D,    KC_X
+#define ___________________APT_L1__________________       KC_W,    KC_C,    KH_Y,    KC_D,    KC_K
 #define ___________________APT_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_B
 #define ___________________APT_L3__________________       KC_Z,    KC_V,    KC_G,    KC_F,    KC_P
 
 #define ___________________APT_R1__________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
-#define ___________________APT_R2__________________       KC_K,    KH_N,    KH_E,    KH_A,    KH_I
-#define ___________________APT_R3__________________       KC_J,    KC_M,    COM_EXC, DOT_QUE, KC_SCLN
+#define ___________________APT_R2__________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
+#define ___________________APT_R3__________________       KC_X,    KC_M,    COM_EXC, DOT_QUE, KC_SCLN
 
 #define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
 #define __________________APTv3_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
-#define __________________APTv3_L3_________________       KC_X,    KC_C,    KC_M,    KH_P,    KC_V
+#define __________________APTv3_L3_________________       KC_X,    KC_C,    KC_M,    KC_P,    KC_V
 
 #define __________________APTv3_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
 #define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
