@@ -18,6 +18,8 @@ COMB(copy,              S_COPY,     KC_S, KC_D)         // Ctrl+Ins (copy)
 COMB(paste,             S_PASTE,    KC_D, KC_F)         // Shift+Del (paste)
 COMB(panic,             PANIC,      KC_D, KC_K)         // panic!
 COMB(caps,              KC_CAPS,    KC_S, KC_X)         // Caps Lock Time :)
+COMB(click_l,            LCLICK,     KC_D, KC_C)         // Left Click :)
+COMB(click_r,            RCLICK,     KC_V, KC_F)         // Right Click :)
 
 COMB(nummode,           NUMMODE,    KC_J, KC_K)         // Nummode toggle
 COMB(funmode,           FUNMODE,    KC_K, KC_L)         // Funmode toggle

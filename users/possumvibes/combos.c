@@ -33,6 +33,8 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case kc_qu:
         case kc_z:
         case delete:
+        case click_l:
+        case click_r:
         case esc:
         case funmode:
         case musmode:
