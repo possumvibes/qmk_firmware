@@ -65,7 +65,7 @@ Last but not least, this readme has links to all my current board keymaps at the
 ### Possumvibes Keyboard Vault
 Possibly even up to date!
 
-- Kyria (38 keys; [Readme](../../keyboards/splitkb/kyria/keymaps/possumvibes/readme.md)): My current daily driver, from [SplitKb](https://splitkb.com/). Uses this userspace keymap.
+- Kyria (38 keys; [Readme](../../keyboards/splitkb/kyria/keymaps/possumvibes/readme.md)): A 44-46 key MX split from [SplitKb](https://splitkb.com/). Uses this userspace keymap.
 - Osprette (34 keys; [Readme](../../keyboards/osprette/keymaps/possumvibes/readme.md)): A choc-spaced pinky cluster board from [S'mores' Boards](https://www.smoresboards.com/). Uses this userspace keymap.
-- Fissure (36-40 keys; [Readme](../../keyboards/fissure/keymaps/possumvibes/readme.md)): A choc-spaced board with two keys in each 6th col for steno. Uses this userspace keymap.
+- Fissure (36-40 keys; [Readme](../../keyboards/fissure/keymaps/possumvibes/readme.md)): My current daily driver! A choc-spaced board with two keys in each 6th col for steno. Uses this userspace keymap.
 - 2% Milk (2 keys; [Readme](../../keyboards/spaceman/2_milk/keymaps/possumvibes/readme.md)): A 2% macropad from [Keyhive](https://keyhive.xyz/shop/milk).
