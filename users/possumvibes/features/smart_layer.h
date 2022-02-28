@@ -32,5 +32,15 @@ void nav_mode_disable(void);
 // Handle each key for nav mode.
 void nav_mode_process(uint16_t keycode, keyrecord_t *record);
 
+/* -------- Mus Mode -------- */
+// Turn Mus mode on. To be called from a custom keycode.
+void mus_mode_enable(void);
+
+// Turn mus mode off.
+void mus_mode_disable(void);
+
+// Handle each key for mus mode.
+void mus_mode_process(uint16_t keycode, keyrecord_t *record);
+
 /* -------- Process Record -------- */
 void process_layermodes(uint16_t keycode, keyrecord_t *record);

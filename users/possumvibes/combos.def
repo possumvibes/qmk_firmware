@@ -2,13 +2,14 @@
 
 /*---- TOP ROW ----*/
 COMB(turbonav,          NAVMODE,    KC_W, KC_R)         // Nav access
+COMB(delete,            KC_DEL,     KC_W, KC_E)         // Delete
 COMB(save,              S_SAVE,     KC_E, KC_R)         // Save
 COMB(back_fwd,          BCK_FWD,    KC_R, KC_T)         // Back/Fwd (shifted)
 
 COMB(undo_redo,         UND_RED,    KC_Y, KC_U)         // Undo/Redo (shifted)
 COMB(esc,               KC_ESC,     KC_U, KC_O)         // Esc
 COMB(qu,                KC_QU,      KC_U, KC_I)
-COMB(delete,            KC_DEL,     KC_I, KC_O)         // Delete
+COMB(mouse,             MUSMODE,    KC_I, KC_O)         // Mouse access
 COMB(kc_z,              KC_Z,       KC_W, KC_S)         // what if z combo
 
 /*---- HOME ROW ----*/

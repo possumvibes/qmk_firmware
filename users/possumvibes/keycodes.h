@@ -30,6 +30,8 @@ enum custom_keycodes {
     NUMMODE,  // activates a "num-word" smart layer toggle
     FUNMODE,  // activates a smart layer toggle for func
     NAVMODE,  // activates a smart nav layer
+    MUSMODE,  // activates a smart mouse layer
+
     // Custom Punctuation
     COM_EXC,  // , !
     DOT_QUE,  // . ?
@@ -75,7 +77,7 @@ enum custom_keycodes {
 
 // Thumb Keys
 #define THM_LH0     LT(_NAV, KC_ENT)
-#define THM_LH1     KC_TAB
+#define THM_LH1     LT(_MOUSE, KC_TAB)
 
 #define THM_RH0     KC_SPC
 #define THM_RH1     KC_BSPC
@@ -98,6 +100,10 @@ enum custom_keycodes {
 #define KY_0        SYM(KC_0)
 #define KY_6        SYM(KC_6)
 #define KY_7        SYM(KC_7)
+
+#define LCLICK      KC_BTN1
+#define RCLICK      KC_BTN2
+#define MCLICK      KC_BTN3
 
 // Default Layer States
 #define QWERTY      DF(_QWERTY)

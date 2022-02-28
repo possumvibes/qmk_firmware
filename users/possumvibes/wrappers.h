@@ -88,14 +88,14 @@
 #define ___________________SYM_R3__________________       KC_COMM, KC_CIRC, KC_PIPE, KC_MINS, KC_SLSH
 
 #define __________________MOUSE_L1_________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define __________________MOUSE_L2_________________       CLEAR,   KC_BTN1, KC_BTN2, KC_BTN3, XXXXXXX
-#define __________________MOUSE_L3_________________       ML_LGUI, ML_LALT, ML_LCTL, ML_LSFT, XXXXXXX
+#define __________________MOUSE_L2_________________       CLEAR,   LCLICK,  MCLICK,  RCLICK, XXXXXXX
+#define __________________MOUSE_L3_________________       OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX
 
-#define __________________MOUSE_R1_________________       XXXXXXX, KC_PGDN, KC_MS_U, KC_PGUP, XXXXXXX
-#define __________________MOUSE_R2_________________       XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX
-#define __________________MOUSE_R3_________________       XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R
+#define __________________MOUSE_R1_________________       XXXXXXX, LCLICK,  KC_WH_U, RCLICK,  XXXXXXX
+#define __________________MOUSE_R2_________________       XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_R, XXXXXXX
+#define __________________MOUSE_R3_________________       XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX
 
-#define ___________________NAV_L1__________________       PANIC,   NUM_OSL, OS_LGUI, FUN_OSL, SYM_OSL
+#define ___________________NAV_L1__________________       PANIC,   LCLICK,  OS_LGUI, RCLICK,  MCLICK
 #define ___________________NAV_L2__________________       SW_WIN,  OS_LALT, OS_LCTL, OS_LSFT, KC_CAPS
 #define ___________________NAV_L3__________________       SW_TAB,  SW_REV,  KC_CAPS, TS_LCTL, XXXXXXX
 

@@ -90,6 +90,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case NAVMODE:
             nav_mode_enable();
             return false;
+         case MUSMODE:
+            mus_mode_enable();
+            return false;
 
         // Funky Symbol Shifts
         case KC_AMPR:

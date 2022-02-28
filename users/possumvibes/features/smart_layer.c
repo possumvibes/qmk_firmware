@@ -123,6 +123,40 @@ void nav_mode_process(uint16_t keycode, keyrecord_t *record){
     }
 }
 
+/*--------- Mus Mode ---------------*/
+static bool _mus_mode_active = false;
+
+// Turn mus mode on. To be called from a custom keycode.
+void mus_mode_enable(void) {
+    _mus_mode_active = true;
+    layer_on(_MOUSE);
+}
+
+// Turn mus mode off.
+void mus_mode_disable(void) {
+    _mus_mode_active = false;
+    layer_off(_MOUSE);
+}
+
+void mus_mode_process(uint16_t keycode, keyrecord_t *record){
+    // todo possum strip keycode from lt/modtaps if needed
+
+    // Assess if we should exit layermode or continue processing normally.
+    switch (keycode) {
+        case OS_LSFT ... OS_LGUI:
+        case CLEAR:
+        case KC_HOME ... KC_UP:
+        case KC_MS_U ... KC_ACL2:
+            break;
+        default:
+            // All other keys disable the layer mode.
+            if (!record->event.pressed) {
+                mus_mode_disable();
+            }
+            break;
+    }
+}
+
 /* -------- Process Record -------- */
 void process_layermodes(uint16_t keycode, keyrecord_t *record) {
     if (_num_mode_active) {
@@ -131,5 +165,7 @@ void process_layermodes(uint16_t keycode, keyrecord_t *record) {
         func_mode_process(keycode, record);
     } else if (_nav_mode_active){
         nav_mode_process(keycode, record);
+    } else if (_mus_mode_active){
+        mus_mode_process(keycode, record);
     }
 }
