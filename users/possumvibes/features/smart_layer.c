@@ -110,6 +110,7 @@ void nav_mode_process(uint16_t keycode, keyrecord_t *record){
         case OS_LSFT ... OS_LGUI:
         case ML_LCTL ... ML_LGUI:
         case KC_HOME ... KC_UP:
+        case KC_MS_U ... KC_ACL2:
         case CLEAR:
         case F12_TH:
         case CTL_U:
