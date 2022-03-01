@@ -187,7 +187,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case DOT_QUE: {
             return override_shift(is_shifted, KC_DOT, KC_QUES, keycode, record);
         }
-
         // Other
         case SPC_SFT: {
             if(record->event.pressed){

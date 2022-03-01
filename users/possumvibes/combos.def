@@ -18,14 +18,15 @@ COMB(copy,              S_COPY,     KC_S, KC_D)         // Ctrl+Ins (copy)
 COMB(paste,             S_PASTE,    KC_D, KC_F)         // Shift+Del (paste)
 COMB(panic,             PANIC,      KC_D, KC_K)         // panic!
 COMB(caps,              KC_CAPS,    KC_S, KC_X)         // Caps Lock Time :)
-COMB(click_l,            LCLICK,     KC_D, KC_C)         // Left Click :)
-COMB(click_r,            RCLICK,     KC_V, KC_F)         // Right Click :)
+COMB(click_l,           LCLICK,     KC_D, KC_C)         // Left Click :)
+COMB(click_r,           RCLICK,     KC_V, KC_F)         // Right Click :)
 
 COMB(nummode,           NUMMODE,    KC_J, KC_K)         // Nummode toggle
 COMB(funmode,           FUNMODE,    KC_K, KC_L)         // Funmode toggle
 COMB(numosl,            NUM_OSL,    KC_J, KC_L)         // OS Num
 COMB(tab,               KC_TAB,     KC_K, KC_M)         // Tab
-
+COMB(click_l2,          LCLICK,     KC_J, KC_M)         // Left Click :)
+COMB(click_r2,          RCLICK,     KC_K, KC_COMM)      // Right Click :)
 
 /*---- BOTTOM ROW ----*/
 COMB(hash,              KC_HASH,    KC_X, KC_C)         // #

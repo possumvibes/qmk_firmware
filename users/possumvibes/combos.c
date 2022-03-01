@@ -11,6 +11,8 @@ bool get_combo_must_hold(uint16_t index, combo_t *combo){
 bool get_combo_must_tap(uint16_t index, combo_t *combo){
     switch(index){
         case sys_lthm:
+        case click_l:
+        case click_l2:
             return false;
         // everything should be tap-only unless otherwise specified
         default: return true;
@@ -35,6 +37,8 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case delete:
         case click_l:
         case click_r:
+        case click_l2:
+        case click_r2:
         case esc:
         case funmode:
         case musmode:

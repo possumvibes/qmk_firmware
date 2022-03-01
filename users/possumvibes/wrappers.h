@@ -43,7 +43,7 @@
 
 #define __________________APTv3_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
 #define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define __________________APTv3_R3_________________       KC_Z,    KC_QUOT, COM_EXC, DOT_QUE, KC_SCLN
+#define __________________APTv3_R3_________________       KC_Z,    KC_SLSH, COM_EXC, DOT_QUE, KC_SCLN
 
 
 #define __________________FUNC_L1__________________       KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX
@@ -95,11 +95,11 @@
 #define __________________MOUSE_R2_________________       XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_R, XXXXXXX
 #define __________________MOUSE_R3_________________       XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX
 
-#define ___________________NAV_L1__________________       PANIC,   LCLICK,  OS_LGUI, RCLICK,  MCLICK
-#define ___________________NAV_L2__________________       SW_WIN,  OS_LALT, OS_LCTL, OS_LSFT, KC_CAPS
-#define ___________________NAV_L3__________________       SW_TAB,  SW_REV,  KC_CAPS, TS_LCTL, XXXXXXX
+#define ___________________NAV_L1__________________       KC_WH_U, LCLICK,  OS_LGUI, RCLICK,  KC_WH_D
+#define ___________________NAV_L2__________________       SW_WIN,  OS_LALT, OS_LCTL, OS_LSFT, KC_PGUP
+#define ___________________NAV_L3__________________       SW_TAB,  SW_REV,  KC_CAPS, TS_LCTL, KC_PGDN
 
-#define ___________________NAV_R1__________________       XXXXXXX, KC_HOME, KC_UP,   KC_END,  KC_DEL
+#define ___________________NAV_R1__________________       KC_PGDN, KC_HOME, KC_UP,   KC_END,  KC_PGUP
 #define ___________________NAV_R2__________________       F12_TH,  KC_LEFT, KC_DOWN, KC_RGHT, CLEAR
 #define ___________________NAV_R3__________________       CTL_U,   ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
 
