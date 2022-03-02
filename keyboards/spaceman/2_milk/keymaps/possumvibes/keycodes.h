@@ -13,11 +13,14 @@ enum layers {
 
 #define TH(k)   LT(0, k)
 
-#define PGU_MOR    LT(_MORSE, KC_PGUP)
-#define PGD_LOW    LT(_LOWER, KC_PGDN)
+#define LCL_MOR    LT(_MORSE, LCLICK)
+#define RCL_LOW    LT(_LOWER, RCLICK)
 #define KC_MORSE   TH(KC_DOT)
 
 #define KC_LOCKS   TH(KC_F24)
+#define LCLICK      KC_BTN1
+#define RCLICK      KC_BTN2
+#define MCLICK      KC_BTN3
 
 bool override_th_hold(uint16_t hold_keycode, keyrecord_t *record);
 

@@ -1,1 +1,2 @@
-COMB(reset,      RESET,      PGU_MOR, PGD_LOW) // Home layer combo sends RESET
+COMB(reset,      RESET,      LCL_MOR, RCL_LOW) // Home layer combo sends RESET
+COMB(reset2,     RESET,      LCLICK, RCLICK)   // Home layer combo sends RESET

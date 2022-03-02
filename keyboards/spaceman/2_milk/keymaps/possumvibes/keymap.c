@@ -7,17 +7,21 @@
 #endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    // [_BASE] = LAYOUT(
+    //     LCL_MOR,
+    //     RCL_LOW
+    // ),
+    // [_LOWER] = LAYOUT(
+    //     KC_LOCKS,
+    //     _______
+    // ),
+    // [_MORSE] = LAYOUT(
+    //     _______,
+    //     KC_MORSE
+    // )
     [_BASE] = LAYOUT(
-        PGU_MOR,
-        PGD_LOW
-    ),
-    [_LOWER] = LAYOUT(
-        KC_LOCKS,
-        _______
-    ),
-    [_MORSE] = LAYOUT(
-        _______,
-        KC_MORSE
+        LCLICK,
+        RCLICK
     )
 };
 
