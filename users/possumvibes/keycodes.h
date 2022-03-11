@@ -159,6 +159,7 @@ enum custom_keycodes {
 #define KH_H        LSFT_T(KC_H)
 
 #define KH_D        LGUI_T(KC_D)
+#define KH_G        LGUI_T(KC_G)
 #define KH_Y        LGUI_T(KC_Y)
 #define KH_U        RGUI_T(KC_U)
 
