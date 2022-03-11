@@ -40,6 +40,7 @@ enum custom_keycodes {
     SPC_SFT,  // Space and OSS
     GET_SET,  // { get; set; }
     KC_QU,    // qu, Qu, QU
+    DBCLICK,  // double mouse click
 
     // macros
     ALT_F4,   // per is_windows Close Application
