@@ -2,7 +2,7 @@ APPLY_USERSPACE			= yes	# Apply the userspace keymap
 
 COMBO_ENABLE 			= yes 	# Enables use of combos
 ENCODER_ENABLE 			= yes	# Enables use of one or more encoders
-MOUSEKEY_ENABLE 		= no	# Enables mouse keys
+MOUSEKEY_ENABLE 		= yes	# Enables mouse keys
 TAP_DANCE_ENABLE		= no	# Enables Tap Dance
 CONSOLE_ENABLE			= no	# Enables debugging
 
