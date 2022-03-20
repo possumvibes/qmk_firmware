@@ -49,6 +49,9 @@ bool is_mod_lock_cancel_key(uint16_t keycode) {
         case ML_LCTL:
         case ML_LGUI:
         case ML_LSFT:
+        case LCLICK:
+        case RCLICK:
+        case DBCLICK:
             return false;
         default:
             return true;
