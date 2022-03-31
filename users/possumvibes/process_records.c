@@ -206,22 +206,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
 
-        case KC_QU: {
-            if (record->event.pressed){
-                if(is_shifted){
-                    del_mods(MOD_MASK_SHIFT);
-                    del_oneshot_mods(MOD_MASK_SHIFT);
-                    SEND_STRING("Qu");
-                } else {
-                    SEND_STRING("qu");
-                }
-            }
-            return false;
-        }
         case DBCLICK:
             if(record->event.pressed){
                 tap_code16(LCLICK);
                 tap_code16(LCLICK);
+            }
+            return false;
+        case SCREEN:
+            if(record->event.pressed){
+                if(is_windows){
+                    tap_code16(G(S(KC_S)));
+                } else {
+                   tap_code16(S(C(KC_PSCR)));
+                }
             }
             return false;
 

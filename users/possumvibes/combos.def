@@ -2,15 +2,14 @@
 
 /*---- TOP ROW ----*/
 COMB(turbonav,          NAVMODE,    KC_W, KC_R)         // Nav access
-COMB(delete,            KC_DEL,     KC_W, KC_E)         // Delete
+// COMB(tab,               KC_TAB,     KC_W, KC_E)         // Delete
 COMB(save,              S_SAVE,     KC_E, KC_R)         // Save
 COMB(back_fwd,          BCK_FWD,    KC_R, KC_T)         // Back/Fwd (shifted)
 
 COMB(undo_redo,         UND_RED,    KC_Y, KC_U)         // Undo/Redo (shifted)
 COMB(esc,               KC_ESC,     KC_U, KC_O)         // Esc
-COMB(qu,                KC_QU,      KC_U, KC_I)
-COMB(mouse,             MUSMODE,    KC_I, KC_O)         // Mouse access
-COMB(kc_z,              KC_Z,       KC_W, KC_S)         // what if z combo
+COMB(tab,               KC_TAB,     KC_U, KC_I)         // Tab again
+COMB(musmode,             MUSMODE,    KC_I, KC_O)         // Mouse access
 
 /*---- HOME ROW ----*/
 COMB(cut,               S_CUT,      KC_S, KC_F)         // Shift+Del (cut)
@@ -20,13 +19,14 @@ COMB(panic,             PANIC,      KC_D, KC_K)         // panic!
 COMB(caps,              KC_CAPS,    KC_S, KC_X)         // Caps Lock Time :)
 COMB(click_l,           LCLICK,     KC_D, KC_C)         // Left Click :)
 COMB(click_r,           RCLICK,     KC_V, KC_F)         // Right Click :)
+COMB(dbclick_l,         DBCLICK,    KC_G, KC_B)         // Double Click :)
 
 COMB(nummode,           NUMMODE,    KC_J, KC_K)         // Nummode toggle
 COMB(funmode,           FUNMODE,    KC_K, KC_L)         // Funmode toggle
 COMB(numosl,            NUM_OSL,    KC_J, KC_L)         // OS Num
-COMB(tab,               KC_TAB,     KC_K, KC_M)         // Tab
 COMB(click_l2,          LCLICK,     KC_J, KC_M)         // Left Click :)
 COMB(click_r2,          RCLICK,     KC_K, KC_COMM)      // Right Click :)
+COMB(dbclick_r,         DBCLICK,    KC_H, KC_N)         // Double Click :)
 
 /*---- BOTTOM ROW ----*/
 COMB(hash,              KC_HASH,    KC_X, KC_C)         // #

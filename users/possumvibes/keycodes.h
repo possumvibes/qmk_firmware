@@ -39,7 +39,7 @@ enum custom_keycodes {
     // custom strings
     SPC_SFT,  // Space and OSS
     GET_SET,  // { get; set; }
-    KC_QU,    // qu, Qu, QU
+    SCREEN,   // Screenshot per OS
     DBCLICK,  // double mouse click
 
     // macros
@@ -78,7 +78,8 @@ enum custom_keycodes {
 
 // Thumb Keys
 #define THM_LH0     LT(_NAV, KC_ENT)
-#define THM_LH1     LT(_MOUSE, KC_TAB)
+// #define THM_LH1     LT(_MOUSE, KC_TAB)
+#define THM_LH1     OS_LSFT
 
 #define THM_RH0     KC_SPC
 #define THM_RH1     KC_BSPC
@@ -121,7 +122,6 @@ enum custom_keycodes {
 #define S_BACK      A(KC_LEFT)
 #define S_FWD       A(KC_RIGHT)
 #define C_BSPC      C(KC_BSPC)
-#define SCREEN      S(C(KC_PSCR))
 #define CTL_U       C(KC_U)
 
 #define F3_TH       TH(KC_F3)

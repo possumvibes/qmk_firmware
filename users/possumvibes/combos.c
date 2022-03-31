@@ -21,24 +21,21 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo){
 
 uint16_t get_combo_term(uint16_t index, combo_t *combo){
     switch(index) {
-        // faster combos, home row and home thumb
+        // faster combos over rolls
         case back_fwd:
         case cut:
         case copy:
         case paste:
         case save:
-        // case select_all:
         case undo_redo:
-            return COMBO_TERM - 10;
-        // right hand home/upper combos gotta be faster than left?
         case caps:
-        case kc_qu:
-        case kc_z:
         case delete:
         case click_l:
         case click_r:
         case click_l2:
         case click_r2:
+        case dbclick_l:
+        case dbclick_r:
         case esc:
         case funmode:
         case musmode:
