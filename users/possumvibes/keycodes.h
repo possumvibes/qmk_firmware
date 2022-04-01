@@ -136,6 +136,7 @@ enum custom_keycodes {
 #define LCBR_TH     TH(KC_F17)
 #define LPRN_TH     TH(KC_F18)
 #define RPRN_TH     TH(KC_F19)
+#define DQUO_TH     TH(KC_F20r)
 
 /* ----Home Row Mods---- */
 #define KY_E        LGUI_T(KC_E)
