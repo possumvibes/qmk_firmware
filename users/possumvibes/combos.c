@@ -44,7 +44,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case tab:
         case turbonav:
         case underscore_rthm:
-            return COMBO_TERM - 15;
+            return COMBO_TERM - 18;
         default:
             return COMBO_TERM;
     }

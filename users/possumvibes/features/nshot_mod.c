@@ -82,7 +82,7 @@ bool is_nshot_cancel_key(uint16_t keycode) {
         case PANIC:
         case CLEAR:
         case THM_LH0:
-        case THM_LH1:
+        // case THM_LH1:  // THM_LH1 is currently os_lsft
         case THM_RH0:
         case THM_RH1:
             return true;
@@ -94,7 +94,7 @@ bool is_nshot_cancel_key(uint16_t keycode) {
 bool is_nshot_ignored_key(uint16_t keycode) {
     switch (keycode) {
         case THM_LH0:
-        case THM_LH1:
+        // case THM_LH1:  // THM_LH1 is currently os_lsft
         case THM_RH0:
         case THM_RH1:
         case SYM_OSL:
@@ -106,6 +106,12 @@ bool is_nshot_ignored_key(uint16_t keycode) {
         case ALPHA:
         case NUMMODE:
         case FUNMODE:
+        case KH_R:
+        case KH_I:
+        case OS_LSFT:
+        case OS_LCTL:
+        case OS_LALT:
+        case OS_LGUI:
             return true;
         default:
             return false;

@@ -25,13 +25,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         // case KH_S: //KY_S and KH_S are both aliases for LALT_T(KC_S)
         case KH_A:
             // Ring
-            return TAPPING_TERM + 10;
+            return TAPPING_TERM + 5;
         case KY_E:
         case KY_I:
         case KH_D:
         case KH_U:
             // Upper Middle
-            return TAPPING_TERM + 15;
+            return TAPPING_TERM + 10;
         case KY_D:
         case KY_K:
         case KH_T:
@@ -43,7 +43,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         case KH_H:
         case KH_N:
             // Index
-            return TAPPING_TERM -15;
+            return TAPPING_TERM -10;
         case LABK_TH:
         case LBRC_TH:
         case LCBR_TH:

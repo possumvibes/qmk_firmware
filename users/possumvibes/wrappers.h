@@ -88,10 +88,10 @@
 
 #define ___________________SYM_L1__________________       KC_BSLS, LABK_TH, KC_RABK, KC_QUES, KC_DLR
 #define ___________________SYM_L2__________________       KC_COLN, LPRN_TH, RPRN_TH, KC_SCLN, KC_PERC
-#define ___________________SYM_L3__________________       KC_RCBR, LBRC_TH, RBRC_TH, LCBR_TH, XXXXXXX
+#define ___________________SYM_L3__________________       KC_RCBR, LBRC_TH, RBRC_TH, LCBR_TH, KC_SLSH
 
-#define ___________________SYM_R1__________________       KC_DOT,  GET_SET, KC_RABK, KC_EXLM, KC_GRV
-#define ___________________SYM_R2__________________       KC_QUOT, KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
+#define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_RABK, KC_EXLM, KC_GRV
+#define ___________________SYM_R2__________________       DQUO_TH, KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
 #define ___________________SYM_R3__________________       KC_COMM, KC_CIRC, KC_PIPE, KC_MINS, KC_SLSH
 
 #define __________________MOUSE_L1_________________       KC_PGUP, KC_HOME, KC_WH_U, KC_END,  KC_PGDN

@@ -145,6 +145,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
         }
+        case DQUO_TH: return override_th_bracket_pair(KC_DQUO, KC_DQUO, keycode, record);
         case LABK_TH:
             return override_th_bracket_pair(KC_LABK, KC_RABK, keycode, record);
         case LBRC_TH:
