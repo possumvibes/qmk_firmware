@@ -15,6 +15,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
 
     for (int i = 0; i < NUM_NSHOT_STATES; ++i) {
         curr_state = &nshot_states[i];
+        uint8_t max_count = curr_state->max_count * 2;
 
         if (keycode == curr_state->trigger) {
             if (record->event.pressed) {
@@ -48,6 +49,21 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                     curr_state->count = 0;
                     unregister_code(curr_state->mod);
                 }
+
+                // Check for oneshot completion on sequential keys while rolling.
+                // curr_state->state will only be os_up_queued after the n-shot has been triggered.
+                if (curr_state->state == os_up_queued && !is_nshot_ignored_key(keycode)) {
+                    // Increment on sequential key press.
+                    curr_state->count = curr_state->count + 1;
+
+                    // If count > max_count, the previous key hit maxed out the n-shot.
+                    // Complete the n-shot; this current keycode will be pressed sans mod.
+                    if (curr_state->count == max_count) {
+                        curr_state->state = os_up_unqueued;
+                        curr_state->count = 0;
+                        unregister_code(curr_state->mod);
+                    }
+                }
             } else {
                 if (!is_nshot_ignored_key(keycode)) {
                     // On non-ignored keyup, consider the oneshot used.
@@ -62,7 +78,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                             curr_state->count = curr_state->count + 1;
 
                             // If the n-shot max has been reached, complete the n-shot.
-                            if (curr_state->count == curr_state->max_count) {
+                            if (curr_state->count == max_count) {
                                 curr_state->state = os_up_unqueued;
                                 curr_state->count = 0;
                                 unregister_code(curr_state->mod);
