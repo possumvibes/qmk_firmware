@@ -53,71 +53,69 @@
 #define ___________________APT_R2__________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
 #define ___________________APT_R3__________________       KC_QUOT, KC_X,    COM_EXC, DOT_QUE, KC_SCLN
 
-#define __________________FUNC_L1__________________       KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX
-#define __________________FUNC_L2__________________       KC_F1,   F3_TH,   F6_TH,   F12_TH,  XXXXXXX
+#define _________________SEMIMAK_L1________________       KC_F,    KC_L,    KS_H,    KC_V,    KC_Z
+#define _________________SEMIMAK_L2________________       KS_S,    KS_R,    KS_N,    KS_T,    KC_K
+#define _________________SEMIMAK_L3________________       KC_X,    KC_J,    KC_B,    KC_M,    KC_Q
+
+#define _________________SEMIMAK_R1________________       KC_QUOT, KC_W,    KH_U,    KC_O,    KC_Y
+#define _________________SEMIMAK_R2________________       KC_C,    KS_D,    KH_E,    KH_A,    KH_I
+#define _________________SEMIMAK_R3________________       KC_P,    KC_G,    COM_EXC, DOT_QUE, KC_SCLN
+
+#define __________________FUNC_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   KC_VOLU
+#define __________________FUNC_L2__________________       KC_F1,   F3_TH,   F6_TH,   F12_TH,  KC_VOLD
 #define __________________FUNC_L3__________________       KC_F9,   KC_F4,   KC_F2,   F5_TH,   XXXXXXX
 
-#define __________________FUNC_R1__________________       XXXXXXX, KC_MPLY, KC_MUTE, KC_PSCR, XXXXXXX
-#define __________________FUNC_R2__________________       XXXXXXX, F11_TH,  KC_F10,  KC_F8,   KC_F7
+#define __________________FUNC_R1__________________       KC_MNXT, KC_MPLY, KC_MUTE, KC_PSCR, XXXXXXX
+#define __________________FUNC_R2__________________       KC_MPRV, F11_TH,  KC_F10,  KC_F8,   KC_F7
 #define __________________FUNC_R3__________________       XXXXXXX, OS_LSFT, OS_LCTL, OS_LALT, OS_LGUI
 
-#define ___________________NUM_L1__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define ___________________NUM_L2__________________       KY_6,    KC_4,    KC_0,    KC_2,    XXXXXXX
-#define ___________________NUM_L3__________________       KC_X,    KC_QUOT, KC_DQUO, KC_8,    XXXXXXX
+// #define _________________NUMPADR_L1________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+// #define _________________NUMPADR_L2________________       SYM_MO,  KC_COLN, KC_DOT,  KC_COMM, XXXXXXX
+// #define _________________NUMPADR_L3________________       KC_X,    KC_QUOT, KC_DQUO, KC_DQUO, XXXXXXX
 
-#define ___________________NUM_R1__________________       XXXXXXX, KC_J,    KC_K,    S(KC_G), XXXXXXX
-#define ___________________NUM_R2__________________       XXXXXXX, KC_3,    KC_1,    KC_5,    KY_7
-#define ___________________NUM_R3__________________       XXXXXXX, KC_9,    KC_COMM, KC_DOT, KC_SCLN
+// #define _________________NUMPADR_R1________________       XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX
+// #define _________________NUMPADR_R2________________       XXXXXXX, KC_1,    KC_2,    KC_3,    KY_0
+// #define _________________NUMPADR_R3________________       XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX
 
+#define _________________NUMPADL_L1________________       KC_0,    KC_7,    KC_8,    KC_9,    KC_DLR
+#define _________________NUMPADL_L2________________       KY_0,    KC_1,    KC_2,    KC_3,    KC_PERC
+#define _________________NUMPADL_L3________________       KC_X,    KC_4,    KC_5,    KC_6,    KC_COLN
 
-#define _________________NUMPADR_L1________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define _________________NUMPADR_L2________________       SYM_MO,  KC_COLN, KC_DOT,  KC_COMM, XXXXXXX
-#define _________________NUMPADR_L3________________       KC_X,    KC_QUOT, KC_DQUO, KC_DQUO, XXXXXXX
+#define _________________NUMPADL_R1________________       KC_K,    XXXXXXX, OS_LGUI, XXXXXXX, XXXXXXX
+#define _________________NUMPADL_R2________________       S(KC_G), OS_LSFT, OS_LCTL, OS_LALT, SYM_MO
+#define _________________NUMPADL_R3________________       KC_J,    KC_QUOT, KC_COMM, KC_DOT,  KC_DQUO
 
-#define _________________NUMPADR_R1________________       XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX
-#define _________________NUMPADR_R2________________       XXXXXXX, KC_1,    KC_2,    KC_3,    KY_0
-#define _________________NUMPADR_R3________________       XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX
+#define ___________________SYM_L1__________________       KC_BSLS, KC_LABK, KC_RABK, KC_QUES, KC_DLR
+#define ___________________SYM_L2__________________       KC_COLN, KC_LPRN, KC_RPRN, KC_SCLN, KC_PERC
+#define ___________________SYM_L3__________________       KC_RCBR, KC_LBRC, KC_RBRC, KC_LCBR, KC_SLSH
 
-#define _________________NUMPADL_L1________________       XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX
-#define _________________NUMPADL_L2________________       KY_0,    KC_1,    KC_2,    KC_3,    XXXXXXX
-#define _________________NUMPADL_L3________________       KC_X,    KC_4,    KC_5,    KC_6,    XXXXXXX
-
-#define _________________NUMPADL_R1________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define _________________NUMPADL_R2________________       XXXXXXX, KC_J,    KC_K,    S(KC_G), SYM_MO
-#define _________________NUMPADL_R3________________       XXXXXXX, KC_QUOT, KC_COMM, KC_DOT,  KC_DQUO
-
-#define ___________________SYM_L1__________________       KC_BSLS, LABK_TH, KC_RABK, KC_QUES, KC_DLR
-#define ___________________SYM_L2__________________       KC_COLN, LPRN_TH, RPRN_TH, KC_SCLN, KC_PERC
-#define ___________________SYM_L3__________________       KC_RCBR, LBRC_TH, RBRC_TH, LCBR_TH, KC_SLSH
-
-#define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_RABK, KC_EXLM, KC_GRV
-#define ___________________SYM_R2__________________       DQUO_TH, KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
+#define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_AT,   KC_EXLM, KC_GRV
+#define ___________________SYM_R2__________________       KC_DQUO, KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
 #define ___________________SYM_R3__________________       KC_COMM, KC_CIRC, KC_PIPE, KC_MINS, KC_SLSH
 
-#define __________________MOUSE_L1_________________       KC_PGUP, KC_HOME, KC_WH_U, KC_END,  KC_PGDN
-#define __________________MOUSE_L2_________________       CLEAR,   LCLICK,  KC_WH_D, RCLICK,  KC_WH_L
-#define __________________MOUSE_L3_________________       ML_LGUI, ML_LALT, ML_LCTL, ML_LSFT, KC_WH_R
+#define __________________MOUSE_L1_________________       _______, _______, OS_LGUI, _______, _______
+#define __________________MOUSE_L2_________________       _______, OS_LALT, OS_LCTL, OS_LSFT, _______
+#define __________________MOUSE_L3_________________       _______, _______, PANIC,   TS_LCTL, _______
 
-#define __________________MOUSE_R1_________________       KC_PGDN, KC_HOME, KC_WH_U, KC_END,  KC_PGUP
-#define __________________MOUSE_R2_________________       KC_WH_L, LCLICK,  KC_WH_D, RCLICK,  CLEAR
-#define __________________MOUSE_R3_________________       KC_WH_R, ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
+#define __________________MOUSE_R1_________________       _______, KC_HOME, KC_WH_U, KC_END,  _______
+#define __________________MOUSE_R2_________________       KC_WH_L, LCLICK,  KC_WH_D, RCLICK,  KC_WH_R
+#define __________________MOUSE_R3_________________       _______, KC_PGUP, KC_PGDN, MCLICK, _______
 
-
-#define ___________________NAV_L1__________________       KC_WH_U, LCLICK,  OS_LGUI, RCLICK,  KC_WH_D
-#define ___________________NAV_L2__________________       SW_WIN,  OS_LALT, OS_LCTL, OS_LSFT, KC_PGUP
-#define ___________________NAV_L3__________________       SW_TAB,  SW_REV,  KC_SCRL, TS_LCTL, KC_PGDN
+#define ___________________NAV_L1__________________       XXXXXXX, LCLICK,  OS_LGUI, RCLICK,  KC_WH_U
+#define ___________________NAV_L2__________________       SW_WIN,  OS_LALT, OS_LCTL, OS_LSFT, KC_WH_D
+#define ___________________NAV_L3__________________       SW_TAB,  SW_REV,  F12_TH,  TS_LCTL, CTL_U
 
 #define ___________________NAV_R1__________________       KC_PGDN, KC_HOME, KC_UP,   KC_END,  KC_PGUP
-#define ___________________NAV_R2__________________       F12_TH,  KC_LEFT, KC_DOWN, KC_RGHT, CLEAR
-#define ___________________NAV_R3__________________       CTL_U,   ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
+#define ___________________NAV_R2__________________       F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, CLEAR
+#define ___________________NAV_R3__________________       XXXXXXX, ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
 
 
-#define ___________________SYS_L1__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define ___________________SYS_L2__________________       IS_WIN,  _______, _______, LOCKSCR, XXXXXXX
-#define ___________________SYS_L3__________________       _______, _______, _______, SYS_TO,  XXXXXXX
+#define ___________________SYS_L1__________________       XXXXXXX, XXXXXXX, OS_LGUI, XXXXXXX, XXXXXXX
+#define ___________________SYS_L2__________________       IS_WIN,  OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX
+#define ___________________SYS_L3__________________       _______, _______, _______, TS_LCTL, XXXXXXX
 
 #define ___________________SYS_R1__________________       RESET,   _______, ALT_F4,  APT,     QWERTY
-#define ___________________SYS_R2__________________       XXXXXXX, QMKCOMP, COMMENT, SCREEN, XXXXXXX
+#define ___________________SYS_R2__________________       XXXXXXX, QMKCOMP, COMMENT, SCREEN, SEMIMAK
 #define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, XXXXXXX, _______
 
 

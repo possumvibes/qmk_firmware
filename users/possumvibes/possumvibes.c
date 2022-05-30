@@ -22,23 +22,72 @@ bool override_shift( bool is_shifted,
     return false;
 }
 
-bool override_th_bracket_pair(
+bool override_bracket_pair(
+    bool is_shifted,
     uint16_t left_keycode,
     uint16_t right_keycode,
     uint16_t keycode,
     keyrecord_t *record) {
     if (record->event.pressed) {
-        if (record->tap.count) {
-            tap_code16(left_keycode);
-        } else {
+        if (is_shifted) {
+            uint8_t mod_state = get_mods();
+            del_oneshot_mods(MOD_MASK_SHIFT);
+            del_mods(MOD_MASK_SHIFT);
+
             tap_code16(left_keycode);
             tap_code16(right_keycode);
             tap_code(KC_LEFT);
 
+            set_mods(mod_state);
             layer_off(_SYM);
+        } else {
+            tap_code16(left_keycode);
         }
     }
     return false;
+}
+
+// TODO POSSUM all of these methods can get combined into a smarter def/dict based shift override
+// just need to figure out how to manage the strings for these
+// todo check ericgebhart and getreuer code, they've both got stuff for this specifically
+bool send_function_bracket_string(
+    bool is_shifted,
+    uint16_t keycode,
+    keyrecord_t *record) {
+    if (is_shifted){
+        if (record->event.pressed) {
+            uint8_t mod_state = get_mods();
+            del_oneshot_mods(MOD_MASK_SHIFT);
+            del_mods(MOD_MASK_SHIFT);
+
+            SEND_STRING("(){}");
+            triple_tap(KC_LEFT);
+
+            set_mods(mod_state);
+        }
+        return false;
+    }
+    return true;
+}
+
+bool send_link_bracket_string(
+    bool is_shifted,
+    uint16_t keycode,
+    keyrecord_t *record) {
+    if (is_shifted){
+        if (record->event.pressed) {
+            uint8_t mod_state = get_mods();
+            del_oneshot_mods(MOD_MASK_SHIFT);
+            del_mods(MOD_MASK_SHIFT);
+
+            SEND_STRING("[]()");
+            triple_tap(KC_LEFT);
+
+            set_mods(mod_state);
+        }
+        return false;
+    }
+    return true;
 }
 
 // Send custom keycode on hold for mod tap

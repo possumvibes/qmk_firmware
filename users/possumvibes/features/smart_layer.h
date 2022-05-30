@@ -3,7 +3,7 @@
 
 /* -------- Number Mode -------- */
 // Turn number mode on. To be called from a custom keycode
-void num_mode_enable(void);
+void num_mode_enable(keyrecord_t *record);
 
 // Turn number mode off.
 void num_mode_disable(void);
@@ -13,7 +13,7 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record);
 
 /* -------- Function Mode -------- */
 // Turn Func mode on. To be called from a custom keycode.
-void func_mode_enable(void);
+void func_mode_enable(keyrecord_t *record);
 
 // Turn func mode off.
 void func_mode_disable(void);
@@ -24,7 +24,7 @@ void func_mode_process(uint16_t keycode, keyrecord_t *record);
 
 /* -------- Nav Mode -------- */
 // Turn Nav mode on. To be called from a custom keycode.
-void nav_mode_enable(void);
+void nav_mode_enable(keyrecord_t *record);
 
 // Turn nav mode off.
 void nav_mode_disable(void);
@@ -34,13 +34,14 @@ void nav_mode_process(uint16_t keycode, keyrecord_t *record);
 
 /* -------- Mus Mode -------- */
 // Turn Mus mode on. To be called from a custom keycode.
-void mus_mode_enable(void);
+void sym_mode_enable(keyrecord_t *record);
 
-// Turn mus mode off.
-void mus_mode_disable(void);
+// Turn sym mode off.
+void sym_mode_disable(void);
 
-// Handle each key for mus mode.
-void mus_mode_process(uint16_t keycode, keyrecord_t *record);
+// Handle each key for sym mode.
+void sym_mode_process(uint16_t keycode, keyrecord_t *record);
 
 /* -------- Process Record -------- */
 void process_layermodes(uint16_t keycode, keyrecord_t *record);
+

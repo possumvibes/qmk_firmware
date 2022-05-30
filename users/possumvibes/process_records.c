@@ -7,7 +7,7 @@
 __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) { return true; }
 
 uint8_t mod_state;
-bool is_windows = false;
+bool is_windows = true;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE
     if(record->event.pressed)
@@ -44,6 +44,48 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return override_th_hold(S(KC_F11), record);
         case F12_TH:
             return override_th_hold(C(KC_F12), record);
+        case KY_V1:
+            if(record->event.pressed){
+                // Tap V in whatever shift format is present
+                tap_code(KC_V);
+
+                // Remove shift before pressing the number
+                if(is_shifted){
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    del_mods(MOD_MASK_SHIFT);
+                }
+
+                tap_code(KC_1);
+            }
+            return false;
+        case KY_V2:
+            if(record->event.pressed){
+                // Tap V in whatever shift format is present
+                tap_code(KC_V);
+
+                // Remove shift before pressing the number
+                if(is_shifted){
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    del_mods(MOD_MASK_SHIFT);
+                }
+
+                tap_code(KC_2);
+            }
+            return false;
+        case KY_V3:
+            if(record->event.pressed){
+                // Tap V in whatever shift format is present
+                tap_code(KC_V);
+
+                // Remove shift before pressing the number
+                if(is_shifted){
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    del_mods(MOD_MASK_SHIFT);
+                }
+
+                tap_code(KC_3);
+            }
+            return false;
 
         // Shortcuts and macros
         case IS_WIN: {
@@ -82,16 +124,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         // Layer Modes
         case NUMMODE:
-            num_mode_enable();
+            num_mode_enable(record);
             return false;
         case FUNMODE:
-            func_mode_enable();
+            func_mode_enable(record);
             return false;
         case NAVMODE:
-            nav_mode_enable();
+            nav_mode_enable(record);
             return false;
-         case MUSMODE:
-            mus_mode_enable();
+         case SYMMODE:
+            sym_mode_enable(record);
             return false;
 
         // Funky Symbol Shifts
@@ -145,42 +187,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
         }
-        case DQUO_TH: return override_th_bracket_pair(KC_DQUO, KC_DQUO, keycode, record);
-        case LABK_TH:
-            return override_th_bracket_pair(KC_LABK, KC_RABK, keycode, record);
-        case LBRC_TH:
-            return override_th_bracket_pair(KC_LBRC, KC_RBRC, keycode, record);
-        case LCBR_TH:
-            return override_th_bracket_pair(KC_LCBR, KC_RCBR, keycode, record);
-        case LPRN_TH:
-            return override_th_bracket_pair(KC_LPRN, KC_RPRN, keycode, record);
-        case RBRC_TH: {
-            if(record->event.pressed){
-                if(record->tap.count){
-                    tap_code16(KC_RBRC);
-                }
-                else{
-                    SEND_STRING("[]()");
-                    triple_tap(KC_LEFT);
-
-                    layer_off(_SYM);
-                }
-            }
-            return false;
-        }
-        case RPRN_TH: {
-            if(record->event.pressed){
-                if(record->tap.count){
-                    tap_code16(KC_RPRN);
-                } else {
-                    SEND_STRING("(){}");
-                    triple_tap(KC_LEFT);
-
-                    layer_off(_SYM);
-                }
-            }
-            return false;
-        }
+        case KC_DQUO: return override_bracket_pair(is_shifted, KC_DQUO, KC_DQUO, keycode, record);
+        case KC_LABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
+        case KC_LBRC: return override_bracket_pair(is_shifted, KC_LBRC, KC_RBRC, keycode, record);
+        case KC_LCBR: return override_bracket_pair(is_shifted, KC_LCBR, KC_RCBR, keycode, record);
+        case KC_LPRN: return override_bracket_pair(is_shifted, KC_LPRN, KC_RPRN, keycode, record);
+        case KC_RBRC: return send_link_bracket_string(is_shifted, keycode, record);
+        case KC_RPRN: return send_function_bracket_string(is_shifted, keycode, record);
 
         case COM_EXC: {
             return override_shift(is_shifted, KC_COMM, KC_EXLM, keycode, record);

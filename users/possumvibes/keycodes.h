@@ -5,6 +5,7 @@ enum layers {
     _APT = 0,
     _COMBOREF,
     _QWERTY,
+    _SEMIMAK,
     _GAMENAV,
     _NETHACK,
     _FUNC,
@@ -30,7 +31,7 @@ enum custom_keycodes {
     NUMMODE,  // activates a "num-word" smart layer toggle
     FUNMODE,  // activates a smart layer toggle for func
     NAVMODE,  // activates a smart nav layer
-    MUSMODE,  // activates a smart mouse layer
+    SYMMODE,  // activates a smart mouse layer
 
     // Custom Punctuation
     COM_EXC,  // , !
@@ -41,6 +42,9 @@ enum custom_keycodes {
     GET_SET,  // { get; set; }
     SCREEN,   // Screenshot per OS
     DBCLICK,  // double mouse click
+    KY_V1,    // V1
+    KY_V2,    // V2
+    KY_V3,    // V3
 
     // macros
     ALT_F4,   // per is_windows Close Application
@@ -77,8 +81,7 @@ enum custom_keycodes {
 #define SYM(k)      LT(_SYM, k)
 
 // Thumb Keys
-#define THM_LH0     LT(_NAV, KC_ENT)
-// #define THM_LH1     LT(_MOUSE, KC_TAB)
+#define THM_LH0     NAVMODE
 #define THM_LH1     OS_LSFT
 
 #define THM_RH0     KC_SPC
@@ -110,6 +113,7 @@ enum custom_keycodes {
 // Default Layer States
 #define QWERTY      DF(_QWERTY)
 #define APT         DF(_APT)
+#define SEMIMAK     DF(_SEMIMAK)
 
 // Shortcuts
 #define S_CUT       S(KC_DEL)
@@ -130,14 +134,6 @@ enum custom_keycodes {
 #define F11_TH      TH(KC_F11)
 #define F12_TH      TH(KC_F12)
 
-#define LABK_TH     TH(KC_F13)
-#define LBRC_TH     TH(KC_F15)
-#define RBRC_TH     TH(KC_F16)
-#define LCBR_TH     TH(KC_F17)
-#define LPRN_TH     TH(KC_F18)
-#define RPRN_TH     TH(KC_F19)
-#define DQUO_TH     TH(KC_F20r)
-
 /* ----Home Row Mods---- */
 #define KY_E        LGUI_T(KC_E)
 #define KY_I        RGUI_T(KC_I)
@@ -155,41 +151,27 @@ enum custom_keycodes {
 #define KY_V        LT(_NUM, KC_V)
 
 /* -------------- */
+#define KS_S        SYM(KC_S)
 #define KH_R        SYM(KC_R)
+
+#define KS_R        LALT_T(KC_R)
 #define KH_S        LALT_T(KC_S)
+
+#define KS_N        LCTL_T(KC_N)
 #define KH_T        LCTL_T(KC_T)
+
+#define KS_T        LSFT_T(KC_T)
 #define KH_H        LSFT_T(KC_H)
 
+#define KS_H        LGUI_T(KC_H)
 #define KH_D        LGUI_T(KC_D)
 #define KH_G        LGUI_T(KC_G)
 #define KH_Y        LGUI_T(KC_Y)
+
 #define KH_U        RGUI_T(KC_U)
 
+#define KS_D        RSFT_T(KC_D)
 #define KH_N        RSFT_T(KC_N)
 #define KH_E        RCTL_T(KC_E)
 #define KH_A        LALT_T(KC_A)
 #define KH_I        SYM(KC_I)
-
-/*-------tap dance-------*/
-#ifdef TAP_DANCE_ENABLE
-enum tapdances {
-    F5_TD,
-    F6_TD,
-    F11_TD,
-    F12_TD,
-    CMNT_TD
-};
-
-// #define TD_F5       TD(F5_TD)
-// #define TD_F6       TD(F6_TD)
-// #define TD_F11      TD(F11_TD)
-// #define TD_F12      TD(F12_TD)
-// #define TD_CMNT     TD(CMNT_TD)
-#else
-#define TD_F5       F5_TH
-#define TD_F6       F6_TH
-#define TD_F11      F11_TH
-#define TD_F12      F12_TH
-#define TD_CMNT     C(KC_SLSH)
-#endif
-

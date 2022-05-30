@@ -4,7 +4,7 @@
 /* -------- Number Mode -------- */
 static bool _num_mode_active = false;
 // Turn number mode on. To be called from a custom keycode
-void num_mode_enable(void) {
+void num_mode_enable(keyrecord_t *record) {
     _num_mode_active = true;
     layer_on(_NUM);
 }
@@ -30,13 +30,15 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record) {
         case KC_SCLN:
         case KC_QUOT:
         case KC_EQL:
-        case KC_BSPC:
+        // case KC_BSPC:
         case KC_X:
         case SYM_MO:
+        case SYMMODE:
         case KY_0:
         case KY_6:
         case KY_7:
-        case OS_LSFT ... TS_LCTL:
+        case OS_LSFT ... OS_LGUI:
+
             // process the code and stay in the mode *dabs*
             break;
         default:
@@ -52,7 +54,7 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record) {
 static bool _func_mode_active = false;
 
 // Turn Func mode on. To be called from a custom keycode.
-void func_mode_enable(void) {
+void func_mode_enable(keyrecord_t *record) {
     _func_mode_active = true;
     layer_on(_FUNC);
 }
@@ -89,11 +91,22 @@ void func_mode_process(uint16_t keycode, keyrecord_t *record) {
 
 /*--------- Nav Mode ---------------*/
 static bool _nav_mode_active = false;
-
+static uint16_t nav_mode_timer;
 // Turn nav mode on. To be called from a custom keycode.
-void nav_mode_enable(void) {
-    _nav_mode_active = true;
-    layer_on(_NAV);
+void nav_mode_enable(keyrecord_t *record) {
+    if (record->event.pressed) {
+        layer_on(_NAV);
+        nav_mode_timer = timer_read();
+    } else {
+        if (timer_elapsed(nav_mode_timer) < TAPPING_TERM) {
+            // Tapping enables layer mode
+            _nav_mode_active = true;
+        } else {
+            // Holding treats as a normal LT
+            layer_off(_NAV);
+        }
+    }
+
 }
 
 // Turn nav mode off.
@@ -124,35 +137,44 @@ void nav_mode_process(uint16_t keycode, keyrecord_t *record){
     }
 }
 
-/*--------- Mus Mode ---------------*/
-static bool _mus_mode_active = false;
+/*--------- Sym Mode ---------------*/
+static bool _sym_mode_active = false;
+static uint16_t sym_mode_timer;
 
-// Turn mus mode on. To be called from a custom keycode.
-void mus_mode_enable(void) {
-    _mus_mode_active = true;
-    layer_on(_MOUSE);
+// Turn sym mode on. To be called from a custom keycode.
+void sym_mode_enable(keyrecord_t *record) {
+    if (record->event.pressed) {
+        layer_on(_SYM);
+        sym_mode_timer = timer_read();
+    } else {
+        if (timer_elapsed(sym_mode_timer) < TAPPING_TERM) {
+            // Tapping enables layer mode
+            _sym_mode_active = true;
+        } else {
+            // Holding treats as a normal LT
+            layer_off(_SYM);
+        }
+    }
 }
 
-// Turn mus mode off.
-void mus_mode_disable(void) {
-    _mus_mode_active = false;
-    layer_off(_MOUSE);
+// Turn sym mode off.
+void sym_mode_disable(void) {
+    _sym_mode_active = false;
+    layer_off(_SYM);
 }
 
-void mus_mode_process(uint16_t keycode, keyrecord_t *record){
+void sym_mode_process(uint16_t keycode, keyrecord_t *record){
     // todo possum strip keycode from lt/modtaps if needed
 
     // Assess if we should exit layermode or continue processing normally.
     switch (keycode) {
+        // SYMMODE is a glorified oneshot layer that lets you hit shift without breaking.
         case OS_LSFT ... OS_LGUI:
-        case CLEAR:
-        case KC_HOME ... KC_UP:
-        case KC_MS_U ... KC_ACL2:
             break;
         default:
             // All other keys disable the layer mode.
             if (!record->event.pressed) {
-                mus_mode_disable();
+                sym_mode_disable();
             }
             break;
     }
@@ -166,7 +188,7 @@ void process_layermodes(uint16_t keycode, keyrecord_t *record) {
         func_mode_process(keycode, record);
     } else if (_nav_mode_active){
         nav_mode_process(keycode, record);
-    } else if (_mus_mode_active){
-        mus_mode_process(keycode, record);
+    } else if (_sym_mode_active){
+        sym_mode_process(keycode, record);
     }
 }

@@ -18,11 +18,22 @@ bool override_shift(bool is_shifted,
     uint16_t keycode,
     keyrecord_t *record);
 
-bool override_th_bracket_pair(
+bool override_bracket_pair(
+    bool is_shifted,
     uint16_t left_keycode,
     uint16_t right_keycode,
     uint16_t keycode,
     keyrecord_t *record );
+
+bool send_function_bracket_string(
+    bool is_shifted,
+    uint16_t keycode,
+    keyrecord_t *record);
+
+bool send_link_bracket_string(
+    bool is_shifted,
+    uint16_t keycode,
+    keyrecord_t *record);
 
 bool override_th_hold(uint16_t hold_keycode, keyrecord_t *record);
 

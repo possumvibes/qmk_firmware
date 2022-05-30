@@ -1,48 +1,45 @@
 /*    COMBO NAME       | OUTPUT    | PARAMS    */
 
 /*---- TOP ROW ----*/
-COMB(turbonav,          NAVMODE,    KC_W, KC_R)         // Nav access
-// COMB(tab,               KC_TAB,     KC_W, KC_E)         // Delete
+COMB(symmode,           SYMMODE,    KC_W, KC_R)         // Mouse access
+// COMB(caps,              KC_CAPS,    KC_W, KC_S)         // Caps Lock Time :)
+COMB(ctl_b,             C(KC_B),    KC_W, KC_E)         // Ctrl+B
 COMB(save,              S_SAVE,     KC_E, KC_R)         // Save
 COMB(back_fwd,          BCK_FWD,    KC_R, KC_T)         // Back/Fwd (shifted)
 
 COMB(undo_redo,         UND_RED,    KC_Y, KC_U)         // Undo/Redo (shifted)
 COMB(esc,               KC_ESC,     KC_U, KC_O)         // Esc
 COMB(tab,               KC_TAB,     KC_U, KC_I)         // Tab again
-COMB(musmode,             MUSMODE,    KC_I, KC_O)         // Mouse access
+COMB(funmode,           FUNMODE,    KC_L, KC_P)         // Funmode toggle
 
 /*---- HOME ROW ----*/
 COMB(cut,               S_CUT,      KC_S, KC_F)         // Shift+Del (cut)
 COMB(copy,              S_COPY,     KC_S, KC_D)         // Ctrl+Ins (copy)
-COMB(paste,             S_PASTE,    KC_D, KC_F)         // Shift+Del (paste)
+COMB(paste,             S_PASTE,    KC_F, KC_G)         // Shift+Del (paste)
 COMB(panic,             PANIC,      KC_D, KC_K)         // panic!
-COMB(caps,              KC_CAPS,    KC_S, KC_X)         // Caps Lock Time :)
 COMB(click_l,           LCLICK,     KC_D, KC_C)         // Left Click :)
 COMB(click_r,           RCLICK,     KC_V, KC_F)         // Right Click :)
 COMB(dbclick_l,         DBCLICK,    KC_G, KC_B)         // Double Click :)
 
 COMB(nummode,           NUMMODE,    KC_J, KC_K)         // Nummode toggle
-COMB(funmode,           FUNMODE,    KC_K, KC_L)         // Funmode toggle
 COMB(numosl,            NUM_OSL,    KC_J, KC_L)         // OS Num
-COMB(click_l2,          LCLICK,     KC_J, KC_M)         // Left Click :)
-COMB(click_r2,          RCLICK,     KC_K, KC_COMM)      // Right Click :)
-COMB(dbclick_r,         DBCLICK,    KC_H, KC_N)         // Double Click :)
 
 /*---- BOTTOM ROW ----*/
+COMB(enter,             KC_ENT,     KC_X, KC_V)         // Enter
 COMB(hash,              KC_HASH,    KC_X, KC_C)         // #
 COMB(fslash,            KC_SLSH,    KC_C, KC_V)         // /
 
 COMB(dash,              KC_MINS,    KC_M, KC_COMM)      // -
 COMB(asterisk,          KC_ASTR,    KC_COMM, KC_DOT)    // *
-COMB(at,                KC_AT,      KC_M, KC_DOT)       // @
+COMB(underscore,        KC_UNDS,    KC_M, KC_DOT)       // _
 
 /*---- THUMBS ----*/
 #ifdef VERTICAL_THUMB_COMBO
 COMB(sys_lthm,          SYS_OSL,    KC_B, KC_ENT)       // Sys OSL
-COMB(underscore_rthm,   KC_UNDS,    KC_SPC, KC_N)       // _
+COMB(sym_rthm,          SYMMODE,    KC_SPC, KC_N)       // Sym OSL
 #else
-COMB(sys_lthm,          SYS_OSL,    KC_ENT, KC_TAB)    // Sys OSL
-COMB(underscore_rthm,   KC_UNDS,    KC_SPC, KC_BSPC)   // _
+COMB(sys_lthm,          SYS_OSL,    KC_ENT, KC_TAB)     // Sys OSL
+COMB(sym_rthm,          SYMMODE,    KC_SPC, KC_BSPC)    // Sym OSL
 #endif
 
 COMB(space_shift,       SPC_SFT,    KC_TAB, KC_SPC)     // space and activate oss

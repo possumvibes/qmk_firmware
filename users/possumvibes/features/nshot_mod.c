@@ -84,7 +84,7 @@ bool is_nshot_cancel_key(uint16_t keycode) {
         case THM_LH0:
         // case THM_LH1:  // THM_LH1 is currently os_lsft
         case THM_RH0:
-        case THM_RH1:
+        // case THM_RH1: // THM_RH1 is currently backspace
             return true;
         default:
             return false;
@@ -96,18 +96,12 @@ bool is_nshot_ignored_key(uint16_t keycode) {
         case THM_LH0:
         // case THM_LH1:  // THM_LH1 is currently os_lsft
         case THM_RH0:
-        case THM_RH1:
-        case SYM_OSL:
-        case SYM_TG:
-        case NAV_TG:
+        // case THM_RH1:  // THM_RH1 is currently backspace
         case NUM_OSL:
-        case NUM_TO:
-        case FUN_OSL:
         case ALPHA:
         case NUMMODE:
         case FUNMODE:
-        case KH_R:
-        case KH_I:
+        case SYMMODE:
         case OS_LSFT:
         case OS_LCTL:
         case OS_LALT:
