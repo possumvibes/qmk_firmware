@@ -24,6 +24,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         // faster combos over rolls
         case paste:
         case enter:
+        case esc:
             return COMBO_TERM - 22
         case back_fwd:
         case cut:
@@ -31,7 +32,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case save:
         case ctl_b:
         case undo_redo:
-        case esc:
         case tab:
         case caps:
         case delete:
