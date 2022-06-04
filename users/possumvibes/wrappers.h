@@ -77,13 +77,16 @@
 // #define _________________NUMPADR_R2________________       XXXXXXX, KC_1,    KC_2,    KC_3,    KY_0
 // #define _________________NUMPADR_R3________________       XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX
 
+#define _________________NUMROW_L1_________________       KC_1,    KC_2,    KC_3,    KC_4,    KC_5
+#define _________________NUMROW_R1_________________       KC_6,    KC_7,    KC_8,    KC_9,    KC_0
+
 #define _________________NUMPADL_L1________________       KC_0,    KC_7,    KC_8,    KC_9,    KC_DLR
 #define _________________NUMPADL_L2________________       KY_0,    KC_1,    KC_2,    KC_3,    KC_PERC
 #define _________________NUMPADL_L3________________       KC_X,    KC_4,    KC_5,    KC_6,    KC_COLN
 
-#define _________________NUMPADL_R1________________       KC_K,    XXXXXXX, OS_LGUI, XXXXXXX, XXXXXXX
-#define _________________NUMPADL_R2________________       S(KC_G), OS_LSFT, OS_LCTL, OS_LALT, SYM_MO
-#define _________________NUMPADL_R3________________       KC_J,    KC_QUOT, KC_COMM, KC_DOT,  KC_DQUO
+#define _________________NUMPADL_R1________________       KC_K,    _______, _______, _______, _______
+#define _________________NUMPADL_R2________________       S(KC_G), _______, _______, _______, SYM_MO
+#define _________________NUMPADL_R3________________       KC_J,    KC_QUOT, COM_EXC, DOT_QUE, KC_SCLN
 
 #define ___________________SYM_L1__________________       KC_BSLS, KC_LABK, KC_RABK, KC_QUES, KC_DLR
 #define ___________________SYM_L2__________________       KC_COLN, KC_LPRN, KC_RPRN, KC_SCLN, KC_PERC
@@ -101,7 +104,7 @@
 #define __________________MOUSE_R2_________________       KC_WH_L, LCLICK,  KC_WH_D, RCLICK,  KC_WH_R
 #define __________________MOUSE_R3_________________       _______, KC_PGUP, KC_PGDN, MCLICK, _______
 
-#define ___________________NAV_L1__________________       XXXXXXX, LCLICK,  OS_LGUI, RCLICK,  KC_WH_U
+#define ___________________NAV_L1__________________       XXXXXXX, KC_PGUP, OS_LGUI, KC_PGDN, KC_WH_U
 #define ___________________NAV_L2__________________       SW_WIN,  OS_LALT, OS_LCTL, OS_LSFT, KC_WH_D
 #define ___________________NAV_L3__________________       SW_TAB,  SW_REV,  F12_TH,  TS_LCTL, CTL_U
 
@@ -110,9 +113,9 @@
 #define ___________________NAV_R3__________________       XXXXXXX, ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
 
 
-#define ___________________SYS_L1__________________       XXXXXXX, XXXXXXX, OS_LGUI, XXXXXXX, XXXXXXX
-#define ___________________SYS_L2__________________       IS_WIN,  OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX
-#define ___________________SYS_L3__________________       _______, _______, _______, TS_LCTL, XXXXXXX
+#define ___________________SYS_L1__________________       XXXXXXX, _______, _______, _______, _______
+#define ___________________SYS_L2__________________       IS_WIN,  _______, _______, _______, _______
+#define ___________________SYS_L3__________________       _______, _______, _______, _______, _______
 
 #define ___________________SYS_R1__________________       RESET,   _______, ALT_F4,  APT,     QWERTY
 #define ___________________SYS_R2__________________       XXXXXXX, QMKCOMP, COMMENT, SCREEN, SEMIMAK
