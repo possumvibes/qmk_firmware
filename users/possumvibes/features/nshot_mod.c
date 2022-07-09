@@ -1,12 +1,15 @@
 #include "nshot_mod.h"
 #include "keycodes.h"
 
+#define modbit_lclg (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LGUI))
+
 nshot_state_t  nshot_states[] = {
-    {OS_LSFT, KC_LSFT, 1, os_up_unqueued, 0},
-    {OS_LCTL, KC_LCTL, 1, os_up_unqueued, 0},
-    {OS_LALT, KC_LALT, 1, os_up_unqueued, 0},
-    {OS_LGUI, KC_LGUI, 1, os_up_unqueued, 0},
-    {TS_LCTL, KC_LCTL, 2, os_up_unqueued, 0}
+    {OS_LSFT, MOD_BIT(KC_LSFT), 1, os_up_unqueued, 0},
+    {OS_LCTL, MOD_BIT(KC_LCTL), 1, os_up_unqueued, 0},
+    {OS_LALT, MOD_BIT(KC_LALT), 1, os_up_unqueued, 0},
+    {OS_LGUI, MOD_BIT(KC_LGUI), 1, os_up_unqueued, 0},
+    {OS_LGLC, modbit_lclg, 1, os_up_unqueued, 0},
+    {TS_LCTL, MOD_BIT(KC_LCTL), 2, os_up_unqueued, 0}
 };
 uint8_t        NUM_NSHOT_STATES = sizeof(nshot_states) / sizeof(nshot_state_t);
 
@@ -21,7 +24,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 // Trigger keydown
                 if (curr_state->state == os_up_unqueued) {
-                    register_code(curr_state->mod);
+                    register_mods(curr_state->modbit);
                 }
                 curr_state->state = os_down_unused;
                 curr_state->count = 0;
@@ -35,7 +38,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                     case os_down_used:
                         // If we did use the mod while trigger was held, unregister it.
                         curr_state->state = os_up_unqueued;
-                        unregister_code(curr_state->mod);
+                        unregister_mods(curr_state->modbit);
                         break;
                     default:
                         break;
@@ -47,7 +50,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                     // Cancel oneshot on designated cancel keydown.
                     curr_state->state = os_up_unqueued;
                     curr_state->count = 0;
-                    unregister_code(curr_state->mod);
+                    unregister_mods(curr_state->modbit);
                 }
 
                 // Check for oneshot completion on sequential keys while rolling.
@@ -61,7 +64,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                     if (curr_state->count == max_count) {
                         curr_state->state = os_up_unqueued;
                         curr_state->count = 0;
-                        unregister_code(curr_state->mod);
+                        unregister_mods(curr_state->modbit);
                     }
                 }
             } else {
@@ -81,7 +84,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                             if (curr_state->count == max_count) {
                                 curr_state->state = os_up_unqueued;
                                 curr_state->count = 0;
-                                unregister_code(curr_state->mod);
+                                unregister_mods(curr_state->modbit);
                             }
                             break;
                         default:
@@ -99,7 +102,7 @@ bool is_nshot_cancel_key(uint16_t keycode) {
         case CLEAR:
         case THM_LH0:
         // case THM_LH1:  // THM_LH1 is currently os_lsft
-        case THM_RH0:
+        // case THM_RH0:
         // case THM_RH1: // THM_RH1 is currently backspace
             return true;
         default:
@@ -111,13 +114,14 @@ bool is_nshot_ignored_key(uint16_t keycode) {
     switch (keycode) {
         case THM_LH0:
         // case THM_LH1:  // THM_LH1 is currently os_lsft
-        case THM_RH0:
+        // case THM_RH0:
         // case THM_RH1:  // THM_RH1 is currently backspace
         case NUM_OSL:
         case ALPHA:
         case NUMMODE:
         case FUNMODE:
         case SYMMODE:
+        case SYS_OSL:
         case OS_LSFT:
         case OS_LCTL:
         case OS_LALT:

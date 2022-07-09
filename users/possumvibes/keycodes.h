@@ -11,7 +11,6 @@ enum layers {
     _FUNC,
     _NUM,
     _SYM,
-    _MOUSE,
     _NAV,
     _SYSTEM
 };
@@ -52,6 +51,7 @@ enum custom_keycodes {
     QMKFLSH,  // qmk flash
     COMMENT,  // C(KC)
     UNCOMNT,  // C(KU)
+    DMENU,    // application finder (dmenu, start, etc)
 
     // Swapper keys
     SW_REV,  // Dead key, reverse direction for swapper
@@ -69,13 +69,16 @@ enum custom_keycodes {
     OS_LCTL,   // OS Mods
     OS_LALT,   // OS Mods
     OS_LGUI,   // OS Mods
+    OS_LGLC,   // OS G+C
     TS_LCTL,   // Two-shot ctrl
 
     NEW_SAFE_RANGE  // Use for keymap-specific codes
 };
 
-/* ---------- Aliases ---------- */
+/* ------ Default Values ---------- */
+#define ISWIN_DF    false
 
+/* ---------- Aliases ---------- */
 #define TH(k)       LT(0,k)
 #define LTH(l,k)    LT(l,k)
 #define SYM(k)      LT(_SYM, k)
@@ -105,10 +108,25 @@ enum custom_keycodes {
 #define KY_0        SYM(KC_0)
 #define KY_6        SYM(KC_6)
 #define KY_7        SYM(KC_7)
+#define KY_V        LT(_NUM, KC_V)
 
 #define LCLICK      KC_BTN1
 #define RCLICK      KC_BTN2
 #define MCLICK      KC_BTN3
+
+// i3 shortcuts
+#define LOGOUT      G(A(KC_Q))
+#define CONFIG      G(A(KC_R))
+#define WKSP_1      G(KC_1)
+#define WKSP_2      G(KC_2)
+#define WKSP_3      G(KC_3)
+#define WKSP_4      G(KC_4)
+#define WKSP_5      G(KC_5)
+// #define WKSP_6      G(KC_6)
+// #define WKSP_7      G(KC_7)
+// #define WKSP_8      G(KC_8)
+// #define WKSP_9      G(KC_9)
+// #define WKSP_10      G(KC_0)
 
 // Default Layer States
 #define QWERTY      DF(_QWERTY)
@@ -127,6 +145,7 @@ enum custom_keycodes {
 #define S_FWD       A(KC_RIGHT)
 #define C_BSPC      C(KC_BSPC)
 #define CTL_U       C(KC_U)
+#define CTL_GUI     C(KC_LGUI)
 
 #define F3_TH       TH(KC_F3)
 #define F5_TH       TH(KC_F5)
@@ -135,43 +154,52 @@ enum custom_keycodes {
 #define F12_TH      TH(KC_F12)
 
 /* ----Home Row Mods---- */
-#define KY_E        LGUI_T(KC_E)
-#define KY_I        RGUI_T(KC_I)
-
-#define KY_A        SYM(KC_A)
-#define KY_S        LALT_T(KC_S)
-#define KY_D        LCTL_T(KC_D)
-#define KY_F        LSFT_T(KC_F)
-
-#define KY_J        RSFT_T(KC_J)
-#define KY_K        RCTL_T(KC_K)
-#define KY_L        LALT_T(KC_L)
-#define KY_QUOT     SYM(KC_QUOT)
-
-#define KY_V        LT(_NUM, KC_V)
-
-/* -------------- */
-#define KS_S        SYM(KC_S)
+// l pinky
+#define KS_C        SYM(KC_C)
 #define KH_R        SYM(KC_R)
+#define KY_A        SYM(KC_A)
 
+// l ring
 #define KS_R        LALT_T(KC_R)
 #define KH_S        LALT_T(KC_S)
+#define KY_S        LALT_T(KC_S)
 
-#define KS_N        LCTL_T(KC_N)
+// l middle
+#define KS_S        LCTL_T(KC_S)
 #define KH_T        LCTL_T(KC_T)
+#define KY_D        LCTL_T(KC_D)
 
+// l index
 #define KS_T        LSFT_T(KC_T)
 #define KH_H        LSFT_T(KC_H)
+#define KY_F        LSFT_T(KC_F)
 
+// l upper middle
 #define KS_H        LGUI_T(KC_H)
 #define KH_D        LGUI_T(KC_D)
 #define KH_G        LGUI_T(KC_G)
 #define KH_Y        LGUI_T(KC_Y)
+#define KY_E        LGUI_T(KC_E)
 
+// r upper middle
+#define KS_O        RGUI_T(KC_O)
 #define KH_U        RGUI_T(KC_U)
+#define KY_I        RGUI_T(KC_I)
 
+// r index
 #define KS_D        RSFT_T(KC_D)
 #define KH_N        RSFT_T(KC_N)
+#define KY_J        RSFT_T(KC_J)
+
+// r middle
 #define KH_E        RCTL_T(KC_E)
+#define KY_K        RCTL_T(KC_K)
+
+// r ring
+#define KS_I        LALT_T(KC_I)
 #define KH_A        LALT_T(KC_A)
+#define KY_L        LALT_T(KC_L)
+
+// r pinky
 #define KH_I        SYM(KC_I)
+#define KY_QUOT     SYM(KC_QUOT)

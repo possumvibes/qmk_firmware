@@ -6,8 +6,8 @@
 
 __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) { return true; }
 
+bool is_windows = ISWIN_DF;
 uint8_t mod_state;
-bool is_windows = true;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE
     if(record->event.pressed)
@@ -103,9 +103,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
         case LOCKSCR: {
-            uint16_t lock_key = is_windows ? KC_L : KC_ESC;
             if(record ->event.pressed) {
-                tap_code16(G(lock_key));
+                if(is_windows){
+                    tap_code16(G(KC_L));
+                } else {
+                    tap_code16(C(A(KC_L))); // xflock4
+                }
             }
             return false;
         }
@@ -241,7 +244,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 if(is_windows){
                     tap_code16(A(KC_F4));
                 } else {
-                    tap_code16(G(KC_Q));
+                    tap_code16(G(KC_W)); // sxhkd kill window
+                }
+            }
+            return false;
+        }
+        case DMENU: {
+            if(record->event.pressed){
+                if(is_windows){
+                    tap_code(KC_LGUI); // start menu, kde applauncher
+                } else {
+                    tap_code16(G(KC_SPC)); // rofi shortcut
                 }
             }
             return false;

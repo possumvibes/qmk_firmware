@@ -12,7 +12,7 @@ typedef enum {
 
 typedef struct {
     uint16_t      trigger;
-    uint16_t      mod;
+    uint8_t       modbit;
     uint8_t       max_count;
     oneshot_state state;
     uint8_t       count;
