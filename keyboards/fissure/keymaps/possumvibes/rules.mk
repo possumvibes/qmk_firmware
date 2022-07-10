@@ -2,7 +2,7 @@ APPLY_USERSPACE			= yes	# Apply the userspace keymap
 
 COMBO_ENABLE 			= yes 	# Enables use of combos
 MOUSEKEY_ENABLE 		= yes	# Enables mouse keys
-TAP_DANCE_ENABLE		= no	# Enables Tap Dance
+CAPS_WORD_ENABLE		= yes	# Enables shift-based caps word
 
 CONSOLE_ENABLE 			= no
 

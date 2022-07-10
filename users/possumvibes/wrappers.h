@@ -116,13 +116,13 @@
 #define ___________________SYM_R3__________________       KC_COMM, KC_CIRC, KC_PIPE, KC_MINS, KC_SLSH
 
 // Nav layer: We Got Mods
-#define ___________________NAV_L1__________________       XXXXXXX, KC_PGUP, OS_LGUI, KC_PGDN, KC_WH_U
+#define ___________________NAV_L1__________________       SW_REV,  KC_PGUP, OS_LGUI, KC_PGDN, KC_WH_U
 #define ___________________NAV_L2__________________       SW_WIN,  OS_LALT, OS_LCTL, OS_LSFT, KC_WH_D
-#define ___________________NAV_L3__________________       SW_TAB,  SW_REV,  F12_TH,  TS_LCTL, CTL_U
+#define ___________________NAV_L3__________________       SW_TAB,  SW_REV,  F12_TH,  TS_LCTL, OS_LGLC
 
 #define ___________________NAV_R1__________________       KC_PGDN, KC_HOME, KC_UP,   KC_END,  KC_PGUP
 #define ___________________NAV_R2__________________       F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, CLEAR
-#define ___________________NAV_R3__________________       XXXXXXX, ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
+#define ___________________NAV_R3__________________       CTL_U,   ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
 
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.
@@ -131,7 +131,7 @@
 #define ___________________SYS_L3__________________       QWERTY,  _______, _______, WKSP_5,  _______
 
 #define ___________________SYS_R1__________________       QK_BOOT, LOGOUT,  ALT_F4,  CONFIG,  XXXXXXX
-#define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, SCREEN,  IS_WIN
+#define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, SCREEN,  _______
 #define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, XXXXXXX, _______
 
 
