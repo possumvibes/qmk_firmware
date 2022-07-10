@@ -130,7 +130,7 @@
 #define ___________________SYS_L2__________________       APT,     WKSP_1,  WKSP_2,  WKSP_3,  WKSP_4
 #define ___________________SYS_L3__________________       QWERTY,  _______, _______, WKSP_5,  _______
 
-#define ___________________SYS_R1__________________       RESET,   LOGOUT,  ALT_F4,  CONFIG,  XXXXXXX
+#define ___________________SYS_R1__________________       QK_BOOT, LOGOUT,  ALT_F4,  CONFIG,  XXXXXXX
 #define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, SCREEN,  IS_WIN
 #define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, XXXXXXX, _______
 

@@ -10,7 +10,7 @@
 #define DEVICE_VER      0x0301
 #define MANUFACTURER    Crides
 #define PRODUCT         Fissure-v3.0
-#define DESCRIPTION     40 key split keyboard
+// #define DESCRIPTION     40 key split keyboard
 
 #define USE_I2C
 #define EE_HANDS
@@ -46,7 +46,7 @@
 #define DEBOUNCE 5
 #define LOCKING_SUPPORT_ENABLE
 #define LOCKING_RESYNC_ENABLE
-#define PREVENT_STUCK_MODIFIERS
+// #define PREVENT_STUCK_MODIFIERS
 
 #define RAW_USAGE_PAGE  0xFF60
 #define RAW_USAGE_ID    0x61
