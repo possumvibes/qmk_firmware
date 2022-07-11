@@ -22,6 +22,10 @@ ifeq ($(strip $(APPLY_USERSPACE)), yes)
 		SRC += encoders.c
 	endif
 
+	ifeq ($(strip $(CAPS_WORD_ENABLE)), yes)
+		SRC += capsword.c
+	endif
+
 	SRC += tap_holds.c
 
 # Add custom features
