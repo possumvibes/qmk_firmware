@@ -193,10 +193,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_DQUO: return override_bracket_pair(is_shifted, KC_DQUO, KC_DQUO, keycode, record);
         case KC_LABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
         case KC_LBRC: return override_bracket_pair(is_shifted, KC_LBRC, KC_RBRC, keycode, record);
-        case KC_LCBR: return override_bracket_pair(is_shifted, KC_LCBR, KC_RCBR, keycode, record);
         case KC_LPRN: return override_bracket_pair(is_shifted, KC_LPRN, KC_RPRN, keycode, record);
-        case KC_RBRC: return send_link_bracket_string(is_shifted, keycode, record);
-        case KC_RPRN: return send_function_bracket_string(is_shifted, keycode, record);
+        case KC_LCBR:
+            // if shifted on keydown, send C+right to exit
+            if(record->event.pressed){
+                uint8_t mod_state = get_mods();
+                del_oneshot_mods(MOD_MASK_SHIFT);
+                del_mods(MOD_MASK_SHIFT);
+
+                if(is_shifted){
+                    tap_code(KC_END);
+                }
+                tap_code16(KC_LCBR);
+                set_mods(mod_state);
+            }
+            return false;
+        case KC_RABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
+        // case KC_RBRC: return send_link_bracket_string(is_shifted, keycode, record);
+        case KC_RPRN: return send_link_bracket_string(is_shifted, keycode, record);
 
         case COM_EXC: {
             return override_shift(is_shifted, KC_COMM, KC_EXLM, keycode, record);
@@ -223,21 +237,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
 
-        case DBCLICK:
+        case RPR_SCL: {
             if(record->event.pressed){
-                tap_code16(LCLICK);
-                tap_code16(LCLICK);
-            }
-            return false;
-        case SCREEN:
-            if(record->event.pressed){
-                if(is_windows){
-                    tap_code16(G(S(KC_S)));
-                } else {
-                   tap_code16(S(C(KC_PSCR)));
+                uint8_t mod_state = get_mods();
+                del_oneshot_mods(MOD_MASK_SHIFT);
+                del_mods(MOD_MASK_SHIFT);
+
+                if(is_shifted){
+                    tap_code16(KC_LPRN);
                 }
+                tap_code16(KC_RPRN);
+                tap_code16(KC_SCLN);
+                set_mods(mod_state);
             }
             return false;
+        }
 
         case ALT_F4: {
             if(record->event.pressed){
@@ -293,6 +307,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
+        case DBCLICK:
+            if(record->event.pressed){
+                tap_code16(LCLICK);
+                tap_code16(LCLICK);
+            }
+            return false;
+        case SCREEN:
+            if(record->event.pressed){
+                if(is_windows){
+                    tap_code16(G(S(KC_S)));
+                } else {
+                   tap_code16(S(C(KC_PSCR)));
+                }
+            }
+            return false;
+
     }
 
     return true;

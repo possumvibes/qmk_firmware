@@ -41,7 +41,7 @@ bool override_bracket_pair(
             set_mods(mod_state);
             layer_off(_SYM);
         } else {
-            tap_code16(left_keycode);
+            tap_code16(keycode);
         }
     }
     return false;
@@ -69,6 +69,8 @@ bool send_function_bracket_string(
     }
     return true;
 }
+
+//(){}
 
 bool send_link_bracket_string(
     bool is_shifted,

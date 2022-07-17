@@ -108,7 +108,7 @@
 
 // Sym layer: theoretically optimized, but man i need a better access point
 #define ___________________SYM_L1__________________       KC_BSLS, KC_LABK, KC_RABK, KC_QUES, KC_DLR
-#define ___________________SYM_L2__________________       KC_COLN, KC_LPRN, KC_RPRN, KC_SCLN, KC_PERC
+#define ___________________SYM_L2__________________       KC_COLN, KC_LPRN, KC_RPRN, RPR_SCL, KC_PERC
 #define ___________________SYM_L3__________________       KC_RCBR, KC_LBRC, KC_RBRC, KC_LCBR, KC_SLSH
 
 #define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_AT,   KC_EXLM, KC_GRV

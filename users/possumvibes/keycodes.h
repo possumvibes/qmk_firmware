@@ -39,19 +39,20 @@ enum custom_keycodes {
     // custom strings
     SPC_SFT,  // Space and OSS
     GET_SET,  // { get; set; }
-    SCREEN,   // Screenshot per OS
-    DBCLICK,  // double mouse click
+    RPR_SCL,  // ); ();
     KY_V1,    // V1
     KY_V2,    // V2
     KY_V3,    // V3
 
     // macros
     ALT_F4,   // per is_windows Close Application
+    DMENU,    // application finder (dmenu, start, etc)
     QMKCOMP,  // qmk compile
     QMKFLSH,  // qmk flash
     COMMENT,  // C(KC)
     UNCOMNT,  // C(KU)
-    DMENU,    // application finder (dmenu, start, etc)
+    SCREEN,   // Screenshot per OS
+    DBCLICK,  // double mouse click
 
     // Swapper keys
     SW_REV,  // Dead key, reverse direction for swapper
