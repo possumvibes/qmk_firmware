@@ -50,6 +50,24 @@ bool override_bracket_pair(
 // TODO POSSUM all of these methods can get combined into a smarter def/dict based shift override
 // just need to figure out how to manage the strings for these
 // todo check ericgebhart and getreuer code, they've both got stuff for this specifically
+bool send_function_bracket_string(
+    bool is_shifted,
+    uint16_t keycode,
+    keyrecord_t *record) {
+    if (is_shifted){
+        if (record->event.pressed) {
+            uint8_t mod_state = get_mods();
+            del_oneshot_mods(MOD_MASK_SHIFT);
+            del_mods(MOD_MASK_SHIFT);
+
+            SEND_STRING("(){");
+
+            set_mods(mod_state);
+        }
+        return false;
+    }
+    return true;
+}
 bool send_link_bracket_string(
     bool is_shifted,
     uint16_t keycode,
