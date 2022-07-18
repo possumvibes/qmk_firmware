@@ -209,7 +209,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         case KC_RABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
-        // case KC_RBRC: return send_link_bracket_string(is_shifted, keycode, record);
+        case KC_RBRC: return send_link_bracket_string(is_shifted, keycode, record);
         case KC_RPRN: return send_link_bracket_string(is_shifted, keycode, record);
 
         case COM_EXC: {
