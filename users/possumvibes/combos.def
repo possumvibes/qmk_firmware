@@ -20,21 +20,15 @@ COMB(panic,             PANIC,      KC_D, KC_K)         // panic!
 COMB(click_l,           LCLICK,     KC_D, KC_C)         // Left Click :)
 COMB(click_r,           RCLICK,     KC_V, KC_F)         // Right Click :)
 COMB(dbclick_l,         DBCLICK,    KC_G, KC_B)         // Double Click :)
-// COMB(rcbracket,         KC_LCBR,    KC_G, KC_B)         // Double Click :)
 
 COMB(nummode,           NUMMODE,    KC_J, KC_K)         // Nummode toggle
 COMB(numosl,            NUM_OSL,    KC_J, KC_L)         // OS Num
-// COMB(lbracket,          KC_LBRC,    KC_H, KC_N)
-// COMB(lparen,            KC_LPRN,    KC_J, KC_M)
-// COMB(rparen,            KC_RPRN,    KC_K, KC_COMM)
 
 /*---- BOTTOM ROW ----*/
 COMB(enter,             KC_ENT,     KC_X, KC_V)         // Enter
 COMB(hash,              KC_HASH,    KC_X, KC_C)         // #
 COMB(fslash,            KC_SLSH,    KC_C, KC_V)         // /
-COMB(osgui_l,           OS_LGUI,    KC_V, KC_B)         // OS Gui
 
-COMB(osgui_r,           OS_LGUI,    KC_N, KC_M)         // OS Gui
 COMB(dash,              KC_MINS,    KC_M, KC_COMM)      // -
 COMB(asterisk,          KC_ASTR,    KC_COMM, KC_DOT)    // *
 COMB(underscore,        KC_UNDS,    KC_M, KC_DOT)       // _

@@ -40,13 +40,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case click_l:
         case click_r:
         case dbclick_l:
-        case lcbracket:
-        case lbracket:
-        case lparen:
-        case rparen:
         case os_lglc:
-        case osgui_r:
-        case osgui_l:
             return COMBO_TERM - 15;
         // layer activations get faster to prevent shenanigans
         case funmode:
