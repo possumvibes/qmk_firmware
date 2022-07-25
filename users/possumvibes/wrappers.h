@@ -76,13 +76,13 @@
 // #define _________________CANARY_R3_________________       KC_X,    KC_H,    KC_SCLN,  COM_EXC, DOT_QUE
 
 // Functions optimized for Visual Studio debugging. The non-debugging/renaming ones are vaguely organized.
-#define __________________FUNC_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   KC_VOLU
-#define __________________FUNC_L2__________________       KC_F1,   F3_TH,   F6_TH,   F12_TH,  KC_VOLD
-#define __________________FUNC_L3__________________       KC_F7,   KC_F4,   KC_F2,   F5_TH,   XXXXXXX
+#define __________________FUNC_L1__________________       OS_LALT, OS_LCTL, LSTDESK, LSTNODE, WKSP_10
+#define __________________FUNC_L2__________________       OS_LGUI, WKSP_1,  WKSP_2,  WKSP_3,  WKSP_4
+#define __________________FUNC_L3__________________       WKSP_9,  WKSP_5,  WKSP_6,  WKSP_7,  WKSP_8
 
-#define __________________FUNC_R1__________________       KC_MNXT, KC_MPLY, KC_MUTE, KC_PSCR, XXXXXXX
-#define __________________FUNC_R2__________________       KC_MPRV, F11_TH,  KC_F10,  KC_F8,   KC_F9
-#define __________________FUNC_R3__________________       XXXXXXX, OS_LSFT, OS_LCTL, OS_LALT, OS_LGUI
+#define __________________FUNC_R1__________________       KC_F1,   KC_F8,   KC_F4,   OS_LCTL, OS_LALT
+#define __________________FUNC_R2__________________       KC_F7,   F11_TH,  KC_F10,  F6_TH,   OS_LGUI
+#define __________________FUNC_R3__________________       KC_F9,   KC_F2,   KC_F3,   F5_TH,   XXXXXXX
 
 //// Numpad on the right, symbols on the left. Not presently in use.
 // #define _________________NUMPADR_L1________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
@@ -98,22 +98,32 @@
 #define _________________NUMROW_R1_________________       KC_6,    KC_7,    KC_8,    KC_9,    KC_0
 
 // Numpad left, mods, some punc, and jkG right.
-#define _________________NUMPADL_L1________________       KC_0,    KC_7,    KC_8,    KC_9,    KC_DLR
-#define _________________NUMPADL_L2________________       KY_0,    KC_1,    KC_2,    KC_3,    KC_PERC
-#define _________________NUMPADL_L3________________       KC_X,    KC_4,    KC_5,    KC_6,    KC_COLN
+#define _________________NUMPADL_L1________________       OS_LALT, KC_7,    KC_8,    KC_9,    KC_PERC
+#define _________________NUMPADL_L2________________       OS_LCTL, KC_1,    KC_2,    KC_3,    KC_DLR
+#define _________________NUMPADL_L3________________       KC_X,    KC_4,    KC_5,    KC_6,    KC_0
 
-#define _________________NUMPADL_R1________________       KC_K,    _______, OS_LGUI, _______, _______
-#define _________________NUMPADL_R2________________       S(KC_G), OS_LSFT, OS_LCTL, OS_LALT, SYM_MO
-#define _________________NUMPADL_R3________________       KC_J,    KC_QUOT, COM_EXC, DOT_QUE, KC_SCLN
+#define _________________NUMPADL_R1________________       KC_K,    KC_MINS, KC_PLUS, OS_LCTL, OS_LALT
+#define _________________NUMPADL_R2________________       S(KC_G), KC_LABK, KC_RABK, KC_EQL,  OS_LGUI
+#define _________________NUMPADL_R3________________       KC_J,    KC_SCLN, COM_EXC, DOT_QUE, KC_QUOT
 
-// Sym layer: theoretically optimized, but man i need a better access point
-#define ___________________SYM_L1__________________       KC_BSLS, KC_LABK, KC_RABK, KC_QUES, KC_DLR
-#define ___________________SYM_L2__________________       KC_COLN, KC_LPRN, KC_RPRN, RPR_SCL, KC_PERC
-#define ___________________SYM_L3__________________       KC_RCBR, KC_LBRC, KC_RBRC, KC_LCBR, KC_SLSH
+// // Sym layer: theoretically optimized, but man i need a better access point
+// #define ___________________SYM_L1__________________       KC_BSLS, KC_LABK, KC_RABK, KC_QUES, KC_DLR
+// #define ___________________SYM_L2__________________       KC_COLN, KC_LPRN, KC_RPRN, RPR_SCL, KC_PERC
+// #define ___________________SYM_L3__________________       KC_RCBR, KC_LBRC, KC_RBRC, KC_LCBR, KC_SLSH
 
-#define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_AT,   KC_EXLM, KC_GRV
-#define ___________________SYM_R2__________________       KC_DQUO, KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
-#define ___________________SYM_R3__________________       KC_COMM, KC_CIRC, KC_PIPE, KC_MINS, KC_SLSH
+// #define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_AT,   KC_EXLM, KC_GRV
+// #define ___________________SYM_R2__________________       KC_DQUO, KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
+// #define ___________________SYM_R3__________________       KC_COMM, KC_CIRC, KC_PIPE, KC_MINS, KC_SLSH
+
+// Sym layer: YAAAAAAAAAA
+#define ___________________SYM_L1__________________       OS_LALT, KC_RCBR, KY_V2,   KY_V3,   KC_PERC
+#define ___________________SYM_L2__________________       OS_LCTL, KC_AMPR, KC_LBRC, KC_RBRC, KC_DLR
+#define ___________________SYM_L3__________________       SYMMODE, KC_PIPE, KC_AT,   KC_GRV,  KC_BSLS
+
+#define ___________________SYM_R1__________________       KC_TILD, LMBD_FN, GET_SET, OS_LCTL, OS_LALT
+#define ___________________SYM_R2__________________       KC_DQUO, KC_COLN, KC_LPRN, KC_RPRN, OS_LGUI
+#define ___________________SYM_R3__________________       KC_QUOT, KC_LCBR, KC_CIRC, RPR_SCL, SYMMODE
+
 
 // Nav layer: We Got Mods
 #define ___________________NAV_L1__________________       SW_REV,  KC_PGUP, OS_LGUI, KC_PGDN, KC_WH_U
@@ -126,9 +136,9 @@
 
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.
-#define ___________________SYS_L1__________________       SEMIMAK, _______, _______, _______, _______
-#define ___________________SYS_L2__________________       APT,     WKSP_1,  WKSP_2,  WKSP_3,  WKSP_4
-#define ___________________SYS_L3__________________       QWERTY,  _______, _______, WKSP_5,  _______
+#define ___________________SYS_L1__________________       SEMIMAK, _______, KC_VOLU, _______, _______
+#define ___________________SYS_L2__________________       APT,     KC_MPRV, KC_MPLY, KC_MNXT, _______
+#define ___________________SYS_L3__________________       QWERTY,  _______, KC_VOLD, KC_MUTE, _______
 
 #define ___________________SYS_R1__________________       QK_BOOT, LOGOUT,  ALT_F4,  CONFIG,  XXXXXXX
 #define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, SCREEN,  _______

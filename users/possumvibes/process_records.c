@@ -208,7 +208,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 set_mods(mod_state);
             }
             return false;
-        case KC_RABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
+        // case KC_RABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
         case KC_RBRC: return send_link_bracket_string(is_shifted, keycode, record);
         case KC_RPRN: return send_function_bracket_string(is_shifted, keycode, record);
 
@@ -252,6 +252,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
+
+        case LMBD_FN:
+            if(record->event.pressed){
+                if(is_shifted){
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    del_mods(MOD_MASK_SHIFT);
+                    SEND_STRING("() =>");
+                } else {
+                    SEND_STRING("=>");
+                }
+            }
+            return false;
 
         case ALT_F4: {
             if(record->event.pressed){

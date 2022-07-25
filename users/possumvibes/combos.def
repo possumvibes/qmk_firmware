@@ -4,15 +4,15 @@
 COMB(esc_l,             KC_ESC,     KC_W, KC_R)         // Esc on the left too
 COMB(dmenu,             DMENU,      KC_W, KC_E)         // Application Launcher
 COMB(save,              S_SAVE,     KC_E, KC_R)         // Save
+COMB(os_lglc,           OS_LGLC,    KC_W, KC_E, KC_R)   // OS lgui+lctl
 COMB(back_fwd,          BCK_FWD,    KC_R, KC_T)         // Back/Fwd (shifted)
-COMB(os_lglc,           OS_LGLC,    KC_Q, KC_S)         // OS G+C
 
 COMB(undo_redo,         UND_RED,    KC_Y, KC_U)         // Undo/Redo (shifted)
 COMB(esc,               KC_ESC,     KC_U, KC_O)         // Esc
 COMB(tab,               KC_TAB,     KC_U, KC_I)         // Tab
-COMB(funmode,           FUNMODE,    KC_L, KC_P)         // Funmode toggle
 
 /*---- HOME ROW ----*/
+COMB(symmode_l,         SYMMODE,    KC_Q, KC_S)         // Left Sym osl
 COMB(cut,               S_CUT,      KC_S, KC_F)         // Shift+Del (cut)
 COMB(copy,              S_COPY,     KC_S, KC_D)         // Ctrl+Ins (copy)
 COMB(paste,             S_PASTE,    KC_F, KC_G)         // Shift+Del (paste)
@@ -21,13 +21,17 @@ COMB(click_l,           LCLICK,     KC_D, KC_C)         // Left Click :)
 COMB(click_r,           RCLICK,     KC_V, KC_F)         // Right Click :)
 COMB(dbclick_l,         DBCLICK,    KC_G, KC_B)         // Double Click :)
 
+COMB(panic_r,           PANIC,      KC_H, KC_J)         // PANIC 2: onehandern
 COMB(nummode,           NUMMODE,    KC_J, KC_K)         // Nummode toggle
 COMB(numosl,            NUM_OSL,    KC_J, KC_L)         // OS Num
+COMB(symmode_r,         SYMMODE,    KC_L, KC_P)         // Right Sym osl
 
 /*---- BOTTOM ROW ----*/
-COMB(enter,             KC_ENT,     KC_X, KC_V)         // Enter
+COMB(nummode_l,         NUMMODE,    KC_A, KC_X)         // left hand nummode access
 COMB(hash,              KC_HASH,    KC_X, KC_C)         // #
 COMB(fslash,            KC_SLSH,    KC_C, KC_V)         // /
+COMB(enter,             KC_ENT,     KC_X, KC_V)         // Enter
+COMB(navmode,           NAVMODE,    KC_V, KC_B)
 
 COMB(dash,              KC_MINS,    KC_M, KC_COMM)      // -
 COMB(asterisk,          KC_ASTR,    KC_COMM, KC_DOT)    // *
@@ -36,10 +40,10 @@ COMB(underscore,        KC_UNDS,    KC_M, KC_DOT)       // _
 /*---- THUMBS ----*/
 #ifdef VERTICAL_THUMB_COMBO
 COMB(sys_lthm,          SYS_OSL,    KC_B, KC_ENT)       // Sys OSL
-COMB(sym_rthm,          SYMMODE,    KC_SPC, KC_N)       // Sym OSL
+COMB(rthumb,            PANIC,      KC_SPC, KC_N)       // Sym OSL
 #else
 COMB(sys_lthm,          SYS_OSL,    KC_ENT, KC_TAB)     // Sys OSL
-COMB(sym_rthm,          SYMMODE,    KC_SPC, KC_BSPC)    // Sym OSL
+COMB(rthumb,            FUNMODE,    KC_SPC, KC_BSPC)    // Sym OSL
 #endif
 
-COMB(space_shift,       SPC_SFT,    KC_TAB, KC_SPC)     // space and activate oss
+// COMB(space_shift,       SPC_SFT,    KC_TAB, KC_SPC)     // space and activate oss

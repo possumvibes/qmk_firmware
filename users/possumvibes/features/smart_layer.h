@@ -32,8 +32,8 @@ void nav_mode_disable(void);
 // Handle each key for nav mode.
 void nav_mode_process(uint16_t keycode, keyrecord_t *record);
 
-/* -------- Mus Mode -------- */
-// Turn Mus mode on. To be called from a custom keycode.
+/* -------- Sym Mode -------- */
+// Turn Sym mode on. To be called from a custom keycode.
 void sym_mode_enable(keyrecord_t *record);
 
 // Turn sym mode off.

@@ -40,6 +40,7 @@ enum custom_keycodes {
     SPC_SFT,  // Space and OSS
     GET_SET,  // { get; set; }
     RPR_SCL,  // ); ();
+    LMBD_FN,  // () =>
     KY_V1,    // V1
     KY_V2,    // V2
     KY_V3,    // V3
@@ -118,16 +119,18 @@ enum custom_keycodes {
 // i3 shortcuts
 #define LOGOUT      G(A(KC_Q))
 #define CONFIG      G(A(KC_R))
+#define LSTDESK     G(KC_TILD)
+#define LSTNODE     G(KC_GRV)
 #define WKSP_1      G(KC_1)
 #define WKSP_2      G(KC_2)
 #define WKSP_3      G(KC_3)
 #define WKSP_4      G(KC_4)
 #define WKSP_5      G(KC_5)
-// #define WKSP_6      G(KC_6)
-// #define WKSP_7      G(KC_7)
-// #define WKSP_8      G(KC_8)
-// #define WKSP_9      G(KC_9)
-// #define WKSP_10      G(KC_0)
+#define WKSP_6      G(KC_6)
+#define WKSP_7      G(KC_7)
+#define WKSP_8      G(KC_8)
+#define WKSP_9      G(KC_9)
+#define WKSP_10     G(KC_0)
 
 // Default Layer States
 #define QWERTY      DF(_QWERTY)

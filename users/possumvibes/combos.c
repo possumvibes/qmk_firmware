@@ -22,32 +22,46 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo){
 uint16_t get_combo_term(uint16_t index, combo_t *combo){
     switch(index) {
         // faster combos over rolls
-        case enter:
         case esc:
         case esc_l:
             return COMBO_TERM - 22
-        // shortcuts get faster taps for fewer roll activations
+
+        // top row shortcuts
         case back_fwd:
         case dmenu:
-        case cut:
-        case copy:
-        case paste:
         case save:
         case tab:
         case undo_redo:
             return COMBO_TERM - 18;
-        // things that are VERY EASY TO TYPO get real fast terms
+
+        // home row/block shortcuts
+        case cut:
+        case copy:
+        case paste:
+        case nummode:
+        case numosl:
+        case enter:
+            return COMBO_TERM - 18;
+
+        // inner/outer cols (including cross-row)
+        case funmode:
+        case navmode:
+        case nummode_l:
+        case panic_r:
+        case symmode_l:
+        case symmode_r:
+            return COMBO_TERM - 15;
+
+        // home row verticals
         case click_l:
         case click_r:
         case dbclick_l:
-        case os_lglc:
             return COMBO_TERM - 15;
-        // layer activations get faster to prevent shenanigans
-        case funmode:
-        case nummode:
-        case numosl:
-        case sym_rthm:
-            return COMBO_TERM - 18;
+
+        // thumbs
+        case rthumb:
+            return COMBO_TERM - 10;
+
         default:
             return COMBO_TERM;
     }

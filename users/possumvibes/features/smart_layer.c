@@ -22,6 +22,8 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record) {
         case KC_DLR:
         case KC_COMM:
         case KC_DOT:
+        case COM_EXC:
+        case DOT_QUE:
         case KC_SLSH:
         case KC_MINS:
         case KC_ASTR:
@@ -30,7 +32,8 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record) {
         case KC_SCLN:
         case KC_QUOT:
         case KC_EQL:
-        // case KC_BSPC:
+        case KC_LABK:
+        case KC_RABK:
         case KC_X:
         case SYM_MO:
         case SYMMODE:
@@ -42,7 +45,7 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record) {
             // process the code and stay in the mode *dabs*
             break;
         default:
-            // All other keys disable the layer mode.
+            // All other keys disable the layer mode on keyup.
             if (!record->event.pressed) {
                 num_mode_disable();
             }
@@ -78,7 +81,6 @@ void func_mode_process(uint16_t keycode, keyrecord_t *record) {
         case F11_TH:
         case F12_TH:
         case OS_LSFT ... OS_LGUI:
-        case KC_MUTE ... KC_MPLY:
             break;
         default:
             // All other keys disable the layer mode.
@@ -170,6 +172,7 @@ void sym_mode_process(uint16_t keycode, keyrecord_t *record){
     switch (keycode) {
         // SYMMODE is a glorified oneshot layer that lets you hit shift without breaking.
         case OS_LSFT ... OS_LGUI:
+        case KC_LPRN:
             break;
         default:
             // All other keys disable the layer mode.
