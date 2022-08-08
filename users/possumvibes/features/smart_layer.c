@@ -172,7 +172,6 @@ void sym_mode_process(uint16_t keycode, keyrecord_t *record){
     switch (keycode) {
         // SYMMODE is a glorified oneshot layer that lets you hit shift without breaking.
         case OS_LSFT ... OS_LGUI:
-        case KC_LPRN:
             break;
         default:
             // All other keys disable the layer mode.

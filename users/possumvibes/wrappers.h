@@ -33,11 +33,11 @@
 // APTHD. APTv3 variant with reduced load on pinkies. Not in use--put too much load on index for me
 #define __________________APTHD_L1_________________       KC_W,    KC_C,    KH_Y,    KC_D,    KC_K
 #define __________________APTHD_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_B
-#define __________________APTHD_L3_________________       KC_X,    KC_F,    KC_G,    KC_P,    KC_V
+#define __________________APTHD_L3_________________       KC_QUOT, KC_F,    KC_G,    KC_P,    KC_V
 
-#define __________________APTHD_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
-#define __________________APTHD_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define __________________APTHD_R3_________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, KC_SCLN
+#define __________________APTHD_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_SCLN
+#define __________________APTHD_R2_________________       KC_X,    KH_N,    KH_E,    KH_A,    KH_I
+#define __________________APTHD_R3_________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, KC_J
 
 // APTv3. Daily Driver.
 #define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
@@ -48,33 +48,6 @@
 #define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
 #define __________________APTv3_R3_________________       KC_Z,    KC_QUOT, COM_EXC, DOT_QUE, KC_SCLN
 
-// APT 3 Meets HD, not presently in use
-#define ___________________APT_L1__________________       KC_W,    KC_C,    KH_G,    KC_D,    KC_V
-#define ___________________APT_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
-#define ___________________APT_L3__________________       KC_Z,    KC_F,    KC_M,    KC_P,    KC_B
-
-#define ___________________APT_R1__________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
-#define ___________________APT_R2__________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define ___________________APT_R3__________________       KC_QUOT, KC_X,    COM_EXC, DOT_QUE, KC_SCLN
-
-// Canary
-#define _________________CANARY_L1_________________       KC_W,    KC_L,    KH_Y,    KC_P,    KC_B
-#define _________________CANARY_L2_________________       KS_C,    KS_R,    KS_S,    KS_T,    KC_G
-#define _________________CANARY_L3_________________       KC_Q,    KC_J,    KC_V,    KC_D,    KC_K
-
-#define _________________CANARY_R1_________________       KC_Z,    KC_F,    KS_O,    KC_U,    KC_QUOT
-#define _________________CANARY_R2_________________       KC_M,    KH_N,    KH_E,    KS_I,    KY_A
-#define _________________CANARY_R3_________________       KC_X,    KC_H,    KC_SCLN,  COM_EXC, DOT_QUE
-
-// Another Layout lol
-// #define _________________CANARY_L1_________________       KC_W,    KC_L,    KH_Y,    KC_P,    KC_B
-// #define _________________CANARY_L2_________________       KS_C,    KS_R,    KS_S,    KS_T,    KC_G
-// #define _________________CANARY_L3_________________       KC_Q,    KC_J,    KC_V,    KC_D,    KC_K
-
-// #define _________________CANARY_R1_________________       KC_Z,    KC_F,    KS_O,    KC_U,    KC_QUOT
-// #define _________________CANARY_R2_________________       KC_M,    KH_N,    KH_E,    KS_I,    KY_A
-// #define _________________CANARY_R3_________________       KC_X,    KC_H,    KC_SCLN,  COM_EXC, DOT_QUE
-
 // Functions optimized for Visual Studio debugging. The non-debugging/renaming ones are vaguely organized.
 #define __________________FUNC_L1__________________       OS_LALT, OS_LCTL, LSTDESK, LSTNODE, WKSP_10
 #define __________________FUNC_L2__________________       OS_LGUI, WKSP_1,  WKSP_2,  WKSP_3,  WKSP_4
@@ -84,45 +57,27 @@
 #define __________________FUNC_R2__________________       KC_F7,   F11_TH,  KC_F10,  F6_TH,   OS_LGUI
 #define __________________FUNC_R3__________________       KC_F9,   KC_F2,   KC_F3,   F5_TH,   XXXXXXX
 
-//// Numpad on the right, symbols on the left. Not presently in use.
-// #define _________________NUMPADR_L1________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-// #define _________________NUMPADR_L2________________       SYM_MO,  KC_COLN, KC_DOT,  KC_COMM, XXXXXXX
-// #define _________________NUMPADR_L3________________       KC_X,    KC_QUOT, KC_DQUO, KC_DQUO, XXXXXXX
-
-// #define _________________NUMPADR_R1________________       XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX
-// #define _________________NUMPADR_R2________________       XXXXXXX, KC_1,    KC_2,    KC_3,    KY_0
-// #define _________________NUMPADR_R3________________       XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX
-
 // Simple numrow, in case I ever want it
 #define _________________NUMROW_L1_________________       KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define _________________NUMROW_R1_________________       KC_6,    KC_7,    KC_8,    KC_9,    KC_0
 
 // Numpad left, mods, some punc, and jkG right.
-#define _________________NUMPADL_L1________________       OS_LALT, KC_7,    KC_8,    KC_9,    KC_PERC
-#define _________________NUMPADL_L2________________       OS_LCTL, KC_1,    KC_2,    KC_3,    KC_DLR
+#define _________________NUMPADL_L1________________       KC_0,    KC_7,    KC_8,    KC_9,    KC_PERC
+#define _________________NUMPADL_L2________________       KC_0,    KC_1,    KC_2,    KC_3,    KC_DLR
 #define _________________NUMPADL_L3________________       KC_X,    KC_4,    KC_5,    KC_6,    KC_0
 
-#define _________________NUMPADL_R1________________       KC_K,    KC_MINS, KC_PLUS, OS_LCTL, OS_LALT
-#define _________________NUMPADL_R2________________       S(KC_G), KC_LABK, KC_RABK, KC_EQL,  OS_LGUI
-#define _________________NUMPADL_R3________________       KC_J,    KC_SCLN, COM_EXC, DOT_QUE, KC_QUOT
+#define _________________NUMPADL_R1________________       KC_K,    XXXXXXX, OS_LGUI, KY_QUOT, _______
+#define _________________NUMPADL_R2________________       S(KC_G), OS_LSFT, OS_LCTL, OS_LALT, _______
+#define _________________NUMPADL_R3________________       KC_J,    KC_SCLN, COM_EXC, DOT_QUE, _______
 
-// // Sym layer: theoretically optimized, but man i need a better access point
-// #define ___________________SYM_L1__________________       KC_BSLS, KC_LABK, KC_RABK, KC_QUES, KC_DLR
-// #define ___________________SYM_L2__________________       KC_COLN, KC_LPRN, KC_RPRN, RPR_SCL, KC_PERC
-// #define ___________________SYM_L3__________________       KC_RCBR, KC_LBRC, KC_RBRC, KC_LCBR, KC_SLSH
+// Sym layer: A Lesson Was Learned
+#define ___________________SYM_L1__________________       OS_LALT, KC_RABK, ANGLEBR, RPR_SCL, KC_QUES
+#define ___________________SYM_L2__________________       OS_LCTL, KC_LPRN, KC_RPRN, KC_COLN, KC_RCBR
+#define ___________________SYM_L3__________________       OS_LGUI, KC_RBRC, KC_LBRC, KC_LCBR, KC_BSLS
 
-// #define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_AT,   KC_EXLM, KC_GRV
-// #define ___________________SYM_R2__________________       KC_DQUO, KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
-// #define ___________________SYM_R3__________________       KC_COMM, KC_CIRC, KC_PIPE, KC_MINS, KC_SLSH
-
-// Sym layer: YAAAAAAAAAA
-#define ___________________SYM_L1__________________       OS_LALT, KC_RCBR, KY_V2,   KY_V3,   KC_PERC
-#define ___________________SYM_L2__________________       OS_LCTL, KC_AMPR, KC_LBRC, KC_RBRC, KC_DLR
-#define ___________________SYM_L3__________________       SYMMODE, KC_PIPE, KC_AT,   KC_GRV,  KC_BSLS
-
-#define ___________________SYM_R1__________________       KC_TILD, LMBD_FN, GET_SET, OS_LCTL, OS_LALT
-#define ___________________SYM_R2__________________       KC_DQUO, KC_COLN, KC_LPRN, KC_RPRN, OS_LGUI
-#define ___________________SYM_R3__________________       KC_QUOT, KC_LCBR, KC_CIRC, RPR_SCL, SYMMODE
+#define ___________________SYM_R1__________________       KC_TILD, GET_SET, LMBD_FN, KC_GRV,  XXXXXXX
+#define ___________________SYM_R2__________________       KC_DQUO, KC_EQL,  KC_AMPR, KC_PLUS, XXXXXXX
+#define ___________________SYM_R3__________________       KC_LABK, KC_CIRC, KC_PIPE, KC_AT,   XXXXXXX
 
 
 // Nav layer: We Got Mods
@@ -136,13 +91,13 @@
 
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.
-#define ___________________SYS_L1__________________       SEMIMAK, _______, KC_VOLU, _______, _______
+#define ___________________SYS_L1__________________       APTHD,   LOGOUT,  KC_VOLU, CONFIG,  _______
 #define ___________________SYS_L2__________________       APT,     KC_MPRV, KC_MPLY, KC_MNXT, _______
 #define ___________________SYS_L3__________________       QWERTY,  _______, KC_VOLD, KC_MUTE, _______
 
-#define ___________________SYS_R1__________________       QK_BOOT, LOGOUT,  ALT_F4,  CONFIG,  XXXXXXX
-#define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, SCREEN,  _______
-#define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, XXXXXXX, _______
+#define ___________________SYS_R1__________________       QK_BOOT, SCREEN,  ALT_F4,  KY_V3,   XXXXXXX
+#define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, KY_V2,   _______
+#define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, KY_V1,   _______
 
 
 /* ------ Gaming Layers ------ */
@@ -163,3 +118,53 @@
 #define _______________NETHACK_NUM_R2_______________________       KC_4,    KC_5,    KC_6,    KC_0,    KC_SLSH, KC_QUOT
 #define _______________NETHACK_NUM_R3_______________________       KC_1,    KC_2,    KC_3,    KC_DOT,  KC_UP,   KC_N
 #define _______________NETHACK_NUM_R4_______________________       KC_BSPC, KC_SPC,  OS_LSFT, KC_LEFT, KC_DOWN, KC_RIGHT
+
+/* --- Retired rows --- */
+//// Numpad on the right, symbols on the left. Not presently in use.
+// #define _________________NUMPADR_L1________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+// #define _________________NUMPADR_L2________________       SYM_MO,  KC_COLN, KC_DOT,  KC_COMM, XXXXXXX
+// #define _________________NUMPADR_L3________________       KC_X,    KC_QUOT, KC_DQUO, KC_DQUO, XXXXXXX
+
+// #define _________________NUMPADR_R1________________       XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX
+// #define _________________NUMPADR_R2________________       XXXXXXX, KC_1,    KC_2,    KC_3,    KY_0
+// #define _________________NUMPADR_R3________________       XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX
+
+
+// Sym layer: theoretically optimized, but man i need a better access point
+// #define ___________________SYM_L1__________________       KC_BSLS, KC_LABK, KC_RABK, KC_QUES, KC_DLR
+// #define ___________________SYM_L2__________________       KC_COLN, KC_LPRN, KC_RPRN, RPR_SCL, KC_PERC
+// #define ___________________SYM_L3__________________       KC_RCBR, KC_LBRC, KC_RBRC, KC_LCBR, KC_SLSH
+
+// #define ___________________SYM_R1__________________       KC_QUOT, GET_SET, KC_AT,   KC_EXLM, KC_GRV
+// #define ___________________SYM_R2__________________       KC_DQUO, KC_EQL,  KC_AMPR, KC_PLUS, KC_TILD
+// #define ___________________SYM_R3__________________       KC_COMM, KC_CIRC, KC_PIPE, KC_MINS, KC_SLSH
+
+// // Sym layer: YAAAAAAAAAA
+// #define ___________________SYM_L1__________________       OS_LALT, KC_AT,   KC_RABK, KC_QUES, KC_GRV
+// #define ___________________SYM_L2__________________       OS_LCTL, KC_AMPR, KC_PLUS, KC_EQL,  KC_LABK
+// #define ___________________SYM_L3__________________       OS_LGUI, KC_PIPE, KC_LBRC, KC_RBRC, KC_BSLS
+
+// #define ___________________SYM_R1__________________       KC_TILD, LMBD_FN, GET_SET, KY_V2,   KC_RCBR
+// #define ___________________SYM_R2__________________       KC_DQUO, KC_COLN, KC_LPRN, RPR_SCL, KC_RPRN
+// #define ___________________SYM_R3__________________       KC_QUOT, KC_LCBR, ANGLEBR, KY_V3,   XXXXXXX
+
+
+
+/* alt layouts */
+// APT 3 Meets HD, not presently in use
+#define ___________________APT_L1__________________       KC_W,    KC_C,    KH_G,    KC_D,    KC_V
+#define ___________________APT_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+#define ___________________APT_L3__________________       KC_Z,    KC_F,    KC_M,    KC_P,    KC_B
+
+#define ___________________APT_R1__________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
+#define ___________________APT_R2__________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
+#define ___________________APT_R3__________________       KC_QUOT, KC_X,    COM_EXC, DOT_QUE, KC_SCLN
+
+// Canary
+#define _________________CANARY_L1_________________       KC_W,    KC_L,    KH_Y,    KC_P,    KC_B
+#define _________________CANARY_L2_________________       KS_C,    KS_R,    KS_S,    KS_T,    KC_G
+#define _________________CANARY_L3_________________       KC_Q,    KC_J,    KC_V,    KC_D,    KC_K
+
+#define _________________CANARY_R1_________________       KC_Z,    KC_F,    KS_O,    KC_U,    KC_QUOT
+#define _________________CANARY_R2_________________       KC_M,    KH_N,    KH_E,    KS_I,    KY_A
+#define _________________CANARY_R3_________________       KC_X,    KC_H,    KC_SCLN,  COM_EXC, DOT_QUE

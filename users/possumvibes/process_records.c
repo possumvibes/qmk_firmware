@@ -148,6 +148,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_MINS:
         case KC_PIPE:
         case KC_PLUS:
+        case KC_QUES:
         case KC_SLSH:
         case KC_TILD:
         {
@@ -259,9 +260,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     del_oneshot_mods(MOD_MASK_SHIFT);
                     del_mods(MOD_MASK_SHIFT);
                     SEND_STRING("() =>");
+                    set_mods(mod_state);
                 } else {
                     SEND_STRING("=>");
                 }
+            }
+            return false;
+
+        case ANGLEBR:
+            if(record->event.pressed){
+                del_oneshot_mods(MOD_MASK_SHIFT);
+                del_mods(MOD_MASK_SHIFT);
+
+                tap_code16(KC_LABK);
+                tap_code16(KC_RABK);
+                tap_code(KC_LEFT);
+
+                set_mods(mod_state);
             }
             return false;
 

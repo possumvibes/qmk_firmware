@@ -56,10 +56,12 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case click_l:
         case click_r:
         case dbclick_l:
+        case fslash2:
             return COMBO_TERM - 15;
 
         // thumbs
         case rthumb:
+        case outer_thumb:
             return COMBO_TERM - 10;
 
         default:

@@ -5,7 +5,7 @@ enum layers {
     _APT = 0,
     _COMBOREF,
     _QWERTY,
-    _SEMIMAK,
+    _APTHD,
     _GAMENAV,
     _NETHACK,
     _FUNC,
@@ -41,6 +41,7 @@ enum custom_keycodes {
     GET_SET,  // { get; set; }
     RPR_SCL,  // ); ();
     LMBD_FN,  // () =>
+    ANGLEBR,  // <|>
     KY_V1,    // V1
     KY_V2,    // V2
     KY_V3,    // V3
@@ -135,7 +136,7 @@ enum custom_keycodes {
 // Default Layer States
 #define QWERTY      DF(_QWERTY)
 #define APT         DF(_APT)
-#define SEMIMAK     DF(_SEMIMAK)
+#define APTHD     DF(_APTHD)
 
 // Shortcuts
 #define S_CUT       S(KC_DEL)
