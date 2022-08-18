@@ -49,13 +49,13 @@
 #define __________________APTv3_R3_________________       KC_Z,    KC_QUOT, COM_EXC, DOT_QUE, KC_SCLN
 
 // Functions optimized for Visual Studio debugging. The non-debugging/renaming ones are vaguely organized.
-#define __________________FUNC_L1__________________       OS_LALT, OS_LCTL, LSTDESK, LSTNODE, WKSP_10
-#define __________________FUNC_L2__________________       OS_LGUI, WKSP_1,  WKSP_2,  WKSP_3,  WKSP_4
-#define __________________FUNC_L3__________________       WKSP_9,  WKSP_5,  WKSP_6,  WKSP_7,  WKSP_8
+#define __________________FUNC_L1__________________       OS_LALT, WKSP_9,  LSTDESK, LSTNODE, WKSP_10
+#define __________________FUNC_L2__________________       OS_LCTL, WKSP_1,  WKSP_2,  WKSP_3,  WKSP_4
+#define __________________FUNC_L3__________________       OS_LGUI, WKSP_5,  WKSP_6,  WKSP_7,  WKSP_8
 
-#define __________________FUNC_R1__________________       KC_F1,   KC_F8,   KC_F4,   OS_LCTL, OS_LALT
-#define __________________FUNC_R2__________________       KC_F7,   F11_TH,  KC_F10,  F6_TH,   OS_LGUI
-#define __________________FUNC_R3__________________       KC_F9,   KC_F2,   KC_F3,   F5_TH,   XXXXXXX
+#define __________________FUNC_R1__________________       KC_F1,   KC_F8,   KC_F4,   F5_TH,   OS_LALT
+#define __________________FUNC_R2__________________       KC_F7,   F11_TH,  KC_F10,  F6_TH,   OS_LCTL
+#define __________________FUNC_R3__________________       KC_F9,   KC_F2,   KC_F3,   F6_TH,   OS_LGUI
 
 // Simple numrow, in case I ever want it
 #define _________________NUMROW_L1_________________       KC_1,    KC_2,    KC_3,    KC_4,    KC_5
