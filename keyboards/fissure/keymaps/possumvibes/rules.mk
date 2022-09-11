@@ -1,4 +1,4 @@
-APPLY_USERSPACE			= yes	# Apply the userspace keymap
+APPLY_USERSPACE			= yes	# Apply the userspace keymap (only usable in userspace rules.mk)
 
 COMBO_ENABLE 			= yes 	# Enables use of combos
 MOUSEKEY_ENABLE 		= yes	# Enables mouse keys

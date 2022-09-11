@@ -18,29 +18,13 @@
 
 #define EE_HANDS
 
+// #define VERTICAL_THUMB_COMBO
+
+// kyria encoders require direction flip.
 #define ENCODER_DIRECTION_FLIP      // Flips encoder direction so "clockwise" is clockwise.
-#define COMBO_ONLY_FROM_LAYER 1     // compare only with the COMBOREF layer.
-#define VERTICAL_THUMB_COMBO
 
-#define IGNORE_MOD_TAP_INTERRUPT    // Lets you roll mod-tap keys
-#define TAPPING_FORCE_HOLD          // Allows mod use immediately after tap use
-#define TAPPING_FORCE_HOLD_PER_KEY  // BUT NOT EVERYWHERE.
-#define TAPPING_TERM 200            // Base tapping term
-#define TAPPING_TERM_PER_KEY        // Adjust tapping term for finger strength
-
-// Let's lock some one-shots
-#define TAPPING_TOGGLE 2            // Locks Tap Toggles after two taps.
-#define ONESHOT_TAP_TOGGLE 2        // Locks Oneshot Toggles after two taps.
-#define ONESHOT_TIMEOUT 5000        // How long a oneshot stays active.
-
-// Allows media codes to properly register in macros and rotary encoder code
-#define TAP_CODE_DELAY 15           // Introduces delay between code taps so no keys get eaten.
-
-// Combos!
+#undef COMBO_TERM
 #define COMBO_TERM 38               // Gotta combo fast.
-#define COMBO_MUST_TAP_PER_COMBO    // Set whether combos can be held to repeat.
-#define COMBO_MUST_HOLD_PER_COMBO   // Set whether combos have to be held to function. probably don't need both of these.
-#define COMBO_TERM_PER_COMBO        // Adjust combo term for ease of combo.
 
 #ifdef LEADER_ENABLE
 // The Leader key allows to flexibly assign macros to key sequences.

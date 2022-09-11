@@ -11,15 +11,21 @@ bool override_shift( bool is_shifted,
             del_mods(MOD_MASK_SHIFT);
             del_oneshot_mods(MOD_MASK_SHIFT);
 
-            tap_code16(shift_override);
+            register_code16(shift_override);
 
             set_mods(mod_state);
         } else {
             // regular: /
-            tap_code16(tap_keycode);
+            register_code16(tap_keycode);
         }
+        return false;
     }
-    return false;
+    else {
+        unregister_code16(shift_override);
+        unregister_code16(tap_keycode);
+    }
+
+    return true;
 }
 
 bool override_bracket_pair(

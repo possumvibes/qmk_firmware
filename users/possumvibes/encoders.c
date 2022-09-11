@@ -51,9 +51,9 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             case _NAV:
                 encoder_volume(clockwise);
                 break;
-            case _SYM: // homerow activated
-                encoder_scroll_x(clockwise);
-                break;
+            // case _SYM: // homerow activated
+            //     encoder_scroll_x(clockwise);
+            //     break;
             default:
                 encoder_scroll_page(clockwise);
                 break;

@@ -1,13 +1,6 @@
 #include "possumvibes.h"
 #include "g/keymap_combo.h"
 
-bool get_combo_must_hold(uint16_t index, combo_t *combo){
-    switch(index) {
-        default:
-            return false;
-    }
-}
-
 bool get_combo_must_tap(uint16_t index, combo_t *combo){
     switch(index){
         case sys_lthm:
