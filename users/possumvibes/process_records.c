@@ -350,6 +350,40 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
+        #ifdef CAPS_WORD_ENABLE
+        case KC_CAPS:
+            if(record->event.pressed){
+                if(is_caps_word_on()){
+                    // Word OFF
+                    caps_word_off();
+                    // Lock OFF
+                    if(host_keyboard_led_state().caps_lock){
+                        tap_code16(KC_CAPS);
+                    }
+                    return false;
+                }
+                if(is_shifted){
+                    // if already caps-ing, OFF.
+                    if(host_keyboard_led_state().caps_lock){
+                        tap_code16(KC_CAPS);
+                        return false;
+                    }
+
+                    // Word ON
+                    caps_word_on();
+                    return false;
+                }
+                // Lock NORMAL
+                return true;
+            }
+            else{
+                if(is_caps_word_on() || is_shifted){
+                    return false;
+                }
+                // Lock NORMAL
+                return true;
+            }
+        #endif
     }
 
     return true;

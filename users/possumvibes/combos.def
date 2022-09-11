@@ -15,6 +15,7 @@ COMB(symmode_l,         SYMMODE,    KC_S, KC_Q)         // left hand nummode acc
 COMB(cut,               S_CUT,      KC_S, KC_F)         // Shift+Del (cut)
 COMB(copy,              S_COPY,     KC_S, KC_D)         // Ctrl+Ins (copy)
 COMB(paste,             S_PASTE,    KC_F, KC_G)         // Shift+Del (paste)
+COMB(caps,              KC_CAPS,    KC_S, KC_V)         // Caps Lock
 
 COMB(panic,             PANIC,      KC_D, KC_K)         // panic!
 

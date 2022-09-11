@@ -4,7 +4,6 @@ bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
         // Keycodes that continue Caps Word, with shift applied.
         case KC_A ... KC_Z:
-        case KC_MINS:
         case KY_V1:
         case KY_V2:
         case KY_V3:
@@ -15,6 +14,7 @@ bool caps_word_press_user(uint16_t keycode) {
         case KC_1 ... KC_0:
         case KC_BSPC:
         case KC_DEL:
+        case KC_MINS:
         case KC_UNDS:
         case FUNMODE:
             return true;
