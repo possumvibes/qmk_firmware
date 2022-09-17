@@ -9,6 +9,7 @@
  * This function assigns the board's pins.
  */
 
+// aliases to keep things short
 #define XXX XXXXXXX
 #define CAP KC_CAPS
 

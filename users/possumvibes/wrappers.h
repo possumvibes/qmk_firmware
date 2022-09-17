@@ -31,13 +31,17 @@
 #define ________________COMBOREF_R3________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
 
 // APTHD. APTv3 variant with reduced load on pinkies. Not in use--put too much load on index for me
-#define __________________APTHD_L1_________________       KC_W,    KC_C,    KH_Y,    KC_D,    KC_K
-#define __________________APTHD_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_B
-#define __________________APTHD_L3_________________       KC_QUOT, KC_F,    KC_G,    KC_P,    KC_V
+#define __________________APTHD_L1_________________       KC_W,    KC_C,    KH_Y,    KC_D,    KC_B
+#define __________________APTHD_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+#define __________________APTHD_L3_________________       KC_X,    KC_F,    KC_G,    KC_P,    KC_V
 
-#define __________________APTHD_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_SCLN
-#define __________________APTHD_R2_________________       KC_X,    KH_N,    KH_E,    KH_A,    KH_I
-#define __________________APTHD_R3_________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, KC_J
+// #define __________________APTHD_L1_________________       KC_W,    KC_F,    KH_G,    KC_D,    KC_B
+// #define __________________APTHD_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+// #define __________________APTHD_L3_________________       KC_X,    KC_C,    KC_Y,    KC_P,    KC_V
+
+#define __________________APTHD_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
+#define __________________APTHD_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
+#define __________________APTHD_R3_________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, KC_SCLN
 
 // APTv3. Daily Driver.
 #define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
@@ -68,7 +72,7 @@
 
 #define _________________NUMPADL_R1________________       KC_K,    XXXXXXX, OS_LGUI, KY_QUOT, _______
 #define _________________NUMPADL_R2________________       S(KC_G), OS_LSFT, OS_LCTL, OS_LALT, _______
-#define _________________NUMPADL_R3________________       KC_J,    KC_SCLN, COM_EXC, DOT_QUE, _______
+#define _________________NUMPADL_R3________________       KC_J,    KC_SCLN, COM_EXC, DOT_QUE, KC_QUOT
 
 // Sym layer: A Lesson Was Learned
 #define ___________________SYM_L1__________________       OS_LALT, KC_RABK, ANGLEBR, RPR_SCL, KC_QUES
@@ -85,7 +89,7 @@
 #define ___________________NAV_L2__________________       SW_WIN,  OS_LALT, OS_LCTL, OS_LSFT, KC_WH_D
 #define ___________________NAV_L3__________________       SW_TAB,  SW_REV,  F12_TH,  TS_LCTL, OS_LGLC
 
-#define ___________________NAV_R1__________________       KC_PGDN, KC_HOME, KC_UP,   KC_END,  KC_PGUP
+#define ___________________NAV_R1__________________       KC_PGDN, KC_HOME, KC_UP,   KC_END,  KC_DEL
 #define ___________________NAV_R2__________________       F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, CLEAR
 #define ___________________NAV_R3__________________       CTL_U,   ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
 
