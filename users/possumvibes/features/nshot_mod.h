@@ -16,6 +16,7 @@ typedef struct {
     uint8_t       max_count;
     oneshot_state state;
     uint8_t       count;
+    bool          had_keydown;
 } nshot_state_t;
 
 extern nshot_state_t nshot_states[];

@@ -4,12 +4,12 @@
 #define modbit_lclg (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LGUI))
 
 nshot_state_t  nshot_states[] = {
-    {OS_LSFT, MOD_BIT(KC_LSFT), 1, os_up_unqueued, 0},
-    {OS_LCTL, MOD_BIT(KC_LCTL), 1, os_up_unqueued, 0},
-    {OS_LALT, MOD_BIT(KC_LALT), 1, os_up_unqueued, 0},
-    {OS_LGUI, MOD_BIT(KC_LGUI), 1, os_up_unqueued, 0},
-    {OS_LGLC, modbit_lclg, 1, os_up_unqueued, 0},
-    {TS_LCTL, MOD_BIT(KC_LCTL), 2, os_up_unqueued, 0}
+    {OS_LSFT, MOD_BIT(KC_LSFT), 1, os_up_unqueued, 0, false},
+    {OS_LCTL, MOD_BIT(KC_LCTL), 1, os_up_unqueued, 0, false},
+    {OS_LALT, MOD_BIT(KC_LALT), 1, os_up_unqueued, 0, false},
+    {OS_LGUI, MOD_BIT(KC_LGUI), 1, os_up_unqueued, 0, false},
+    {OS_LGLC, modbit_lclg, 1, os_up_unqueued, 0, false},
+    {TS_LCTL, MOD_BIT(KC_LCTL), 2, os_up_unqueued, 0, false}
 };
 uint8_t        NUM_NSHOT_STATES = sizeof(nshot_states) / sizeof(nshot_state_t);
 
@@ -28,6 +28,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                 }
                 curr_state->state = os_down_unused;
                 curr_state->count = 0;
+                curr_state->had_keydown = false;
             } else {
                 // Trigger keyup
                 switch (curr_state->state) {
@@ -50,6 +51,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                     // Cancel oneshot on designated cancel keydown.
                     curr_state->state = os_up_unqueued;
                     curr_state->count = 0;
+                    curr_state->had_keydown = false;
                     unregister_mods(curr_state->modbit);
                 }
 
@@ -58,32 +60,45 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                 if (curr_state->state == os_up_queued && !is_nshot_ignored_key(keycode)) {
                     // Increment on sequential key press.
                     curr_state->count = curr_state->count + 1;
+                    curr_state->had_keydown = true;
 
                     // If count > max_count, the previous key hit maxed out the n-shot.
                     // Complete the n-shot; this current keycode will be pressed sans mod.
                     if (curr_state->count == max_count) {
                         curr_state->state = os_up_unqueued;
                         curr_state->count = 0;
+                        curr_state->had_keydown = false;
                         unregister_mods(curr_state->modbit);
                     }
+                }
+
+                if (curr_state->state == os_down_unused){
+                    curr_state->had_keydown = true;
                 }
             } else {
                 if (!is_nshot_ignored_key(keycode)) {
                     // On non-ignored keyup, consider the oneshot used.
                     switch (curr_state->state) {
                         case os_down_unused:
-                            // The mod key is being held as a normal mod.
-                            curr_state->state = os_down_used;
+                            // if there's been a keydown, the mod is being used normally. Mark as used.
+                            if(curr_state->had_keydown){
+                                curr_state->state = os_down_used;
+                            }
+                            // if there has *not* been a keydown, the mod is being rolled into
+                            // and this first keyup is not part of the mod behavior.
                             break;
                         case os_up_queued:
-                            // The mod key is being used as an n-shot.
-                            // Increment the keys-used count.
-                            curr_state->count = curr_state->count + 1;
+                            // If there's been a keydown, the mod key is being used as an n-shot.
+                            // Increment the keycount.
+                            if (curr_state->had_keydown){
+                                curr_state->count = curr_state->count + 1;
+                            }
 
                             // If the n-shot max has been reached, complete the n-shot.
                             if (curr_state->count == max_count) {
                                 curr_state->state = os_up_unqueued;
                                 curr_state->count = 0;
+                                curr_state->had_keydown = false;
                                 unregister_mods(curr_state->modbit);
                             }
                             break;
