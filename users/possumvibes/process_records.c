@@ -86,6 +86,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code(KC_3);
             }
             return false;
+        case VI_ZZ:
+        case VI_ZQ:
+            if(record->event.pressed){
+                if(host_keyboard_led_state().caps_lock){
+                    tap_code16(KC_CAPS);
+                }
+
+                uint8_t exitcode = keycode == VI_ZZ ? KC_Z : KC_Q;
+
+                tap_code(KC_ESC);
+                register_code(KC_LSFT);
+                tap_code(KC_Z);
+                tap_code(exitcode);
+                unregister_code(KC_LSFT);
+            }
+            return false;
 
         // Shortcuts and macros
         case IS_WIN: {
@@ -138,6 +154,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
          case SYMMODE:
             sym_mode_enable(record);
             return false;
+        case MCRMODE:
+            macro_mode_enable(record);
 
         // Funky Symbol Shifts
         case KC_AMPR:
@@ -191,27 +209,44 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
         }
-        case KC_DQUO: return override_bracket_pair(is_shifted, KC_DQUO, KC_DQUO, keycode, record);
-        case KC_LABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
-        case KC_LBRC: return override_bracket_pair(is_shifted, KC_LBRC, KC_RBRC, keycode, record);
-        case KC_LPRN: return override_bracket_pair(is_shifted, KC_LPRN, KC_RPRN, keycode, record);
-        case KC_LCBR:
-            // if shifted on keydown, send C+right to exit
-            if(record->event.pressed){
-                uint8_t mod_state = get_mods();
-                del_oneshot_mods(MOD_MASK_SHIFT);
-                del_mods(MOD_MASK_SHIFT);
+        case KC_UNDS:
+            if (record->event.pressed) {
+                if (is_shifted) {
+                    uint8_t mod_state = get_mods();
+                    del_mods(MOD_MASK_SHIFT);
 
-                if(is_shifted){
-                    tap_code(KC_END);
+                    register_code16(KC_TILD);
+
+                    set_mods(mod_state);
+                    return false;
                 }
-                tap_code16(KC_LCBR);
-                set_mods(mod_state);
             }
-            return false;
+            else {
+                unregister_code16(KC_TILD);
+            }
+
+            return true;
+        case KC_DQUO: return override_bracket_pair(is_shifted, KC_DQUO, KC_DQUO, keycode, record);
+        // case KC_LABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
         // case KC_RABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
-        case KC_RBRC: return send_link_bracket_string(is_shifted, keycode, record);
+        case KC_LPRN: return override_bracket_pair(is_shifted, KC_LPRN, KC_RPRN, keycode, record);
         case KC_RPRN: return send_function_bracket_string(is_shifted, keycode, record);
+        // case KC_LBRC: return override_bracket_pair(is_shifted, KC_LBRC, KC_RBRC, keycode, record);
+        // case KC_LCBR:
+        //     // if shifted on keydown, send C+right to exit
+        //     if(record->event.pressed){
+        //         uint8_t mod_state = get_mods();
+        //         del_oneshot_mods(MOD_MASK_SHIFT);
+        //         del_mods(MOD_MASK_SHIFT);
+
+        //         if(is_shifted){
+        //             tap_code(KC_END);
+        //         }
+        //         tap_code16(KC_LCBR);
+        //         set_mods(mod_state);
+        //     }
+        //     return false;
+        // case KC_RBRC: return send_link_bracket_string(is_shifted, keycode, record);
 
         case COM_EXC: {
             return override_shift(is_shifted, KC_COMM, KC_EXLM, keycode, record);
@@ -300,6 +335,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
+        case MD_LINK:
+            if (record->event.pressed) {
+                del_mods(MOD_MASK_SHIFT);
+
+                SEND_STRING("[]()");
+                triple_tap(KC_LEFT);
+
+                set_mods(mod_state);
+            }
+            return false;
         case QMKCOMP: {
             if(record->event.pressed){
                 if(host_keyboard_led_state().caps_lock){
@@ -345,7 +390,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 if(is_windows){
                     tap_code16(G(S(KC_S)));
                 } else {
-                   tap_code16(S(C(KC_PSCR)));
+                   tap_code16(S(KC_PSCR));
                 }
             }
             return false;

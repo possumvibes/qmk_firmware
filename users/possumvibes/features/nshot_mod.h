@@ -14,6 +14,7 @@ typedef struct {
     uint16_t      trigger;
     uint8_t       modbit;
     uint8_t       max_count;
+    bool          active_on_rolls;
     oneshot_state state;
     uint8_t       count;
     bool          had_keydown;

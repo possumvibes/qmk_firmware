@@ -18,29 +18,21 @@ void num_mode_disable(void) {
 void num_mode_process(uint16_t keycode, keyrecord_t *record) {
     // Assess if we should exit layermode or continue processing normally.
     switch (keycode) {
+        case OS_LSFT ... OS_LGUI:
         case KC_1 ... KC_0:
+        case KY_8:
+        case KY_4:
+        case KY_5:
+        case KY_6:
         case KC_DLR:
-        case KC_COMM:
-        case KC_DOT:
+        case KC_QUOT:
+        case KC_SLSH:
+        case KC_SCLN:
         case COM_EXC:
         case DOT_QUE:
-        case KC_SLSH:
         case KC_MINS:
-        case KC_ASTR:
-        case KC_PLUS:
-        case KC_COLN:
-        case KC_SCLN:
-        case KC_QUOT:
         case KC_EQL:
-        case KC_LABK:
-        case KC_RABK:
         case KC_X:
-        case SYM_MO:
-        case SYMMODE:
-        case KY_0:
-        case KY_6:
-        case KY_7:
-        case OS_LSFT ... OS_LGUI:
 
             // process the code and stay in the mode *dabs*
             break;
@@ -172,11 +164,40 @@ void sym_mode_process(uint16_t keycode, keyrecord_t *record){
     switch (keycode) {
         // SYMMODE is a glorified oneshot layer that lets you hit shift without breaking.
         case OS_LSFT ... OS_LGUI:
+        case KC_MINS:
             break;
         default:
             // All other keys disable the layer mode.
             if (!record->event.pressed) {
                 sym_mode_disable();
+            }
+            break;
+    }
+}
+
+/* -------- Macro Mode -------- */
+static bool _macro_mode_active = false;
+// Turn macro mode on. To be called from a custom keycode
+void macro_mode_enable(keyrecord_t *record) {
+    _macro_mode_active = true;
+    layer_on(_MACRO);
+}
+
+// Turn macro mode off.
+void macro_mode_disable(void) {
+    _macro_mode_active = false;
+    layer_off(_MACRO);
+}
+
+void macro_mode_process(uint16_t keycode, keyrecord_t *record) {
+    // Assess if we should exit layermode or continue processing normally.
+    switch (keycode) {
+        case OS_LSFT ... OS_LGUI:
+            break;
+        default:
+            // All other keys disable the layer mode on keyup.
+            if (!record->event.pressed) {
+                macro_mode_disable();
             }
             break;
     }
@@ -192,5 +213,7 @@ void process_layermodes(uint16_t keycode, keyrecord_t *record) {
         nav_mode_process(keycode, record);
     } else if (_sym_mode_active){
         sym_mode_process(keycode, record);
+    } else if (_macro_mode_active){
+        macro_mode_process(keycode, record);
     }
 }

@@ -33,8 +33,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         case KY_A:
         case KH_I:
         case KY_QUOT:
-        case KY_6:
-        case KY_7:
             return TAPPING_TERM;
 
         // Ring
@@ -43,6 +41,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         case KS_I:
         case KH_A:
         case KY_L:
+        case KY_4:
             return TAPPING_TERM + 5;
 
         // Middle
@@ -51,6 +50,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         case KY_D:
         case KH_E:
         case KY_K:
+        case KY_5:
             return TAPPING_TERM - 10;
 
         // Index
@@ -60,7 +60,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         case KS_D:
         case KH_N:
         case KY_J:
-            return TAPPING_TERM - 15;
+        case KY_6:
+            return TAPPING_TERM - 16;
 
         // Upper Middle
         case KS_H:
@@ -71,6 +72,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         case KS_O:
         case KH_U:
         case KY_I:
+        case KY_8:
             return TAPPING_TERM + 5;
         default:
             return TAPPING_TERM;

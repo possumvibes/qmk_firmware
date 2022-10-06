@@ -6,10 +6,9 @@ enum layers {
     _COMBOREF,
     _QWERTY,
     _APTHD,
-    _GAMENAV,
-    _NETHACK,
     _FUNC,
     _NUM,
+    _MACRO,
     _SYM,
     _NAV,
     _SYSTEM
@@ -31,6 +30,7 @@ enum custom_keycodes {
     FUNMODE,  // activates a smart layer toggle for func
     NAVMODE,  // activates a smart nav layer
     SYMMODE,  // activates a smart mouse layer
+    MCRMODE,  // activates a smart numpad layer
 
     // Custom Punctuation
     COM_EXC,  // , !
@@ -42,9 +42,12 @@ enum custom_keycodes {
     RPR_SCL,  // ); ();
     LMBD_FN,  // () =>
     ANGLEBR,  // <|>
+    MD_LINK,  // [|]()
     KY_V1,    // V1
     KY_V2,    // V2
     KY_V3,    // V3
+    VI_ZZ,    // ZZ
+    VI_ZQ,    // ZQ
 
     // macros
     ALT_F4,   // per is_windows Close Application
@@ -69,11 +72,12 @@ enum custom_keycodes {
 
     // N-Shot Mods
     OS_LSFT,   // OS Mods
+    OSR_SFT,   // OS mod immune to rolling
     OS_LCTL,   // OS Mods
+    TS_LCTL,   // Two-shot ctrl,
     OS_LALT,   // OS Mods
     OS_LGUI,   // OS Mods
     OS_LGLC,   // OS G+C
-    TS_LCTL,   // Two-shot ctrl
 
     NEW_SAFE_RANGE  // Use for keymap-specific codes
 };
@@ -86,9 +90,17 @@ enum custom_keycodes {
 #define LTH(l,k)    LT(l,k)
 #define SYM(k)      LT(_SYM, k)
 
+// aliases to keep things short in layouts
+#define NON     XXXXXXX
+#define CAP     KC_CAPS
+#define TL0     THM_LH0
+#define TL1     THM_LH1
+#define TR0     THM_RH0
+#define TR1     THM_RH1
+
 // Thumb Keys
 #define THM_LH0     NAVMODE
-#define THM_LH1     OS_LSFT
+#define THM_LH1     OSR_SFT
 
 #define THM_RH0     KC_SPC
 #define THM_RH1     KC_BSPC
@@ -104,18 +116,14 @@ enum custom_keycodes {
 #define FUN_OSL     OSL(_FUNC)
 #define SYS_OSL     OSL(_SYSTEM)
 #define SYS_TO      TO(_SYSTEM)
-#define GAMENAV     TG(_GAMENAV)
-#define NETHACK     TG(_NETHACK)
 #define ALPHA       TO(0)
-
-#define KY_0        SYM(KC_0)
-#define KY_6        SYM(KC_6)
-#define KY_7        SYM(KC_7)
-#define KY_V        LT(_NUM, KC_V)
 
 #define LCLICK      KC_BTN1
 #define RCLICK      KC_BTN2
 #define MCLICK      KC_BTN3
+
+#define KC_BACK     A(KC_LEFT)
+#define KC_FWD      A(KC_RGHT)
 
 // i3 shortcuts
 #define LOGOUT      G(A(KC_Q))
@@ -168,16 +176,20 @@ enum custom_keycodes {
 #define KS_R        LALT_T(KC_R)
 #define KH_S        LALT_T(KC_S)
 #define KY_S        LALT_T(KC_S)
+#define KY_4        LALT_T(KC_4)
+
 
 // l middle
 #define KS_S        LCTL_T(KC_S)
 #define KH_T        LCTL_T(KC_T)
 #define KY_D        LCTL_T(KC_D)
+#define KY_5        LCTL_T(KC_5)
 
 // l index
 #define KS_T        LSFT_T(KC_T)
 #define KH_H        LSFT_T(KC_H)
 #define KY_F        LSFT_T(KC_F)
+#define KY_6        LSFT_T(KC_6)
 
 // l upper middle
 #define KS_H        LGUI_T(KC_H)
@@ -185,6 +197,7 @@ enum custom_keycodes {
 #define KH_G        LGUI_T(KC_G)
 #define KH_Y        LGUI_T(KC_Y)
 #define KY_E        LGUI_T(KC_E)
+#define KY_8        LGUI_T(KC_8)
 
 // r upper middle
 #define KS_O        RGUI_T(KC_O)

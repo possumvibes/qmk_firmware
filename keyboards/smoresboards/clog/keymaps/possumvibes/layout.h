@@ -10,11 +10,6 @@
  */
 
  // aliases to keep things short
-#define XXX XXXXXXX
-#define LT0 THM_LH0
-#define LT1 THM_LH1
-#define RT0 THM_RH0
-#define RT1 THM_RH1
 
 /* This is a wrapper for the LAYOUT function to allow passing cleaner or modified arguments. */
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
@@ -28,7 +23,7 @@
                   L11, L12, L13, L14, R10, R11, R12, R13, \
         L10, L20, L21, L22, L23, L24, R20, R21, R22, R23, R24, R14, \
              L30, L31, L32, L33, L34, R30, R31, R32, R33, R34, \
-                            LT0, LT1, RT1, RT0 \
+                            TL0, TL1, TR1, TR0 \
     )
 #define LAYOUT_possum_wrapper(...)  LAYOUT_possum(__VA_ARGS__)
 

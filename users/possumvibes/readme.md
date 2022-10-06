@@ -21,15 +21,16 @@ Another neat feature of the smart layer implementation is the ability to make a 
 
 ### Swapper
 Another Callum feature, modified to accept a reverse trigger and action. I am currently using this for Alt+Tab and Ctrl+Tab, with my SW_REV custom keycode acting as the Swapper-Reverse trigger key for both. The modifier is released with the press or release of another non-swapper key (the releasing keypress is swallowed and does not get handled after cancelling the swapper). I keep mine on the nav layer and access them primarily via my nav layer-tap, so releasing the layer tap-hold also releases the swapper modifier.
+Update as of September 2022: having these on the nav layer put too much stress on my nav thumb! This would probably not be an issue for a person without hypermobility, but here we are. 
 
 ### Combos
-I use combos very heavily for punctuation and shortcuts. I have `- * _ # / KC_ENT` on the bottom row; layer modes and cut-copy-paste on home row; tab, esc, and macros on the top row. Mouse keys are on left hand vertical combos, and more layer access combos are on thumb keys (vertical combo with QWERTY B/N on flat boards, horizontal combo on boards with lowered thumb clusters).
+I use combos very heavily for punctuation and shortcuts. I have enter on the bottom row and tab, esc, and macros on the top row. Home row horizontal combos include cut-copy-paste; home row diagonal with outer thumb activate layer modes. Extra punctuation is primarily on home row, but there are a few characters on home and top as well. Mouse keys are on left hand vertical combos, and more layer access combos are on thumb keys (vertical combo with QWERTY B/N on flat boards, horizontal combo on boards with lowered thumb clusters). As I've reduced down to 34-35 keys, I've added more cross-row combos for things like CapsLock+Word and per-OS app finder. Recent changes emphasize reduced rolling and typo'd activations.
 
-This [Combos KLE](http://www.keyboard-layout-editor.com/#/gists/4c081803e87b4e4e6b83b25dc6c86fb3) is a work in progress :)
+I don't have any images of the combos at this time, but `combos.def` is based off a the COMBOREF layer defined in `wrappers.h` and accordingly not too terrible to read out.
 
 ### Layout
 
-The base layout that all my boards use can be found here: [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/#/gists/79a1cfb7764af21fc37f416259811919). There are variations between boards based on encoders, column count, thumb key arrangement, etc, but the core alphas viewable here are those defined in `wrappers.h`.
+The base layout that all my boards use can be found here: [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/#/gists/79a1cfb7764af21fc37f416259811919) **Note 9/2022: KLE is now very out of date; coming soon probably**. There are variations between boards based on encoders, column count, thumb key arrangement, etc, but the core alphas viewable here are those defined in `wrappers.h`.
 
 ### Navigating the userspace
  

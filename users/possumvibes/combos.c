@@ -17,10 +17,12 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         // faster combos over rolls
         case esc:
         case esc_l:
+        case rh_indexmid:
+        case rh_indexring:
             return COMBO_TERM - 22
 
         // top row shortcuts
-        case back_fwd:
+        // case back_fwd:
         case dmenu:
         case save:
         case tab:
@@ -31,8 +33,6 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case cut:
         case copy:
         case paste:
-        case nummode:
-        case numosl:
         case enter:
             return COMBO_TERM - 18;
 
@@ -56,7 +56,8 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case rthumb:
         case outer_thumb:
             return COMBO_TERM - 10;
-
+        // case space_shift:
+        //     return COMBO_TERM + 15
         default:
             return COMBO_TERM;
     }

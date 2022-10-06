@@ -4,12 +4,13 @@
 #define modbit_lclg (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LGUI))
 
 nshot_state_t  nshot_states[] = {
-    {OS_LSFT, MOD_BIT(KC_LSFT), 1, os_up_unqueued, 0, false},
-    {OS_LCTL, MOD_BIT(KC_LCTL), 1, os_up_unqueued, 0, false},
-    {OS_LALT, MOD_BIT(KC_LALT), 1, os_up_unqueued, 0, false},
-    {OS_LGUI, MOD_BIT(KC_LGUI), 1, os_up_unqueued, 0, false},
-    {OS_LGLC, modbit_lclg, 1, os_up_unqueued, 0, false},
-    {TS_LCTL, MOD_BIT(KC_LCTL), 2, os_up_unqueued, 0, false}
+    {OS_LSFT, MOD_BIT(KC_LSFT), 1, true,  os_up_unqueued, 0, false},
+    {OS_LCTL, MOD_BIT(KC_LCTL), 1, true,  os_up_unqueued, 0, false},
+    {OS_LALT, MOD_BIT(KC_LALT), 1, true,  os_up_unqueued, 0, false},
+    {OS_LGUI, MOD_BIT(KC_LGUI), 1, true,  os_up_unqueued, 0, false},
+    {OS_LGLC, modbit_lclg,      1, true,  os_up_unqueued, 0, false},
+    {TS_LCTL, MOD_BIT(KC_LCTL), 2, true,  os_up_unqueued, 0, false},
+    {OSR_SFT, MOD_BIT(KC_LSFT), 1, false, os_up_unqueued, 0, false}
 };
 uint8_t        NUM_NSHOT_STATES = sizeof(nshot_states) / sizeof(nshot_state_t);
 
@@ -28,7 +29,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                 }
                 curr_state->state = os_down_unused;
                 curr_state->count = 0;
-                curr_state->had_keydown = false;
+                curr_state->had_keydown = curr_state->active_on_rolls;
             } else {
                 // Trigger keyup
                 switch (curr_state->state) {
@@ -51,7 +52,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                     // Cancel oneshot on designated cancel keydown.
                     curr_state->state = os_up_unqueued;
                     curr_state->count = 0;
-                    curr_state->had_keydown = false;
+                    curr_state->had_keydown = curr_state->active_on_rolls;
                     unregister_mods(curr_state->modbit);
                 }
 
@@ -67,7 +68,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                     if (curr_state->count == max_count) {
                         curr_state->state = os_up_unqueued;
                         curr_state->count = 0;
-                        curr_state->had_keydown = false;
+                        curr_state->had_keydown = curr_state->active_on_rolls;
                         unregister_mods(curr_state->modbit);
                     }
                 }
@@ -98,7 +99,7 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                             if (curr_state->count == max_count) {
                                 curr_state->state = os_up_unqueued;
                                 curr_state->count = 0;
-                                curr_state->had_keydown = false;
+                                curr_state->had_keydown = curr_state->active_on_rolls;
                                 unregister_mods(curr_state->modbit);
                             }
                             break;
@@ -136,6 +137,7 @@ bool is_nshot_ignored_key(uint16_t keycode) {
         case NUMMODE:
         case FUNMODE:
         case SYMMODE:
+        case MCRMODE:
         case SYS_OSL:
         case OS_LSFT:
         case OS_LCTL:
