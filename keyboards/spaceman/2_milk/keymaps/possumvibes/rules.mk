@@ -1,5 +1,5 @@
 VPATH += keyboards/gboards/ # using gboards combo code: see https://combos.gboards.ca/
-APPLY_USERSPACE			= no	# Don't apply the userspace keymap
+USER_NAME := possumvibes/pseudospace
 
 COMBO_ENABLE 			= yes 	# Enables use of combos
 MOUSEKEY_ENABLE 		= yes	# Enables mouse keys
