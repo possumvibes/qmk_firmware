@@ -31,11 +31,12 @@ COMB(dmenu_dn,          DMENU,      KC_L, KC_M)
 COMB(lparen,            KC_LPRN,    KC_X, KC_C)         // (
 COMB(asterisk,          KC_ASTR,    KC_C, KC_V)         // something!!
 COMB(enter,             KC_ENT,     KC_X, KC_V)         // Enter
+COMB(delete,            KC_DEL,     KC_A, KC_X)         // Func/Win Mode
 
 COMB(dash,              KC_MINS,    KC_M, KC_COMM)      // ;
 COMB(underscore,        KC_UNDS,    KC_M, KC_DOT)       // Unds
 COMB(rparen,            KC_RPRN,    KC_COMM, KC_DOT)    // )
-COMB(funmode,           MCRMODE,    KC_DOT, KC_SCLN)    // Func/Win Mode
+COMB(funmode,           KC_DEL,     KC_DOT, KC_SCLN)    // Func/Win Mode
 
 /* --- TOP-HOME VERTICALS --- */
 COMB(os_lglc_lvert,     OS_LGLC,    KC_E, KC_C)         // yet another os lgui+lctl
@@ -60,20 +61,10 @@ COMB(rthumb,            MCRMODE,    KC_SPC, KC_BSPC)    // Sym OSL
 
 
 /*---- DIAGONAL THUMBS ----*/
-// COMB(lt_out_ring,       MCRMODE,    KC_TAB, KC_S)
+COMB(lt_out_ring,       MCRMODE,    KC_TAB, KC_S)
 COMB(lt_out_middle,     SYMMODE,    KC_TAB, KC_D)
 COMB(lt_out_index,      FUNMODE,    KC_TAB, KC_F)
 
 COMB(rt_out_index,      FUNMODE,    KC_BSPC, KC_J)
 COMB(rt_out_middle,     NUM_OSL,    KC_BSPC, KC_K)
 COMB(rt_out_ring,       NUMMODE,    KC_BSPC, KC_L)
-
-// COMBOS CANCELLED on account of i roll vowel-space *really* fast
-// // duplicated bc i can't find the right thumb yet
-// // COMB(lt_in_ring,        MCRMODE,    KC_ENT, KC_S)
-// COMB(lt_in_middle,      SYMMODE,    KC_ENT, KC_D)
-// COMB(lt_in_index,       FUNMODE,    KC_ENT, KC_F)
-
-// COMB(rt_in_index,       FUNMODE,    KC_SPC, KC_J)
-// COMB(rt_in_middle,      NUM_OSL,    KC_SPC, KC_K)
-// COMB(rt_in_ring,        NUMMODE,    KC_SPC, KC_L)

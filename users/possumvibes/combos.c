@@ -38,6 +38,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
 
         // inner/outer cols (including cross-row)
         case funmode:
+        case delete:
         case navmode:
         case nummode_l:
         case panic_r:
