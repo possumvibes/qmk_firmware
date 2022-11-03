@@ -58,8 +58,8 @@
 #define __________________FUNC_R3__________________       KC_F1,   KC_F2,   KC_F3,   KC_F4,   OS_LGUI
 
 // Numpad left, mods, some punc, and jkG right.
-#define _________________NUMPADL_L1________________       KC_PERC, KC_7,    KY_8,    KC_9,    KC_PERC
-#define _________________NUMPADL_L2________________       KC_DLR,  KY_4,    KY_5,    KY_6,    KC_DLR
+#define _________________NUMPADL_L1________________       OS_LALT, KC_7,    KY_8,    KC_9,    KC_PERC
+#define _________________NUMPADL_L2________________       OS_LCTL, KY_4,    KY_5,    KY_6,    KC_DLR
 #define _________________NUMPADL_L3________________       KC_EQL,  KC_1,    KC_2,    KC_3,    KC_0
 
 #define _________________NUMPADL_R1________________       S(KC_G), KC_J,    KC_K,    KC_HASH, OS_LALT
@@ -67,13 +67,13 @@
 #define _________________NUMPADL_R3________________       XXXXXXX, _______, _______, _______, _______
 
 // Macro layer: so i can put the v2 macros somewhere shiftable
-#define _________________MACRO_L1__________________       OS_LALT, XXXXXXX, LMBD_FN, XXXXXXX, XXXXXXX
-#define _________________MACRO_L2__________________       OS_LCTL, MD_LINK, ANGLEBR, GET_SET, XXXXXXX
-#define _________________MACRO_L3__________________       OS_LGUI, XXXXXXX, XXXXXXX, RPR_SCL, XXXXXXX
+#define _________________MACRO_L1__________________       OS_LALT, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
+#define _________________MACRO_L2__________________       OS_LCTL, MD_LINK, LMBD_FN, GET_SET, XXXXXXX
+#define _________________MACRO_L3__________________       OS_LGUI, XXXXXXX, ANGLEBR, RPR_SCL, XXXXXXX
 
-#define _________________MACRO_R1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   _______
-#define _________________MACRO_R2__________________       XXXXXXX, KC_1,    KC_2,    KC_3,    _______
-#define _________________MACRO_R3__________________       XXXXXXX, MD_LINK, KC_ASTR, KC_HASH, XXXXXXX
+#define _________________MACRO_R1__________________       XXXXXXX, _______, _______, _______, XXXXXXX
+#define _________________MACRO_R2__________________       XXXXXXX, KC_DLR,  KC_AT,   KC_PERC, XXXXXXX
+#define _________________MACRO_R3__________________       XXXXXXX, _______, _______, _______, XXXXXXX
 
 #define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______
 #define ___________________SYM_L2__________________       _______, OS_LALT, OS_LCTL, OS_LSFT, _______
@@ -81,7 +81,7 @@
 
 #define ___________________SYM_R1__________________       KC_EXLM, KC_PLUS, KC_AMPR, KC_PIPE, KC_QUES
 #define ___________________SYM_R2__________________       KC_BSLS, KC_EQL,  KC_HASH, KC_GRV,  XXXXXXX
-#define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, KC_LABK, KC_RABK, KC_QUES
+#define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, KC_LABK, KC_RABK, XXXXXXX
 
 
 // Nav layer: We Got Mods
