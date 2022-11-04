@@ -156,6 +156,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case MCRMODE:
             macro_mode_enable(record);
+            return false;
 
         // Funky Symbol Shifts
         case KC_AMPR:
