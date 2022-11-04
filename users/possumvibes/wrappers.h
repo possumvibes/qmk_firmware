@@ -72,7 +72,7 @@
 #define _________________MACRO_L3__________________       OS_LGUI, XXXXXXX, ANGLEBR, RPR_SCL, XXXXXXX
 
 #define _________________MACRO_R1__________________       XXXXXXX, _______, _______, _______, XXXXXXX
-#define _________________MACRO_R2__________________       XXXXXXX, KC_PERC, KC_AT,   KC_DLR, XXXXXXX
+#define _________________MACRO_R2__________________       XXXXXXX, _______, KC_PERC, KC_DLR,  XXXXXXX
 #define _________________MACRO_R3__________________       XXXXXXX, _______, _______, _______, XXXXXXX
 
 #define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______
@@ -80,7 +80,7 @@
 #define ___________________SYM_L3__________________       _______, _______, _______, _______, _______
 
 #define ___________________SYM_R1__________________       KC_EXLM, KC_PLUS, KC_AMPR, KC_PIPE, KC_QUES
-#define ___________________SYM_R2__________________       KC_BSLS, KC_EQL,  KC_HASH, KC_GRV,  XXXXXXX
+#define ___________________SYM_R2__________________       KC_BSLS, KC_EQL,  KC_AT,   KC_GRV,  XXXXXXX
 #define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, KC_LABK, KC_RABK, XXXXXXX
 
 
