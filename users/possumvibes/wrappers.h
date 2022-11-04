@@ -63,7 +63,7 @@
 #define _________________NUMPADL_L3________________       KC_EQL,  KC_1,    KC_2,    KC_3,    KC_0
 
 #define _________________NUMPADL_R1________________       S(KC_G), KC_J,    KC_K,    KC_HASH, OS_LALT
-#define _________________NUMPADL_R2________________       KC_PLUS, KC_C,    XXXXXXX, KC_X,    OS_LCTL
+#define _________________NUMPADL_R2________________       KC_PLUS, KC_C,    PANIC,   KC_X,    OS_LCTL
 #define _________________NUMPADL_R3________________       XXXXXXX, _______, _______, _______, _______
 
 // Macro layer: so i can put the v2 macros somewhere shiftable
