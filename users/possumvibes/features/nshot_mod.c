@@ -3,14 +3,17 @@
 
 #define modbit_lclg (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LGUI))
 
+// for all mods, the last key of the n-shot will always behave as such:
+// [Mod down, mod up, previous n-shot keys if extant], A down, B down, A up, B up: Mod-A b
+// For key progression A down, Mod down, A up, Mod up:
 nshot_state_t  nshot_states[] = {
-    {OS_LSFT, MOD_BIT(KC_LSFT), 1, true,  os_up_unqueued, 0, false},
-    {OS_LCTL, MOD_BIT(KC_LCTL), 1, true,  os_up_unqueued, 0, false},
-    {OS_LALT, MOD_BIT(KC_LALT), 1, true,  os_up_unqueued, 0, false},
-    {OS_LGUI, MOD_BIT(KC_LGUI), 1, true,  os_up_unqueued, 0, false},
-    {OS_LGLC, modbit_lclg,      1, true,  os_up_unqueued, 0, false},
-    {TS_LCTL, MOD_BIT(KC_LCTL), 2, true,  os_up_unqueued, 0, false},
-    {OSR_SFT, MOD_BIT(KC_LSFT), 1, false, os_up_unqueued, 0, false}
+    {OS_LSFT, MOD_BIT(KC_LSFT), 1, true,  os_up_unqueued, 0, 0, false}, // S-a
+    {OS_LCTL, MOD_BIT(KC_LCTL), 1, true,  os_up_unqueued, 0, 0, false}, // C-a
+    {OS_LALT, MOD_BIT(KC_LALT), 1, true,  os_up_unqueued, 0, 0, false}, // A-a
+    {OS_LGUI, MOD_BIT(KC_LGUI), 1, true,  os_up_unqueued, 0, 0, false}, // G-a
+    {OS_LGLC, modbit_lclg,      1, true,  os_up_unqueued, 0, 0, false}, // G-C-a
+    {TS_LCTL, MOD_BIT(KC_LCTL), 2, true,  os_up_unqueued, 0, 0, false}, // C-a
+    {OSR_SFT, MOD_BIT(KC_LSFT), 1, false, os_up_unqueued, 0, 0, false}  // a
 };
 uint8_t        NUM_NSHOT_STATES = sizeof(nshot_states) / sizeof(nshot_state_t);
 
@@ -30,13 +33,19 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
                 curr_state->state = os_down_unused;
                 curr_state->count = 0;
                 curr_state->had_keydown = curr_state->active_on_rolls;
+                curr_state->timer = timer_read();
             } else {
                 // Trigger keyup
                 switch (curr_state->state) {
                     case os_down_unused:
                         // If we didn't use the mod while trigger was held, queue it.
+                        if((timer_elapsed(curr_state->timer)) < TAPPING_TERM) {
                         curr_state->state = os_up_queued;
                         break;
+                        }
+                        curr_state->state = os_up_unqueued;
+                            unregister_mods(curr_state->modbit);
+                            break;
                     case os_down_used:
                         // If we did use the mod while trigger was held, unregister it.
                         curr_state->state = os_up_unqueued;
@@ -133,7 +142,6 @@ bool is_nshot_ignored_key(uint16_t keycode) {
         // case THM_RH0:
         // case THM_RH1:  // THM_RH1 is currently backspace
         case NUM_OSL:
-        case ALPHA:
         case NUMMODE:
         case FUNMODE:
         case SYMMODE:

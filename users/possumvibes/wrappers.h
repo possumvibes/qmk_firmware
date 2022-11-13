@@ -19,7 +19,7 @@
 
 #define _________________QWERTY_R1_________________       KC_Y,    KC_U,    KY_I,    KC_O,    KC_P
 #define _________________QWERTY_R2_________________       KC_H,    KY_J,    KY_K,    KY_L,    KY_QUOT
-#define _________________QWERTY_R3_________________       KC_N,    KC_M,    COM_EXC, DOT_QUE, KC_SLSH
+#define _________________QWERTY_R3_________________       KC_N,    KC_M,    COM_EXC, DOT_QUE, XXXXXXX
 
 // all the cool kids reference combos from an alpha layout they don't remember anymore
 #define ________________COMBOREF_L1________________       KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
@@ -28,7 +28,7 @@
 
 #define ________________COMBOREF_R1________________       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
 #define ________________COMBOREF_R2________________       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
-#define ________________COMBOREF_R3________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
+#define ________________COMBOREF_R3________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  XXXXXXX
 
 // APT 3 Meets HD, not presently in use
 #define ________________APTv3_HD_L1________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
@@ -37,7 +37,7 @@
 
 #define ________________APTv3_HD_R1________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
 #define ________________APTv3_HD_R2________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define ________________APTv3_HD_R3________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, KC_SLSH
+#define ________________APTv3_HD_R3________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, XXXXXXX
 
 // APTv3. Daily Driver.
 #define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
@@ -46,30 +46,30 @@
 
 #define __________________APTv3_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
 #define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define __________________APTv3_R3_________________       KC_Z,    KC_QUOT, COM_EXC, DOT_QUE, KC_SLSH
+#define __________________APTv3_R3_________________       KC_Z,    KC_QUOT, COM_EXC, DOT_QUE, XXXXXXX
 
 // Functions and Window management. Funcs are organized by number except for the debuggin' ones
 #define __________________FUNC_L1__________________       OS_LALT, WKSP_9,  LSTDESK, LSTNODE, WKSP_10
 #define __________________FUNC_L2__________________       OS_LCTL, WKSP_1,  WKSP_2,  WKSP_3,  WKSP_4
-#define __________________FUNC_L3__________________       OS_LGUI, WKSP_5,  WKSP_6,  WKSP_7,  WKSP_8
+#define __________________FUNC_L3__________________       XXXXXXX, WKSP_5,  WKSP_6,  WKSP_7,  WKSP_8
 
-#define __________________FUNC_R1__________________       KC_F5,   KC_F6,   KC_F7,   KC_F8,   OS_LALT
+#define __________________FUNC_R1__________________       KC_F5,   KC_F6,   KC_F7,   KC_F8,   OS_LGUI
 #define __________________FUNC_R2__________________       KC_F9,   F11_TH,  KC_F10,  F6_TH,   OS_LCTL
-#define __________________FUNC_R3__________________       KC_F1,   KC_F2,   KC_F3,   KC_F4,   OS_LGUI
+#define __________________FUNC_R3__________________       KC_F1,   KC_F2,   KC_F3,   KC_F4,   XXXXXXX
 
 // Numpad left, mods, some punc, and jkG right.
-#define _________________NUMPADL_L1________________       OS_LALT, KC_7,    KY_8,    KC_9,    KC_PERC
-#define _________________NUMPADL_L2________________       OS_LCTL, KY_4,    KY_5,    KY_6,    KC_DLR
-#define _________________NUMPADL_L3________________       KC_EQL,  KC_1,    KC_2,    KC_3,    KC_0
+#define _________________NUMPADL_L1________________       XXXXXXX, KC_7,    KY_8,    KC_9,    KC_PERC
+#define _________________NUMPADL_L2________________       XXXXXXX, KY_4,    KY_5,    KY_6,    KC_DLR
+#define _________________NUMPADL_L3________________       XXXXXXX, KC_1,    KC_2,    KC_3,    KC_0
 
-#define _________________NUMPADL_R1________________       S(KC_G), KC_J,    KC_K,    KC_HASH, OS_LALT
-#define _________________NUMPADL_R2________________       KC_PLUS, KC_C,    PANIC,   KC_X,    OS_LCTL
-#define _________________NUMPADL_R3________________       XXXXXXX, _______, _______, _______, _______
+#define _________________NUMPADL_R1________________       KC_EQL,  KC_K,    OS_LGUI, PANIC,   XXXXXXX
+#define _________________NUMPADL_R2________________       KC_PLUS, S(KC_G), OS_LCTL, OS_LALT, XXXXXXX
+#define _________________NUMPADL_R3________________       XXXXXXX, KC_J,    KC_X,    KC_C,    XXXXXXX
 
 // Macro layer: so i can put the v2 macros somewhere shiftable
-#define _________________MACRO_L1__________________       OS_LALT, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
-#define _________________MACRO_L2__________________       OS_LCTL, MD_LINK, LMBD_FN, GET_SET, XXXXXXX
-#define _________________MACRO_L3__________________       OS_LGUI, XXXXXXX, ANGLEBR, RPR_SCL, XXXXXXX
+#define _________________MACRO_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
+#define _________________MACRO_L2__________________       XXXXXXX, MD_LINK, ANGLEBR, GET_SET, XXXXXXX
+#define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, LMBD_FN, RPR_SCL, XXXXXXX
 
 #define _________________MACRO_R1__________________       XXXXXXX, _______, _______, _______, XXXXXXX
 #define _________________MACRO_R2__________________       XXXXXXX, _______, KC_PERC, KC_DLR,  XXXXXXX
@@ -91,7 +91,7 @@
 
 #define ___________________NAV_R1__________________       CTL_U,   KC_HOME, KC_UP,   KC_END,  KC_DEL
 #define ___________________NAV_R2__________________       F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, CLEAR
-#define ___________________NAV_R3__________________       XXXXXXX, ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
+#define ___________________NAV_R3__________________       ML_LGUI, ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
 
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.

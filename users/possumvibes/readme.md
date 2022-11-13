@@ -10,9 +10,11 @@ These are "locking" toggle-able mods with a defined cancel/continue key list. I 
 ### N-shot mods
 These are an adaptation of the Callum oneshot mods that use array structure and leave the mod "sticky" for a specified *n* amount of keypresses (practically speaking, this means one-shot mods plus a two-shot Ctrl.) N-shots leverage mod bits rather than mod keycodes to allow for multi-mod n-shots (e.g., Gui+Ctrl). Like the Callum implementation, "ignore" and "cancel" keys are defined in separate functions. 
 
-This implementation solves the issue of shifting extra characters when rolling present in the base Callum implementation.
+This implementation solves the issue of shifting extra characters when rolling present in the base Callum implementation. It also makes the ability to roll _into_ the mod customizable. When held for longer than TAPPING_TERM without another keypress, the mod will act as a normal held mod and release without queueing.
 
 I currently use nshots on alpha as my thumb one-shot shift, in combos for ease of window management, and on my nav layer, which is accessible from any layer, for use on my non-alpha layers. I use a combination of home row mods, thumb shift, combos, and n-shots on a layer for my mods to allow me multiple ways of activating my most commonly used mods. 
+
+Of note: if not using an n-shot on thumb in combination with smart layers for order-agnostic layer+mod activation, *use the default OSM for thumbshift instead*. 
 
 ### Smart Layers
 Smart layers are, functionally, caps word but for your layer of choice, with cancel keys defined. I have NumMode and FuncMode, each of which allow me to keep typing numbers or f-keys respectively until I hit a cancel key. These are likewise born out of a passionate dislike of holding layer toggles or using thumbs for any kind of fast or repeated movement (*especially* involving holding layer toggles). These are very much inspired by the T-34 layout, linked in the code influences section.

@@ -87,7 +87,6 @@ enum custom_keycodes {
 
 /* ---------- Aliases ---------- */
 #define TH(k)       LT(0,k)
-#define LTH(l,k)    LT(l,k)
 #define SYM(k)      LT(_SYM, k)
 
 // aliases to keep things short in layouts
@@ -116,7 +115,6 @@ enum custom_keycodes {
 #define FUN_OSL     OSL(_FUNC)
 #define SYS_OSL     OSL(_SYSTEM)
 #define SYS_TO      TO(_SYSTEM)
-#define ALPHA       TO(0)
 
 #define LCLICK      KC_BTN1
 #define RCLICK      KC_BTN2
@@ -125,7 +123,7 @@ enum custom_keycodes {
 #define KC_BACK     A(KC_LEFT)
 #define KC_FWD      A(KC_RGHT)
 
-// i3 shortcuts
+// window manager shortcuts
 #define LOGOUT      G(A(KC_Q))
 #define CONFIG      G(A(KC_R))
 #define LSTDESK     G(KC_TILD)
@@ -144,7 +142,7 @@ enum custom_keycodes {
 // Default Layer States
 #define QWERTY      DF(_QWERTY)
 #define APT         DF(_APT)
-#define APTHD     DF(_APTHD)
+#define APTHD       DF(_APTHD)
 
 // Shortcuts
 #define S_CUT       S(KC_DEL)
@@ -158,7 +156,6 @@ enum custom_keycodes {
 #define S_FWD       A(KC_RIGHT)
 #define C_BSPC      C(KC_BSPC)
 #define CTL_U       C(KC_U)
-#define CTL_GUI     C(KC_LGUI)
 
 #define F3_TH       TH(KC_F3)
 #define F5_TH       TH(KC_F5)
