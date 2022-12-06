@@ -45,7 +45,7 @@ COMB(os_lglc_rvert,     OS_LGLC,    KC_F, KC_R)         // OS lgui+lctl
 /* --- HOME-BOTTOM VERTICALS --- */
 COMB(click_l,           LCLICK,     KC_D, KC_C)         // Left Click :)
 COMB(click_r,           RCLICK,     KC_V, KC_F)         // Right Click :)
-COMB(dbclick_l,         DBCLICK,    KC_G, KC_B)         // Double Click :)
+COMB(click_lctl,        CCLICK,     KC_G, KC_B)         // Ctrl + click
 
 COMB(hash2,             KC_HASH,    KC_J, KC_M)         // Hash TWO: the hashening
 COMB(fslash2,           KC_SLSH,    KC_K, KC_COMM)      // Slash TWO: the slashening

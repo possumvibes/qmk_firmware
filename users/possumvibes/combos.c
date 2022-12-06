@@ -49,7 +49,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         // home row verticals
         case click_l:
         case click_r:
-        case dbclick_l:
+        case click_lctl:
         case fslash2:
             return COMBO_TERM - 15;
 

@@ -60,11 +60,11 @@
 // Numpad left, mods, some punc, and jkG right.
 #define _________________NUMPADL_L1________________       XXXXXXX, KC_7,    KY_8,    KC_9,    KC_PERC
 #define _________________NUMPADL_L2________________       XXXXXXX, KY_4,    KY_5,    KY_6,    KC_DLR
-#define _________________NUMPADL_L3________________       XXXXXXX, KC_1,    KC_2,    KC_3,    KC_0
+#define _________________NUMPADL_L3________________       KC_X,    KC_1,    KC_2,    KC_3,    KC_0
 
-#define _________________NUMPADL_R1________________       KC_EQL,  KC_K,    OS_LGUI, PANIC,   XXXXXXX
-#define _________________NUMPADL_R2________________       KC_PLUS, S(KC_G), OS_LCTL, OS_LALT, XXXXXXX
-#define _________________NUMPADL_R3________________       XXXXXXX, KC_J,    KC_X,    KC_C,    XXXXXXX
+#define _________________NUMPADL_R1________________       KC_EQL,  KC_PLUS, KC_COLN, PANIC,   XXXXXXX
+#define _________________NUMPADL_R2________________       XXXXXXX, KC_J,    KC_K,    S(KC_G), XXXXXXX
+#define _________________NUMPADL_R3________________       XXXXXXX, _______, _______, _______, XXXXXXX
 
 // Macro layer: so i can put the v2 macros somewhere shiftable
 #define _________________MACRO_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
@@ -72,7 +72,7 @@
 #define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, LMBD_FN, RPR_SCL, XXXXXXX
 
 #define _________________MACRO_R1__________________       XXXXXXX, _______, _______, _______, XXXXXXX
-#define _________________MACRO_R2__________________       XXXXXXX, _______, KC_PERC, KC_DLR,  XXXXXXX
+#define _________________MACRO_R2__________________       XXXXXXX, _______, KC_DLR,  KC_PERC, XXXXXXX
 #define _________________MACRO_R3__________________       XXXXXXX, _______, _______, _______, XXXXXXX
 
 #define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______

@@ -57,7 +57,6 @@ enum custom_keycodes {
     COMMENT,  // C(KC)
     UNCOMNT,  // C(KU)
     SCREEN,   // Screenshot per OS
-    DBCLICK,  // double mouse click
 
     // Swapper keys
     SW_REV,  // Dead key, reverse direction for swapper
@@ -119,6 +118,7 @@ enum custom_keycodes {
 #define LCLICK      KC_BTN1
 #define RCLICK      KC_BTN2
 #define MCLICK      KC_BTN3
+#define CCLICK      C(LCLICK)
 
 #define KC_BACK     A(KC_LEFT)
 #define KC_FWD      A(KC_RGHT)

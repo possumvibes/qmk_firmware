@@ -380,12 +380,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
-        case DBCLICK:
-            if(record->event.pressed){
-                tap_code16(LCLICK);
-                tap_code16(LCLICK);
-            }
-            return false;
         case SCREEN:
             if(record->event.pressed){
                 if(is_windows){
