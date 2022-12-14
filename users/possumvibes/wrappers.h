@@ -40,11 +40,11 @@
 #define ________________APTv3_HD_R3________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, XXXXXXX
 
 // APTv3. Daily Driver.
-#define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
+#define __________________APTv3_L1_________________       KC_Q,    KC_G,    KH_D,    KC_F,    KC_B
 #define __________________APTv3_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
 #define __________________APTv3_L3_________________       KC_X,    KC_C,    KC_M,    KC_P,    KC_V
 
-#define __________________APTv3_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
+#define __________________APTv3_R1_________________       KC_W,    KC_L,    KH_U,    KC_O,    KC_Y
 #define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
 #define __________________APTv3_R3_________________       KC_Z,    KC_QUOT, COM_EXC, DOT_QUE, XXXXXXX
 
