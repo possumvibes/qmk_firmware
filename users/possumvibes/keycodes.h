@@ -48,6 +48,10 @@ enum custom_keycodes {
     KY_V3,    // V3
     VI_ZZ,    // ZZ
     VI_ZQ,    // ZQ
+    VI_AW,    // aw aW
+    VI_IW,    // iw iW
+    VI_YA,     // ya
+    VI_YI,     // yi
 
     // macros
     ALT_F4,   // per is_windows Close Application

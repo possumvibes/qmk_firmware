@@ -68,12 +68,12 @@
 
 // Macro layer: so i can put the v2 macros somewhere shiftable
 #define _________________MACRO_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
-#define _________________MACRO_L2__________________       XXXXXXX, MD_LINK, ANGLEBR, GET_SET, XXXXXXX
-#define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, LMBD_FN, RPR_SCL, XXXXXXX
+#define _________________MACRO_L2__________________       XXXXXXX, MD_LINK, ANGLEBR, LMBD_FN, XXXXXXX
+#define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, GET_SET, RPR_SCL, XXXXXXX
 
-#define _________________MACRO_R1__________________       XXXXXXX, _______, _______, _______, XXXXXXX
-#define _________________MACRO_R2__________________       XXXXXXX, _______, KC_DLR,  KC_PERC, XXXXXXX
-#define _________________MACRO_R3__________________       XXXXXXX, _______, _______, _______, XXXXXXX
+#define _________________MACRO_R1__________________       XXXXXXX, KC_W,    VI_IW,   VI_YI,   XXXXXXX
+#define _________________MACRO_R2__________________       XXXXXXX, KC_Y,    VI_AW,   VI_YA,   XXXXXXX
+#define _________________MACRO_R3__________________       XXXXXXX, KC_DLR,  KC_PERC, _______, XXXXXXX
 
 #define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______
 #define ___________________SYM_L2__________________       _______, OS_LALT, OS_LCTL, OS_LSFT, _______

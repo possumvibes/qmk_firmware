@@ -102,7 +102,43 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(KC_LSFT);
             }
             return false;
+        case VI_IW:
+        case VI_AW:
+            if(record->event.pressed){
+                if(host_keyboard_led_state().caps_lock){
+                    tap_code16(KC_CAPS);
+                }
 
+                uint8_t code = keycode == VI_IW ? KC_I : KC_A;
+                if(is_shifted){
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    del_mods(MOD_MASK_SHIFT);
+                }
+                tap_code(code);
+                if (is_shifted){
+                    tap_code16(S(KC_W));
+                    return false;
+                }
+                tap_code(KC_W);
+            }
+            return false;
+        case VI_YA:
+        case VI_YI:
+            if(record->event.pressed){
+                if(host_keyboard_led_state().caps_lock){
+                    tap_code16(KC_CAPS);
+                }
+
+                if(is_shifted){
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    del_mods(MOD_MASK_SHIFT);
+                }
+
+                uint8_t exitcode = keycode == VI_YA ? KC_A : KC_I;
+                tap_code(KC_Y);
+                tap_code(exitcode);
+            }
+            return false;
         // Shortcuts and macros
         case IS_WIN: {
             if(record->event.pressed){
