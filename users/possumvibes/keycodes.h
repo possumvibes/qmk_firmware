@@ -100,13 +100,6 @@ enum custom_keycodes {
 #define TR0     THM_RH0
 #define TR1     THM_RH1
 
-// Thumb Keys
-#define THM_LH0     NAVMODE
-#define THM_LH1     OSR_SFT
-
-#define THM_RH0     KC_SPC
-#define THM_RH1     KC_BSPC
-
 // layer toggles
 #define SYM_OSL     OSL(_SYM)
 #define SYM_TG      TG(_SYM)

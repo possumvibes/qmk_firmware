@@ -37,7 +37,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
             return COMBO_TERM - 18;
 
         // inner/outer cols (including cross-row)
-        case funmode:
+        case backspace:
         case delete:
         case navmode:
         case nummode_l:

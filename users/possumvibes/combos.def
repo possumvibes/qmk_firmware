@@ -31,16 +31,17 @@ COMB(dmenu_dn,          DMENU,      KC_L, KC_M)
 COMB(lparen,            KC_LPRN,    KC_X, KC_C)         // (
 COMB(asterisk,          KC_ASTR,    KC_C, KC_V)         // something!!
 COMB(enter,             KC_ENT,     KC_X, KC_V)         // Enter
-COMB(delete,            KC_DEL,     KC_A, KC_X)         // Func/Win Mode
+COMB(backspace,         KC_BSPC,     KC_A, KC_X)        // Backspace?
 
 COMB(dash,              KC_MINS,    KC_M, KC_COMM)      // ;
 COMB(underscore,        KC_UNDS,    KC_M, KC_DOT)       // Unds
 COMB(rparen,            KC_RPRN,    KC_COMM, KC_DOT)    // )
-COMB(funmode,           KC_DEL,     KC_DOT, KC_SCLN)    // Func/Win Mode
+COMB(delete,            KC_DEL,     KC_DOT, KC_SCLN)    // Func/Win Mode
 
 /* --- TOP-HOME VERTICALS --- */
-COMB(os_lglc_lvert,     OS_LGLC,    KC_E, KC_C)         // yet another os lgui+lctl
-COMB(os_lglc_rvert,     OS_LGLC,    KC_F, KC_R)         // OS lgui+lctl
+COMB(os_lglc_lvert,     OS_LGLC,    KC_F, KC_R)         // OS lgui+lctl
+COMB(os_lglc_rvert,     OS_LGLC,    KC_J, KC_U)         // yet another os lgui+lctl
+COMB(dollar,            KC_DLR,     KC_Y, KC_H)         // $
 
 /* --- HOME-BOTTOM VERTICALS --- */
 COMB(click_l,           LCLICK,     KC_D, KC_C)         // Left Click :)
