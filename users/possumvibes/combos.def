@@ -40,6 +40,7 @@ COMB(delete,            KC_DEL,     KC_DOT, KC_SCLN)    // Func/Win Mode
 
 /* --- TOP-HOME VERTICALS --- */
 COMB(os_lglc_lvert,     OS_LGLC,    KC_F, KC_R)         // OS lgui+lctl
+COMB(tilde,             KC_TILD,    KC_T, KC_G)         // ~
 COMB(os_lglc_rvert,     OS_LGLC,    KC_J, KC_U)         // yet another os lgui+lctl
 COMB(dollar,            KC_DLR,     KC_Y, KC_H)         // $
 

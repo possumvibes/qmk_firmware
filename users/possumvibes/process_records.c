@@ -205,7 +205,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_PLUS:
         case KC_QUES:
         case KC_SLSH:
-        case KC_TILD:
+        case KC_UNDS:
         {
             if(record ->event.pressed) {
                 // If shifted, double these common punctuation marks.
@@ -246,22 +246,35 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
         }
-        case KC_UNDS:
+        #ifdef CAPS_WORD_ENABLE
+        case KC_DLR:
             if (record->event.pressed) {
                 if (is_shifted) {
-                    uint8_t mod_state = get_mods();
                     del_mods(MOD_MASK_SHIFT);
 
-                    register_code16(KC_TILD);
+                    register_code16(KC_DLR);
+                    caps_word_on();
 
-                    set_mods(mod_state);
                     return false;
                 }
             }
             else {
-                unregister_code16(KC_TILD);
+                unregister_code16(KC_DLR);
             }
 
+            return true;
+        #endif
+        case KC_TILD:
+            if(record->event.pressed) {
+                if (is_shifted) {
+                    uint8_t mod_state = get_mods();
+                    del_mods(MOD_MASK_SHIFT);
+
+                    SEND_STRING("~/");
+                    set_mods(mod_state);
+                    return false;
+                }
+            }
             return true;
         case KC_DQUO: return override_bracket_pair(is_shifted, KC_DQUO, KC_DQUO, keycode, record);
         // case KC_LABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);

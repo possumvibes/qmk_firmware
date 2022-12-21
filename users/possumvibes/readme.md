@@ -28,7 +28,7 @@ Update as of September 2022: having these on the nav layer put too much stress o
 ### Combos
 I use combos very heavily for punctuation and shortcuts. I have enter on the bottom row and tab, esc, and macros on the top row. Home row horizontal combos include cut-copy-paste; home row diagonal with outer thumb activate layer modes. Extra punctuation is primarily on home row, but there are a few characters on home and top as well. Mouse keys are on left hand vertical combos, and more layer access combos are on thumb keys (vertical combo with QWERTY B/N on flat boards, horizontal combo on boards with lowered thumb clusters). As I've reduced down to 34-35 keys, I've added more cross-row combos for things like CapsLock+Word and per-OS app finder. Recent changes emphasize reduced rolling and typo'd activations.
 
-I don't have any images of the combos at this time, but `combos.def` is based off a the COMBOREF layer defined in `wrappers.h` and accordingly not too terrible to read out.
+I don't have any images of the combos at this time, but `combos.def` is based off a the COMBOREF layer defined in `wrappers.h` and accordingly not too terrible to read out. (I *do* have images of the combos, just as soon as i figure out how best to upload 'em)
 
 ### Layout
 
