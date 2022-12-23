@@ -79,7 +79,7 @@
 #define _________________MACRO_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
 #define _________________MACRO_L2__________________       XXXXXXX, MD_LINK, ANGLEBR, LMBD_FN, GET_SET
 #define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, XXXXXXX, RPR_SCL, XXXXXXX
-#define ____MACRO_LT____                                  THM_LH0, KC_0
+#define ____MACRO_LT____                                  THM_LH0, THM_LH1
 
 #define _________________MACRO_R1__________________       XXXXXXX, KC_W,    VI_IW,   VI_YI,   XXXXXXX
 #define _________________MACRO_R2__________________       XXXXXXX, KC_Y,    VI_AW,   VI_YA,   XXXXXXX
