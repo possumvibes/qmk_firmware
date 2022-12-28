@@ -79,7 +79,7 @@
 #define _________________MACRO_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
 #define _________________MACRO_L2__________________       XXXXXXX, MD_LINK, ANGLEBR, LMBD_FN, GET_SET
 #define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, XXXXXXX, RPR_SCL, XXXXXXX
-#define ____MACRO_LT____                                  THM_LH0, THM_LH1
+#define ____MACRO_LT____                                  THM_LH0, OSR_SFT
 
 #define _________________MACRO_R1__________________       XXXXXXX, KC_W,    VI_IW,   VI_YI,   XXXXXXX
 #define _________________MACRO_R2__________________       XXXXXXX, KC_Y,    VI_AW,   VI_YA,   XXXXXXX
@@ -89,12 +89,12 @@
 #define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______
 #define ___________________SYM_L2__________________       _______, OS_LALT, OS_LCTL, OS_LSFT, _______
 #define ___________________SYM_L3__________________       _______, _______, _______, _______, _______
-#define _____SYM_LT_____                                  _______, THM_RH1
+#define _____SYM_LT_____                                  THM_LH0, OSR_SFT
 
 #define ___________________SYM_R1__________________       KC_EXLM, KC_PLUS, KC_AMPR, KC_PIPE, KC_QUES
 #define ___________________SYM_R2__________________       KC_BSLS, KC_EQL,  KC_AT,   KC_GRV,  XXXXXXX
 #define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, KC_LABK, KC_RABK, XXXXXXX
-#define _____SYM_RT_____                                  THM_LH1, _______
+#define _____SYM_RT_____                                  OSR_SFT, _______
 
 
 // Nav layer: We Got Mods
