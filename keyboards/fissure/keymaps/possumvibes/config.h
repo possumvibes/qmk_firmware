@@ -1,7 +1,7 @@
 #pragma once
 
 #undef DEBOUNCE
-#define DEBOUNCE 7
+#define DEBOUNCE 8
 
 // SPACE SAVERS WHEN NOT DEBUGGING
 #ifndef NO_DEBUG
