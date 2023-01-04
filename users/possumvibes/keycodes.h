@@ -50,8 +50,8 @@ enum custom_keycodes {
     VI_ZQ,    // ZQ
     VI_AW,    // aw aW
     VI_IW,    // iw iW
-    VI_YA,     // ya
-    VI_YI,     // yi
+    VI_YAW,     // ya
+    VI_YIW,     // yi
 
     // macros
     ALT_F4,   // per is_windows Close Application

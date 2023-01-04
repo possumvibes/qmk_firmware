@@ -81,9 +81,9 @@
 #define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, XXXXXXX, RPR_SCL, XXXXXXX
 #define ____MACRO_LT____                                  THM_LH0, OSR_SFT
 
-#define _________________MACRO_R1__________________       XXXXXXX, KC_W,    VI_IW,   VI_YI,   XXXXXXX
-#define _________________MACRO_R2__________________       XXXXXXX, KC_Y,    VI_AW,   VI_YA,   XXXXXXX
-#define _________________MACRO_R3__________________       XXXXXXX, KC_DLR,  KC_PERC, _______, XXXXXXX
+#define _________________MACRO_R1__________________       XXXXXXX, _______, _______, _______, XXXXXXX
+#define _________________MACRO_R2__________________       XXXXXXX, KC_Y,    VI_AW,   VI_IW,   XXXXXXX
+#define _________________MACRO_R3__________________       XXXXXXX, KC_W,    VI_YAW,  VI_YIW,  XXXXXXX
 #define ____MACRO_RT____                                  OSR_SFT, _______
 
 #define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______

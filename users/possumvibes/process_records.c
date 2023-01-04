@@ -110,33 +110,39 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
 
                 uint8_t code = keycode == VI_IW ? KC_I : KC_A;
+                uint16_t word_code = is_shifted ? S(KC_W) : KC_W;
+
                 if(is_shifted){
                     del_oneshot_mods(MOD_MASK_SHIFT);
                     del_mods(MOD_MASK_SHIFT);
                 }
                 tap_code(code);
-                if (is_shifted){
-                    tap_code16(S(KC_W));
-                    return false;
-                }
-                tap_code(KC_W);
+                tap_code16(word_code);
+              //  if (is_shifted){
+              //      tap_code16(S(KC_W));
+              //      return false;
+              //  }
+              //  tap_code(KC_W);
             }
             return false;
-        case VI_YA:
-        case VI_YI:
+        case VI_YAW:
+        case VI_YIW:
             if(record->event.pressed){
                 if(host_keyboard_led_state().caps_lock){
                     tap_code16(KC_CAPS);
                 }
 
+                uint8_t textobject = keycode == VI_YAW ? KC_A : KC_I;
+                uint16_t word_code = is_shifted ? S(KC_W) : KC_W;
+                
                 if(is_shifted){
                     del_oneshot_mods(MOD_MASK_SHIFT);
                     del_mods(MOD_MASK_SHIFT);
                 }
 
-                uint8_t exitcode = keycode == VI_YA ? KC_A : KC_I;
                 tap_code(KC_Y);
-                tap_code(exitcode);
+                tap_code(textobject);
+                tap_code16(word_code);
             }
             return false;
         // Shortcuts and macros
