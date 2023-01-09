@@ -25,7 +25,7 @@
 
 #define _________________QWERTY_R1_________________       KC_Y,    KC_U,    KY_I,    KC_O,    KC_P
 #define _________________QWERTY_R2_________________       KC_H,    KY_J,    KY_K,    KY_L,    KY_QUOT
-#define _________________QWERTY_R3_________________       KC_N,    KC_M,    COM_EXC, DOT_QUE, XXXXXXX
+#define _________________QWERTY_R3_________________       KC_N,    KC_M,    KC_COMM, KC_DOT, XXXXXXX
 
 // all the cool kids reference combos from an alpha layout they don't remember anymore
 #define ________________COMBOREF_L1________________       KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
@@ -43,7 +43,7 @@
 
 #define ________________APTv3_HD_R1________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
 #define ________________APTv3_HD_R2________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define ________________APTv3_HD_R3________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, XXXXXXX
+#define ________________APTv3_HD_R3________________       KC_Z,    KC_M,    KC_COMM, KC_DOT, XXXXXXX
 
 // APTv3. Daily Driver.
 #define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
@@ -52,7 +52,7 @@
 
 #define __________________APTv3_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
 #define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define __________________APTv3_R3_________________       KC_Z,    KC_QUOT, COM_EXC, DOT_QUE, XXXXXXX
+#define __________________APTv3_R3_________________       KC_Z,    KC_QUOT, KC_COMM, KC_DOT,  KC_DEL
 
 // Functions and Window management. Funcs are organized by number except for the debuggin' ones
 #define __________________FUNC_L1__________________       OS_LALT, WKSP_9,  LSTDESK, LSTNODE, WKSP_10
@@ -77,13 +77,13 @@
 
 // Macro layer: so i can put the v2 macros somewhere shiftable
 #define _________________MACRO_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
-#define _________________MACRO_L2__________________       XXXXXXX, MD_LINK, ANGLEBR, LMBD_FN, GET_SET
-#define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, XXXXXXX, RPR_SCL, XXXXXXX
+#define _________________MACRO_L2__________________       XXXXXXX, VI_IW,   VI_AW,   KC_Y,    XXXXXXX
+#define _________________MACRO_L3__________________       XXXXXXX, VI_YIW,  VI_YAW,  KC_W,    XXXXXXX
 #define ____MACRO_LT____                                  THM_LH0, OSR_SFT
 
-#define _________________MACRO_R1__________________       XXXXXXX, _______, _______, _______, XXXXXXX
-#define _________________MACRO_R2__________________       XXXXXXX, KC_Y,    VI_AW,   VI_IW,   XXXXXXX
-#define _________________MACRO_R3__________________       XXXXXXX, KC_W,    VI_YAW,  VI_YIW,  XXXXXXX
+#define _________________MACRO_R1__________________       XXXXXXX, _______, GET_SET, _______, XXXXXXX
+#define _________________MACRO_R2__________________       XXXXXXX, LMBD_FN, ANGLEBR, MD_LINK, XXXXXXX
+#define _________________MACRO_R3__________________       XXXXXXX, RPR_SCL, MD_CODE, XXXXXXX, XXXXXXX
 #define ____MACRO_RT____                                  OSR_SFT, _______
 
 #define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______
@@ -91,9 +91,9 @@
 #define ___________________SYM_L3__________________       _______, _______, _______, _______, _______
 #define _____SYM_LT_____                                  THM_LH0, OSR_SFT
 
-#define ___________________SYM_R1__________________       KC_EXLM, KC_PLUS, KC_AMPR, KC_PIPE, KC_QUES
-#define ___________________SYM_R2__________________       KC_BSLS, KC_EQL,  KC_AT,   KC_GRV,  XXXXXXX
-#define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, KC_LABK, KC_RABK, XXXXXXX
+#define ___________________SYM_R1__________________       KC_EXLM, KC_PLUS, KC_AMPR, KC_PIPE, XXXXXXX
+#define ___________________SYM_R2__________________       XXXXXXX, KC_EQL,  KC_BSLS, KC_GRV,  XXXXXXX
+#define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, _______, _______, XXXXXXX
 #define _____SYM_RT_____                                  OSR_SFT, _______
 
 
@@ -127,7 +127,7 @@
 
 #define _______________GAMENAV_QWE_R1______________       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
 #define _______________GAMENAV_QWE_R2______________       KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT
-#define _______________GAMENAV_QWE_R3______________       KC_N,    KC_M,    COM_EXC, DOT_QUE, KC_UP
+#define _______________GAMENAV_QWE_R3______________       KC_N,    KC_M,    KC_COMM, KC_DOT, KC_UP
 #define _______________GAMENAV_QWE_R4_______________________      KC_BSPC, KC_SPC,  KC_SCLN, KC_LEFT, KC_DOWN, KC_TAB
 
 
@@ -145,7 +145,7 @@
 
 #define __________________APTHD_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
 #define __________________APTHD_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define __________________APTHD_R3_________________       KC_Z,    KC_M,    COM_EXC, DOT_QUE, KC_SLSH
+#define __________________APTHD_R3_________________       KC_Z,    KC_M,    KC_COMM, KC_DOT, KC_SLSH
 
 // Canary
 #define _________________CANARY_L1_________________       KC_W,    KC_L,    KH_Y,    KC_P,    KC_B
@@ -154,4 +154,4 @@
 
 #define _________________CANARY_R1_________________       KC_Z,    KC_F,    KS_O,    KC_U,    KC_QUOT
 #define _________________CANARY_R2_________________       KC_M,    KH_N,    KH_E,    KS_I,    KY_A
-#define _________________CANARY_R3_________________       KC_X,    KC_H,    KC_SCLN,  COM_EXC, DOT_QUE
+#define _________________CANARY_R3_________________       KC_X,    KC_H,    KC_SCLN,  KC_COMM, KC_DOT

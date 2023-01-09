@@ -8,7 +8,6 @@
  * in users/possumvibes/wrappers.h
  * This function assigns the board's pins.
  */
-
 // This is a wrapper for the kyria LAYOUT function to allow passing cleaner or modified arguments.
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 
@@ -20,9 +19,9 @@
     ) \
     LAYOUT_wrapper( \
         NON, L01, L02, L03, L04, L05,                     R06, R07, R08, R09, R10, KC_DEL, \
-        CAP, L13, L14, L15, L16, L17,                     R18, R19, R20, R21, R22, PANIC, \
-        NON,     L25, L26, L27, L28, L29, NON, NON, NON, NON, R34, R35, R36, R37, R38, NON, \
-             LOCKSCR, NON, TL0, TL1, NON, NON, TR1, TR0, NON, KC_MPLY \
+        L01, L13, L14, L15, L16, L17,                     R18, R19, R20, R21, R22, R10, \
+        NON, L25, L26, L27, L28, L29, NON, NON, NON, NON, R34, R35, R36, R37, R38, NON, \
+              LOCKSCR, NON, TL0, TL1, TL1, TR1, TR1, TR0, NON, KC_MPLY \
     )
 /* Wrapper for new alpha macro */
 #define LAYOUT_possum_wrapper(...) LAYOUT_possum(__VA_ARGS__)
@@ -36,8 +35,8 @@
     ) \
     LAYOUT_wrapper( \
         NON, L01, L02, L03, L04, L05,                     R06, R07, R08, R09, R10, KC_DEL, \
-        CAP, L13, L14, L15, L16, L17,                     R18, R19, R20, R21, R22, NON, \
+        L01, L13, L14, L15, L16, L17,                     R18, R19, R20, R21, R22, R10, \
         NON, L25, L26, L27, L28, L29, NON, NON, NON, NON, R34, R35, R36, R37, R38, NON, \
-        _______, NON,  L40, L41, NON, NON, R42, R43, NON, _______ \
+        _______, NON,  L40, L41, L41, R42, R42, R43, NON, _______ \
     )
 #define LAYOUT_possum_thumbs_wrapper(...) LAYOUT_possum_thumbs(__VA_ARGS__)

@@ -18,7 +18,7 @@
 
 #define EE_HANDS
 
-// #define VERTICAL_THUMB_COMBO
+#define VERTICAL_THUMB_COMBO
 
 // kyria encoders require direction flip.
 #define ENCODER_DIRECTION_FLIP      // Flips encoder direction so "clockwise" is clockwise.

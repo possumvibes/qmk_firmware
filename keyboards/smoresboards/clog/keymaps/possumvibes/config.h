@@ -1,7 +1,8 @@
 #pragma once
 
 #define EE_HANDS
-#define VERTICAL_THUMB_COMBO
+// #define VERTICAL_THUMB_COMBO
+#define TUCKY_THUMBS
 
 // SPACE SAVERS WHEN NOT DEBUGGING
 #ifndef NO_DEBUG

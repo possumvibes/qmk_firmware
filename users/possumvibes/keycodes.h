@@ -32,10 +32,6 @@ enum custom_keycodes {
     SYMMODE,  // activates a smart mouse layer
     MCRMODE,  // activates a smart numpad layer
 
-    // Custom Punctuation
-    COM_EXC,  // , !
-    DOT_QUE,  // . ?
-
     // custom strings
     SPC_SFT,  // Space and OSS
     GET_SET,  // { get; set; }
@@ -43,6 +39,7 @@ enum custom_keycodes {
     LMBD_FN,  // () =>
     ANGLEBR,  // <|>
     MD_LINK,  // [|]()
+    MD_CODE,  // ```| ```
     KY_V1,    // V1
     KY_V2,    // V2
     KY_V3,    // V3
@@ -153,6 +150,7 @@ enum custom_keycodes {
 #define S_FWD       A(KC_RIGHT)
 #define C_BSPC      C(KC_BSPC)
 #define CTL_U       C(KC_U)
+#define CTL_GRV     C(KC_GRV)
 
 #define F3_TH       TH(KC_F3)
 #define F5_TH       TH(KC_F5)

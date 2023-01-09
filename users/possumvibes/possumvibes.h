@@ -12,8 +12,13 @@
 #include "features/swapper.h"
 
 // Interfaces
-bool override_shift(bool is_shifted,
+bool process_custom_key(bool is_shifted,
     uint16_t tap_keycode,
+    uint16_t shift_override,
+    uint16_t keycode,
+    keyrecord_t *record);
+
+bool override_shift(bool is_shifted,
     uint16_t shift_override,
     uint16_t keycode,
     keyrecord_t *record);

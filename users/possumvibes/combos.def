@@ -1,10 +1,10 @@
 /*    COMBO NAME       | OUTPUT    | PARAMS    */
 
-/*---- TOP ROW ----*/
+/*---- TOP ROW HORIZONTAL----*/
 COMB(esc_l,             KC_ESC,     KC_W, KC_R)         // Esc on the left too
-COMB(lbracket,          KC_LBRC,    KC_W, KC_E)         // [
+COMB(lh_urng_umid,      KC_TILD,    KC_W, KC_E)         //
 COMB(save,              S_SAVE,     KC_E, KC_R)         // Save
-COMB(rbracket,          KC_RBRC,    KC_R, KC_T)         // ]
+COMB(lh_uind_ulat,      KC_LCBR,    KC_R, KC_T)         // ]
 COMB(wheel_up,          KC_WH_U,    KC_R, KC_G)
 
 COMB(page_up,           KC_PGUP,    KC_U, KC_H)
@@ -12,55 +12,62 @@ COMB(undo_redo,         UND_RED,    KC_Y, KC_U)         // Undo/Redo (shifted)
 COMB(tab,               KC_TAB,     KC_U, KC_I)         // Tab
 COMB(esc,               KC_ESC,     KC_U, KC_O)         // Esc
 
-/*---- HOME ROW ----*/
-COMB(dmenu_up,          DMENU,      KC_S, KC_Q)         //
+/*---- HOME ROW HORIZONTAL----*/
+COMB(caps,              KC_CAPS,    KC_S, KC_V)
 COMB(cut,               S_CUT,      KC_S, KC_F)         // Shift+Del (cut)
 COMB(copy,              S_COPY,     KC_S, KC_D)         // Ctrl+Ins (copy)
 COMB(paste,             S_PASTE,    KC_F, KC_G)         // Shift+Del (paste)
-COMB(caps,              KC_CAPS,    KC_S, KC_V)         // Caps Lock
-COMB(wheel_dn,          KC_WH_D,    KC_F, KC_B)
 
 COMB(panic,             PANIC,      KC_D, KC_K)         // panic!
 
-COMB(page_dn,           KC_PGDN,    KC_J, KC_N)
-COMB(rh_indexring,      KC_SCLN,    KC_J, KC_L)         // Nummode toggle
-COMB(dmenu_dn,          DMENU,      KC_L, KC_M)
-// COMB(symmode_r,         SYMMODE,    KC_L, KC_P)         // Right Sym osl
+COMB(semicolon,         KC_SCLN,    KC_J, KC_L)         // Nummode toggle
+COMB(dmenu,             DMENU,      KC_L, KC_M)
 
-/*---- BOTTOM ROW ----*/
+/*---- BOTTOM ROW HORIZONTAL----*/
 COMB(lparen,            KC_LPRN,    KC_X, KC_C)         // (
 COMB(asterisk,          KC_ASTR,    KC_C, KC_V)         // something!!
 COMB(enter,             KC_ENT,     KC_X, KC_V)         // Enter
-COMB(backspace,         KC_BSPC,     KC_A, KC_X)        // Backspace?
 
 COMB(dash,              KC_MINS,    KC_M, KC_COMM)      // ;
 COMB(underscore,        KC_UNDS,    KC_M, KC_DOT)       // Unds
 COMB(rparen,            KC_RPRN,    KC_COMM, KC_DOT)    // )
-COMB(delete,            KC_DEL,     KC_DOT, KC_SCLN)    // Func/Win Mode
 
 /* --- TOP-HOME VERTICALS --- */
-COMB(os_lglc_lvert,     OS_LGLC,    KC_F, KC_R)         // OS lgui+lctl
-COMB(tilde,             KC_TILD,    KC_T, KC_G)         // ~
-COMB(os_lglc_rvert,     OS_LGLC,    KC_J, KC_U)         // yet another os lgui+lctl
-COMB(dollar,            KC_DLR,     KC_Y, KC_H)         // $
+COMB(lh_ulat_mlat,      OS_LGLC,    KC_F, KC_R)
+COMB(lh_uind_mind,      KC_LABK,    KC_T, KC_G)
+
+COMB(rh_ulat_mlat,      KC_GRV,     KC_Y, KC_H)
+COMB(rh_uind_mind,      OS_LGLC,    KC_J, KC_U)
 
 /* --- HOME-BOTTOM VERTICALS --- */
 COMB(click_l,           LCLICK,     KC_D, KC_C)         // Left Click :)
 COMB(click_r,           RCLICK,     KC_V, KC_F)         // Right Click :)
 COMB(click_lctl,        CCLICK,     KC_G, KC_B)         // Ctrl + click
 
-COMB(hash2,             KC_HASH,    KC_J, KC_M)         // Hash TWO: the hashening
-COMB(fslash2,           KC_SLSH,    KC_K, KC_COMM)      // Slash TWO: the slashening
+COMB(rh_mind_bind,      KC_HASH,    KC_J, KC_M)         // Hash TWO: the hashening
+COMB(rh_mmid_bmid,      KC_SLSH,    KC_K, KC_COMM)      // Slash TWO: the slashening
+
+/*---- TOP-HOME ADJACENT DIAGONALS ----*/
+COMB(lh_umid_mind,      KC_PERC,    KC_E, KC_F)
+COMB(rh_umid_mind,      KC_DLR,    KC_I, KC_J)
+
+/*---- HOME-BOTTOM ADJACENT DIAGONALS ----*/
+COMB(lh_mpnk_bring,     KC_BSPC,    KC_A, KC_X)
+COMB(lh_mmid_bind,      KC_LBRC,    KC_D, KC_V)
+COMB(wheel_dn,          KC_WH_D,    KC_F, KC_B)
+
+COMB(page_dn,           KC_PGDN,    KC_J, KC_N)
+COMB(rh_mmid_bind,      KC_RBRC,     KC_K, KC_M)
+COMB(rh_mpnk_bring,     KC_DEL,     KC_DOT, KC_SCLN)
 
 /*---- THUMBS ----*/
 #ifdef VERTICAL_THUMB_COMBO
-COMB(sys_lthm,          SYS_OSL,    KC_B, KC_ENT)       // Sys OSL
-COMB(rthumb,            MCRMODE,    KC_SPC, KC_N)       // Sym OSL
+COMB(lthumbs,           SYS_OSL,    KC_ENT, KC_B)       // Sys OSL
+COMB(rthumbs,           MCRMODE,    KC_SPC, KC_N)       // Sym OSL
 #else
-COMB(sys_lthm,          SYS_OSL,    KC_ENT, KC_TAB)     // Sys OSL
-COMB(rthumb,            MCRMODE,    KC_SPC, KC_BSPC)    // Sym OSL
+COMB(lthumbs,           SYS_OSL,    KC_ENT, KC_TAB)     // Sys OSL
+COMB(rthumbs,           MCRMODE,    KC_SPC, KC_BSPC)    // Sym OSL
 #endif
-
 
 /*---- DIAGONAL THUMBS ----*/
 COMB(lt_out_ring,       MCRMODE,    KC_TAB, KC_S)
@@ -70,3 +77,4 @@ COMB(lt_out_index,      FUNMODE,    KC_TAB, KC_F)
 COMB(rt_out_index,      FUNMODE,    KC_BSPC, KC_J)
 COMB(rt_out_middle,     NUM_OSL,    KC_BSPC, KC_K)
 COMB(rt_out_ring,       NUMMODE,    KC_BSPC, KC_L)
+COMB(lt_out_up_ring,    MCRMODE,    KC_BSPC, KC_O)

@@ -29,8 +29,8 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record) {
         case KC_SLSH:
         case KC_SCLN:
         case KC_COLN:
-        case COM_EXC:
-        case DOT_QUE:
+        case KC_COMM:
+        case KC_DOT:
         case KC_MINS:
         case KC_ASTR:
         case KC_EQL:

@@ -7,17 +7,14 @@
 __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) { return true; }
 
 bool is_windows = ISWIN_DF;
-uint8_t mod_state;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE
     if(record->event.pressed)
         uprintf("KL: kc: 0x%04X, col: %u, row: %u, pressed: %b, time: %u, interrupt: %b, count: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
 #endif
 
-    mod_state = get_mods();
-
-    bool is_shifted = (
-        get_mods() & MOD_MASK_SHIFT) ||
+    bool is_shifted =
+        (get_mods() & MOD_MASK_SHIFT) ||
         (get_oneshot_mods() & MOD_MASK_SHIFT);
 
     // Process the functions
@@ -134,7 +131,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
                 uint8_t textobject = keycode == VI_YAW ? KC_A : KC_I;
                 uint16_t word_code = is_shifted ? S(KC_W) : KC_W;
-                
+
                 if(is_shifted){
                     del_oneshot_mods(MOD_MASK_SHIFT);
                     del_mods(MOD_MASK_SHIFT);
@@ -153,7 +150,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
         case BCK_FWD:{
-            return override_shift(is_shifted, A(KC_LEFT), A(KC_RGHT), keycode, record);
+            return process_custom_key(is_shifted, A(KC_LEFT), A(KC_RGHT), keycode, record);
         }
         case CLEAR: {
             clear_oneshot_mods();
@@ -177,10 +174,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
             }
             layer_move(0);
+            caps_word_off();
             return false;
         }
         case UND_RED: {
-            return override_shift(is_shifted, C(KC_Z), C(KC_Y), keycode, record);
+            return process_custom_key(is_shifted, C(KC_Z), C(KC_Y), keycode, record);
         }
 
         // Layer Modes
@@ -211,11 +209,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_PLUS:
         case KC_QUES:
         case KC_SLSH:
-        case KC_UNDS:
         {
             if(record ->event.pressed) {
                 // If shifted, double these common punctuation marks.
                 if(is_shifted){
+                    uint8_t mod_state = get_mods();
+
                     // clear shift temporarily
                     del_mods(MOD_MASK_SHIFT);
                     del_oneshot_mods(MOD_MASK_SHIFT);
@@ -230,27 +229,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
         }
-        case KC_GRV: {
+        case MD_CODE: {
             if(record ->event.pressed) {
-                // if shifted,
-                if(is_shifted){
+                // clear shift temporarily
+                uint8_t mod_state = get_mods();
+                del_mods(MOD_MASK_SHIFT);
+                del_oneshot_mods(MOD_MASK_SHIFT);
 
-                    // clear shift temporarily
-                    del_mods(MOD_MASK_SHIFT);
-                    del_oneshot_mods(MOD_MASK_SHIFT);
+                // ``` ```|
+                SEND_STRING("``` ```");
 
+                // ```| ```
+                triple_tap(KC_LEFT);
+                tap_code(KC_LEFT);
 
-                    triple_tap(keycode);
-                    tap_code16(KC_SPC);
-                    triple_tap(keycode);
-                    tap_code16(C(KC_LEFT));
-
-                    // restore previous shift state
-                    set_mods(mod_state);
-                    return false;
-                }
+                // restore previous shift state
+                set_mods(mod_state);
             }
-            return true;
+            return false;
         }
         #ifdef CAPS_WORD_ENABLE
         case KC_DLR:
@@ -282,34 +278,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return true;
+
         case KC_DQUO: return override_bracket_pair(is_shifted, KC_DQUO, KC_DQUO, keycode, record);
-        // case KC_LABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
-        // case KC_RABK: return override_bracket_pair(is_shifted, KC_LABK, KC_RABK, keycode, record);
+        case KC_GRV:  return override_bracket_pair(is_shifted, KC_GRV, KC_GRV, keycode, record);
+
+        case KC_LBRC: return override_bracket_pair(is_shifted, KC_LBRC, KC_RBRC, keycode, record);
+        case KC_LCBR: return override_bracket_pair(is_shifted, KC_LCBR, KC_RCBR, keycode, record);
         case KC_LPRN: return override_bracket_pair(is_shifted, KC_LPRN, KC_RPRN, keycode, record);
+
+        case KC_LABK: return override_shift(is_shifted, KC_RABK, keycode, record);
         case KC_RPRN: return send_function_bracket_string(is_shifted, keycode, record);
-        // case KC_LBRC: return override_bracket_pair(is_shifted, KC_LBRC, KC_RBRC, keycode, record);
-        // case KC_LCBR:
-        //     // if shifted on keydown, send C+right to exit
-        //     if(record->event.pressed){
-        //         uint8_t mod_state = get_mods();
-        //         del_oneshot_mods(MOD_MASK_SHIFT);
-        //         del_mods(MOD_MASK_SHIFT);
 
-        //         if(is_shifted){
-        //             tap_code(KC_END);
-        //         }
-        //         tap_code16(KC_LCBR);
-        //         set_mods(mod_state);
-        //     }
-        //     return false;
-        // case KC_RBRC: return send_link_bracket_string(is_shifted, keycode, record);
+        case KC_COMM: return override_shift(is_shifted, KC_EXLM, keycode, record);
+        case KC_DOT:  return override_shift(is_shifted, KC_QUES, keycode, record);
+        case KC_PERC: return override_shift(is_shifted, KC_AT, keycode, record);
 
-        case COM_EXC: {
-            return override_shift(is_shifted, KC_COMM, KC_EXLM, keycode, record);
-        }
-        case DOT_QUE: {
-            return override_shift(is_shifted, KC_DOT, KC_QUES, keycode, record);
-        }
         // Other
         case SPC_SFT: {
             if(record->event.pressed){
@@ -348,6 +331,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LMBD_FN:
             if(record->event.pressed){
                 if(is_shifted){
+                    uint8_t mod_state = get_mods();
                     del_oneshot_mods(MOD_MASK_SHIFT);
                     del_mods(MOD_MASK_SHIFT);
                     SEND_STRING("() =>");
@@ -360,6 +344,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case ANGLEBR:
             if(record->event.pressed){
+                uint8_t mod_state = get_mods();
                 del_oneshot_mods(MOD_MASK_SHIFT);
                 del_mods(MOD_MASK_SHIFT);
 
@@ -393,6 +378,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         case MD_LINK:
             if (record->event.pressed) {
+                uint8_t mod_state = get_mods();
                 del_mods(MOD_MASK_SHIFT);
 
                 SEND_STRING("[]()");

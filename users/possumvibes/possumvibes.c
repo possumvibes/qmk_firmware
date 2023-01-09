@@ -1,6 +1,6 @@
 #include "possumvibes.h"
 
-bool override_shift( bool is_shifted,
+bool process_custom_key( bool is_shifted,
     uint16_t tap_keycode,
     uint16_t shift_override,
     uint16_t keycode,
@@ -23,6 +23,33 @@ bool override_shift( bool is_shifted,
     else {
         unregister_code16(shift_override);
         unregister_code16(tap_keycode);
+    }
+
+    return true;
+}
+
+bool override_shift( bool is_shifted,
+    uint16_t shift_override,
+    uint16_t keycode,
+    keyrecord_t *record) {
+    if (record->event.pressed) {
+        if (is_shifted) {
+            uint8_t mod_state = get_mods();
+            del_mods(MOD_MASK_SHIFT);
+            del_oneshot_mods(MOD_MASK_SHIFT);
+
+            register_code16(shift_override);
+
+            set_mods(mod_state);
+        } else {
+            // regular: /
+            register_code16(keycode);
+        }
+        return false;
+    }
+    else {
+        unregister_code16(shift_override);
+        unregister_code16(keycode);
     }
 
     return true;

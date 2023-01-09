@@ -10,7 +10,7 @@
  */
 
  // aliases to keep things short
-
+#define DEL KC_DEL
 /* This is a wrapper for the LAYOUT function to allow passing cleaner or modified arguments. */
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 
