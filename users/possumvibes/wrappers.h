@@ -77,13 +77,13 @@
 
 // Macro layer: so i can put the v2 macros somewhere shiftable
 #define _________________MACRO_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
-#define _________________MACRO_L2__________________       XXXXXXX, VI_IW,   VI_AW,   KC_Y,    XXXXXXX
-#define _________________MACRO_L3__________________       XXXXXXX, VI_YIW,  VI_YAW,  KC_W,    XXXXXXX
+#define _________________MACRO_L2__________________       XXXXXXX, VI_YAW,  VI_AW,   KC_Y,    XXXXXXX
+#define _________________MACRO_L3__________________       XXXXXXX, VI_YIW,  VI_IW,   KC_W,    XXXXXXX
 #define ____MACRO_LT____                                  THM_LH0, OSR_SFT
 
 #define _________________MACRO_R1__________________       XXXXXXX, _______, GET_SET, _______, XXXXXXX
 #define _________________MACRO_R2__________________       XXXXXXX, LMBD_FN, ANGLEBR, MD_LINK, XXXXXXX
-#define _________________MACRO_R3__________________       XXXXXXX, RPR_SCL, MD_CODE, XXXXXXX, XXXXXXX
+#define _________________MACRO_R3__________________       XXXXXXX, RPR_SCL, BRCKETS, MD_CODE, XXXXXXX
 #define ____MACRO_RT____                                  OSR_SFT, _______
 
 #define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______
@@ -96,7 +96,6 @@
 #define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, _______, _______, XXXXXXX
 #define _____SYM_RT_____                                  OSR_SFT, _______
 
-
 // Nav layer: We Got Mods
 #define ___________________NAV_L1__________________       XXXXXXX, KC_BACK, OS_LGUI, KC_FWD,  XXXXXXX
 #define ___________________NAV_L2__________________       XXXXXXX, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX
@@ -108,11 +107,11 @@
 
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.
-#define ___________________SYS_L1__________________       APTHD,   LOGOUT,  KC_VOLU, CONFIG,  XXXXXXX
-#define ___________________SYS_L2__________________       APT,     KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX
-#define ___________________SYS_L3__________________       QWERTY,  _______, KC_VOLD, KC_MUTE, XXXXXXX
+#define ___________________SYS_L1__________________       APTHD,   _______, _______, _______, _______
+#define ___________________SYS_L2__________________       APT,     _______, _______, _______, _______
+#define ___________________SYS_L3__________________       QWERTY,  _______, _______, _______, _______
 
-#define ___________________SYS_R1__________________       QK_BOOT, SCREEN,  ALT_F4,  XXXXXXX, XXXXXXX
+#define ___________________SYS_R1__________________       QK_BOOT, XXXXXXX,  ALT_F4,  XXXXXXX, XXXXXXX
 #define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, VI_ZQ,   _______
 #define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, VI_ZZ,   _______
 

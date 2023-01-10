@@ -38,6 +38,7 @@ enum custom_keycodes {
     RPR_SCL,  // ); ();
     LMBD_FN,  // () =>
     ANGLEBR,  // <|>
+    BRCKETS,  // [|]  {|}
     MD_LINK,  // [|]()
     MD_CODE,  // ```| ```
     KY_V1,    // V1
@@ -57,7 +58,6 @@ enum custom_keycodes {
     QMKFLSH,  // qmk flash
     COMMENT,  // C(KC)
     UNCOMNT,  // C(KU)
-    SCREEN,   // Screenshot per OS
 
     // Swapper keys
     SW_REV,  // Dead key, reverse direction for swapper
@@ -92,22 +92,15 @@ enum custom_keycodes {
 // aliases to keep things short in layouts
 #define NON     XXXXXXX
 #define CAP     KC_CAPS
+#define DEL     KC_DEL
 #define TL0     THM_LH0
 #define TL1     THM_LH1
 #define TR0     THM_RH0
 #define TR1     THM_RH1
 
 // layer toggles
-#define SYM_OSL     OSL(_SYM)
-#define SYM_TG      TG(_SYM)
-#define SYM_MO      MO(_SYM)
-#define MOUS_TG     TG(_MOUSE)
-#define NAV_TG      TG(_NAV)
 #define NUM_OSL     OSL(_NUM)
-#define NUM_TO      TO(_NUM)
-#define FUN_OSL     OSL(_FUNC)
 #define SYS_OSL     OSL(_SYSTEM)
-#define SYS_TO      TO(_SYSTEM)
 
 #define LCLICK      KC_BTN1
 #define RCLICK      KC_BTN2
@@ -118,8 +111,6 @@ enum custom_keycodes {
 #define KC_FWD      A(KC_RGHT)
 
 // window manager shortcuts
-#define LOGOUT      G(A(KC_Q))
-#define CONFIG      G(A(KC_R))
 #define LSTDESK     G(KC_TILD)
 #define LSTNODE     G(KC_GRV)
 #define WKSP_1      G(KC_1)

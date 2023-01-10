@@ -4,7 +4,7 @@
 COMB(esc_l,             KC_ESC,     KC_W, KC_R)         // Esc on the left too
 COMB(lh_urng_umid,      KC_TILD,    KC_W, KC_E)         //
 COMB(save,              S_SAVE,     KC_E, KC_R)         // Save
-COMB(lh_uind_ulat,      KC_LCBR,    KC_R, KC_T)         // ]
+COMB(lh_uind_ulat,      BRCKETS,    KC_R, KC_T)         // ]
 COMB(wheel_up,          KC_WH_U,    KC_R, KC_G)
 
 COMB(page_up,           KC_PGUP,    KC_U, KC_H)

@@ -356,6 +356,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
+        case BRCKETS:
+            if(record->event.pressed){
+                // will type [unshifted] or { shifted }
+                tap_code(KC_LBRC);
+                tap_code(KC_RBRC);
+
+                // Clear mods before moving back
+                uint8_t mod_state = get_mods();
+                del_oneshot_mods(MOD_MASK_SHIFT);
+                del_mods(MOD_MASK_SHIFT);
+
+                tap_code(KC_LEFT);
+                set_mods(mod_state);
+            }
+            return false;
+
         case ALT_F4: {
             if(record->event.pressed){
                 if(is_windows){
@@ -421,15 +437,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
-        case SCREEN:
-            if(record->event.pressed){
-                if(is_windows){
-                    tap_code16(G(S(KC_S)));
-                } else {
-                   tap_code16(S(KC_PSCR));
-                }
-            }
-            return false;
 
         #ifdef CAPS_WORD_ENABLE
         case KC_CAPS:
