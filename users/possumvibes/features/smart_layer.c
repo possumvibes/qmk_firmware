@@ -112,8 +112,6 @@ void nav_mode_disable(void) {
 }
 
 void nav_mode_process(uint16_t keycode, keyrecord_t *record){
-    // todo possum strip keycode from lt/modtaps if needed
-
     // Assess if we should exit layermode or continue processing normally.
     switch (keycode) {
         case OS_LSFT ... OS_LGUI:
@@ -121,8 +119,15 @@ void nav_mode_process(uint16_t keycode, keyrecord_t *record){
         case KC_HOME ... KC_UP:
         case KC_MS_U ... KC_ACL2:
         case CLEAR:
-        case F12_TH:
-        case CTL_U:
+        // case F12_TH:
+        // case CTL_U:
+            break;
+        case NAV_SPC:
+        case NAV_E:
+            // if nav THs are tapped, cancel, otherwise continue.
+            if (record -> event.pressed) {
+                nav_mode_disable();
+            }
             break;
         default:
             // All other keys disable the layer mode.

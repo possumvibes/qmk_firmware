@@ -17,6 +17,7 @@
 #define COMBO_ONLY_FROM_LAYER 1     // compare only with the COMBOREF layer.
 #define COMBO_MUST_TAP_PER_COMBO    // Set whether combos can be held to repeat.
 #define COMBO_TERM_PER_COMBO        // Adjust combo term for ease of combo.
+#define COMBO_STRICT_TIMER          // all keys must be hit within the term from the first keypress.
 
 #ifdef LEADER_ENABLE
 // The Leader key allows to flexibly assign macros to key sequences.

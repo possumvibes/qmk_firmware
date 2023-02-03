@@ -15,7 +15,7 @@
 #define __ALPHATHUMB_L__        THM_LH0, THM_LH1
 
 #define THM_RH0     KC_SPC
-#define THM_RH1     KC_BSPC
+#define THM_RH1     KC_NO
 #define __ALPHATHUMB_R__        THM_RH1, THM_RH0
 
 // fun fact: i literally do not remember qwerty anymore
@@ -36,23 +36,45 @@
 #define ________________COMBOREF_R2________________       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
 #define ________________COMBOREF_R3________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  XXXXXXX
 
-// APT 3 Meets HD, not presently in use
-#define ________________APTv3_HD_L1________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
-#define ________________APTv3_HD_L2________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
-#define ________________APTv3_HD_L3________________       KC_X,    KC_C,    KC_Y,    KC_P,    KC_V
+// AptMod (Aptbomination)
+#define ________________APTMOD_L1__________________       KC_Q,    KC_F,    KH_G,    KC_D,    KC_B
+#define ________________APTMOD_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+#define ________________APTMOD_L3__________________       KC_X,    KC_C,    KC_M,    KC_P,    KC_V
+#define _APTMOD_THUMB_L_                                  NAVMODE, OSR_SFT
 
-#define ________________APTv3_HD_R1________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
-#define ________________APTv3_HD_R2________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define ________________APTv3_HD_R3________________       KC_Z,    KC_M,    KC_COMM, KC_DOT, XXXXXXX
+#define ________________APTMOD_R1__________________       KC_J,    KC_L,    KH_U,    KC_O,    KC_Y 
+#define ________________APTMOD_R2__________________       KC_W,    KH_N,    KH_E,    KH_A,    KH_I
+#define ________________APTMOD_R3__________________       XXXXXXX, KC_QUOT, KC_COMM, KC_DOT,  XXXXXXX
+#define _APTMOD_THUMB_R_                                  KC_BSPC, KC_SPC
 
-// APTv3. Daily Driver.
+// AptMak 
+#define ________________APTMAK_L1__________________       KC_Q,    KC_W,    KH_F,    KC_P,    KC_B
+#define ________________APTMAK_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+#define ________________APTMAK_L3__________________       KC_X,    KC_C,    KC_G,    KC_D,    KC_V
+#define _APTMAK_THUMB_L_                                  KC_SPC,  NAVMODE
+
+#define ________________APTMAK_R1__________________       KC_Z,    KC_L,    KH_U,    KC_Y,    KC_QUOT
+#define ________________APTMAK_R2__________________       KC_J,    KH_N,    KM_A,    KS_I,    KC_O
+#define ________________APTMAK_R3__________________       XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX
+#define _APTMAK_THUMB_R_                                  OS_LSFT, KC_E
+
+// APTv3. Daily driver. 
 #define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
 #define __________________APTv3_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
 #define __________________APTv3_L3_________________       KC_X,    KC_C,    KC_M,    KC_P,    KC_V
 
 #define __________________APTv3_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
 #define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
-#define __________________APTv3_R3_________________       KC_Z,    KC_QUOT, KC_COMM, KC_DOT,  KC_DEL
+#define __________________APTv3_R3_________________       XXXXXXX, KC_QUOT, KC_COMM, KC_DOT,  XXXXXXX
+
+// APT26. 
+#define __________________APT26_L1_________________       KC_W,    KC_F,    KH_G,    KC_D,    KC_B
+#define __________________APT26_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+#define __________________APT26_L3_________________       KC_Q,    KC_C,    KC_M,    KC_P,    KC_V
+
+#define __________________APT26_R1_________________       KC_J,    KC_L,    KH_U,    KC_O,    KC_Y
+#define __________________APT26_R2_________________       KC_X,    KH_N,    KH_E,    KH_A,    KH_I
+#define __________________APT26_R3_________________       KC_Z,    KC_V,    KC_COMM, KC_DOT,  XXXXXXX
 
 // Functions and Window management. Funcs are organized by number except for the debuggin' ones
 #define __________________FUNC_L1__________________       OS_LALT, WKSP_9,  LSTDESK, LSTNODE, WKSP_10
@@ -77,19 +99,19 @@
 
 // Macro layer: so i can put the v2 macros somewhere shiftable
 #define _________________MACRO_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
-#define _________________MACRO_L2__________________       XXXXXXX, VI_YAW,  VI_AW,   KC_Y,    XXXXXXX
-#define _________________MACRO_L3__________________       XXXXXXX, VI_YIW,  VI_IW,   KC_W,    XXXXXXX
-#define ____MACRO_LT____                                  THM_LH0, OSR_SFT
+#define _________________MACRO_L2__________________       XXXXXXX, VI_YAW,  VI_YA,   KC_Y,    XXXXXXX
+#define _________________MACRO_L3__________________       XXXXXXX, VI_YIW,  VI_YI,   KC_W,    XXXXXXX
+#define ____MACRO_LT____                                  _______, OSR_SFT
 
-#define _________________MACRO_R1__________________       XXXXXXX, _______, GET_SET, _______, XXXXXXX
+#define _________________MACRO_R1__________________       XXXXXXX, GET_SET, KC_AT,   BRCKETS, XXXXXXX
 #define _________________MACRO_R2__________________       XXXXXXX, LMBD_FN, ANGLEBR, MD_LINK, XXXXXXX
-#define _________________MACRO_R3__________________       XXXXXXX, RPR_SCL, BRCKETS, MD_CODE, XXXXXXX
+#define _________________MACRO_R3__________________       XXXXXXX, RPR_SCL, MD_CODE, XXXXXXX, XXXXXXX
 #define ____MACRO_RT____                                  OSR_SFT, _______
 
 #define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______
 #define ___________________SYM_L2__________________       _______, OS_LALT, OS_LCTL, OS_LSFT, _______
 #define ___________________SYM_L3__________________       _______, _______, _______, _______, _______
-#define _____SYM_LT_____                                  THM_LH0, OSR_SFT
+#define _____SYM_LT_____                                  _______, OSR_SFT
 
 #define ___________________SYM_R1__________________       KC_EXLM, KC_PLUS, KC_AMPR, KC_PIPE, XXXXXXX
 #define ___________________SYM_R2__________________       XXXXXXX, KC_EQL,  KC_BSLS, KC_GRV,  XXXXXXX
@@ -97,43 +119,32 @@
 #define _____SYM_RT_____                                  OSR_SFT, _______
 
 // Nav layer: We Got Mods
-#define ___________________NAV_L1__________________       XXXXXXX, KC_BACK, OS_LGUI, KC_FWD,  XXXXXXX
+#define ___________________NAV_L1__________________       XXXXXXX, KC_BACK, OS_LGUI, KC_FWD,  OS_LGLC
 #define ___________________NAV_L2__________________       XXXXXXX, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX
 #define ___________________NAV_L3__________________       XXXXXXX, XXXXXXX, F12_TH,  TS_LCTL, XXXXXXX
 
-#define ___________________NAV_R1__________________       CTL_U,   KC_HOME, KC_UP,   KC_END,  KC_DEL
+#define ___________________NAV_R1__________________       OS_LGLC, KC_HOME, KC_UP,   KC_END,  XXXXXXX
 #define ___________________NAV_R2__________________       F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, CLEAR
 #define ___________________NAV_R3__________________       ML_LGUI, ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
 
+// Nav layer TWO: We Got Mods AGAIN
+#define _______________NAV_LEFT_L1_________________       OS_LGLC, KC_END,  KC_UP,   KC_HOME, XXXXXXX
+#define _______________NAV_LEFT_L2_________________       CLEAR    KC_LEFT, KC_DOWN, KC_RGHT, F5_TH, 
+#define _______________NAV_LEFT_L3_________________       XXXXXXX, ML_LALT, ML_LCTL, ML_LSFT, ML_LGUI
+
+#define _______________NAV_LEFT_R1_________________       XXXXXXX, KC_FWD,  OS_LGUI, KC_BACK, XXXXXXX
+#define _______________NAV_LEFT_R2_________________       XXXXXXX, OS_LSFT, OS_LCTL, OS_LALT, XXXXXXX
+#define _______________NAV_LEFT_R3_________________       XXXXXXX, TS_LCTL, F12_TH,  XXXXXXX, XXXXXXX
+
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.
-#define ___________________SYS_L1__________________       APTHD,   _______, _______, _______, _______
-#define ___________________SYS_L2__________________       APT,     _______, _______, _______, _______
-#define ___________________SYS_L3__________________       QWERTY,  _______, _______, _______, _______
+#define ___________________SYS_L1__________________       _______, _______, _______, _______, _______
+#define ___________________SYS_L2__________________       QWERTY,  APTMAK,  APTHD,   APT,     _______
+#define ___________________SYS_L3__________________       _______, _______, _______, _______, _______
 
 #define ___________________SYS_R1__________________       QK_BOOT, XXXXXXX,  ALT_F4,  XXXXXXX, XXXXXXX
 #define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, VI_ZQ,   _______
 #define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, VI_ZZ,   _______
-
-
-/* ------ Gaming Layers ------ */
-// QWERTY with Home Row Mods and no layer toggles
-#define ________________GAME_NAV_L0_________________________       KC_ESC,  SYS_OSL, PANIC,   XXXXXXX, NETHACK, GAMENAV
-
-#define _______________GAMENAV_QWE_L1______________       KC_Q,    KC_W,    KY_E,    KC_R,    KC_T
-#define _______________GAMENAV_QWE_L2______________       KY_A,    KY_S,    KY_D,    KY_F,    KC_G
-#define _______________GAMENAV_QWE_L3______________       KC_Z,    KC_X,    KC_C,    KY_V,    KC_B
-
-#define _______________GAMENAV_QWE_R1______________       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
-#define _______________GAMENAV_QWE_R2______________       KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT
-#define _______________GAMENAV_QWE_R3______________       KC_N,    KC_M,    KC_COMM, KC_DOT, KC_UP
-#define _______________GAMENAV_QWE_R4_______________________      KC_BSPC, KC_SPC,  KC_SCLN, KC_LEFT, KC_DOWN, KC_TAB
-
-
-#define _______________NETHACK_NUM_R1_______________________       KC_7,    KC_8,    KC_9,    KC_COMM, KC_SCLN, KC_Y
-#define _______________NETHACK_NUM_R2_______________________       KC_4,    KC_5,    KC_6,    KC_0,    KC_SLSH, KC_QUOT
-#define _______________NETHACK_NUM_R3_______________________       KC_1,    KC_2,    KC_3,    KC_DOT,  KC_UP,   KC_N
-#define _______________NETHACK_NUM_R4_______________________       KC_BSPC, KC_SPC,  OS_LSFT, KC_LEFT, KC_DOWN, KC_RIGHT
 
 
 /* alt layouts */
@@ -154,3 +165,13 @@
 #define _________________CANARY_R1_________________       KC_Z,    KC_F,    KS_O,    KC_U,    KC_QUOT
 #define _________________CANARY_R2_________________       KC_M,    KH_N,    KH_E,    KS_I,    KY_A
 #define _________________CANARY_R3_________________       KC_X,    KC_H,    KC_SCLN,  KC_COMM, KC_DOT
+
+// APT 3 Meets HD, not presently in use
+#define ________________APTv3_HD_L1________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
+#define ________________APTv3_HD_L2________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+#define ________________APTv3_HD_L3________________       KC_X,    KC_C,    KC_Y,    KC_P,    KC_V
+
+#define ________________APTv3_HD_R1________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
+#define ________________APTv3_HD_R2________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
+#define ________________APTv3_HD_R3________________       KC_Z,    KC_M,    KC_COMM, KC_DOT, XXXXXXX
+

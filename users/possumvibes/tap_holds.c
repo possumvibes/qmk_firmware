@@ -49,6 +49,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         case KH_T:
         case KY_D:
         case KH_E:
+        case KM_A:
         case KY_K:
         case KY_5:
             return TAPPING_TERM - 10;
@@ -66,6 +67,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         // Upper Middle
         case KS_H:
         case KH_D:
+        case KH_F:
         case KH_G:
         case KH_Y:
         case KY_E:
@@ -74,6 +76,12 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         case KY_I:
         case KY_8:
             return TAPPING_TERM + 5;
+
+        // Thumbs I Guess
+        case NAV_E:
+        case NAV_SPC:
+            return TAPPING_TERM - 10;
+
         default:
             return TAPPING_TERM;
     }

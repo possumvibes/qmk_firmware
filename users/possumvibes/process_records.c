@@ -83,6 +83,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code(KC_3);
             }
             return false;
+        case KY_QU:
+            if(record->event.pressed){
+                tap_code(KC_Q);
+
+                if(is_shifted){
+                    uint8_t mod_state = get_mods();
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    del_mods(MOD_MASK_SHIFT);
+
+                    tap_code(KC_U);
+                    set_mods(mod_state);
+                    return false;
+                }
+                
+                tap_code(KC_U);
+            }
+            return false;
         case VI_ZZ:
         case VI_ZQ:
             if(record->event.pressed){
@@ -99,27 +116,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(KC_LSFT);
             }
             return false;
-        case VI_IW:
-        case VI_AW:
+        case VI_YI:
+        case VI_YA:
             if(record->event.pressed){
                 if(host_keyboard_led_state().caps_lock){
                     tap_code16(KC_CAPS);
                 }
 
-                uint8_t code = keycode == VI_IW ? KC_I : KC_A;
-                uint16_t word_code = is_shifted ? S(KC_W) : KC_W;
+                uint8_t code = keycode == VI_YI ? KC_I : KC_A;
 
                 if(is_shifted){
                     del_oneshot_mods(MOD_MASK_SHIFT);
                     del_mods(MOD_MASK_SHIFT);
                 }
+
+                tap_code(KC_Y);
                 tap_code(code);
-                tap_code16(word_code);
-              //  if (is_shifted){
-              //      tap_code16(S(KC_W));
-              //      return false;
-              //  }
-              //  tap_code(KC_W);
             }
             return false;
         case VI_YAW:
@@ -199,12 +211,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
 
         // Funky Symbol Shifts
+        case KC_LABK:
+        case KC_RABK:
         case KC_AMPR:
         case KC_ASTR:
+        case KC_AT:
         case KC_CIRC:
         case KC_EQL:
         case KC_HASH:
         case KC_MINS:
+        case KC_PERC:
         case KC_PIPE:
         case KC_PLUS:
         case KC_QUES:
@@ -229,25 +245,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
         }
-        case MD_CODE: {
-            if(record ->event.pressed) {
-                // clear shift temporarily
-                uint8_t mod_state = get_mods();
-                del_mods(MOD_MASK_SHIFT);
-                del_oneshot_mods(MOD_MASK_SHIFT);
 
-                // ``` ```|
-                SEND_STRING("``` ```");
-
-                // ```| ```
-                triple_tap(KC_LEFT);
-                tap_code(KC_LEFT);
-
-                // restore previous shift state
-                set_mods(mod_state);
-            }
-            return false;
-        }
         #ifdef CAPS_WORD_ENABLE
         case KC_DLR:
             if (record->event.pressed) {
@@ -282,16 +280,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_DQUO: return override_bracket_pair(is_shifted, KC_DQUO, KC_DQUO, keycode, record);
         case KC_GRV:  return override_bracket_pair(is_shifted, KC_GRV, KC_GRV, keycode, record);
 
-        case KC_LBRC: return override_bracket_pair(is_shifted, KC_LBRC, KC_RBRC, keycode, record);
-        case KC_LCBR: return override_bracket_pair(is_shifted, KC_LCBR, KC_RCBR, keycode, record);
+        // case KC_LBRC: return override_bracket_pair(is_shifted, KC_LBRC, KC_RBRC, keycode, record);
+        // case KC_LCBR: return override_bracket_pair(is_shifted, KC_LCBR, KC_RCBR, keycode, record);
         case KC_LPRN: return override_bracket_pair(is_shifted, KC_LPRN, KC_RPRN, keycode, record);
 
-        case KC_LABK: return override_shift(is_shifted, KC_RABK, keycode, record);
+        // case KC_LABK: return override_shift(is_shifted, KC_RABK, keycode, record);
         case KC_RPRN: return send_function_bracket_string(is_shifted, keycode, record);
 
         case KC_COMM: return override_shift(is_shifted, KC_EXLM, keycode, record);
         case KC_DOT:  return override_shift(is_shifted, KC_QUES, keycode, record);
-        case KC_PERC: return override_shift(is_shifted, KC_AT, keycode, record);
 
         // Other
         case SPC_SFT: {
@@ -372,7 +369,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case ALT_F4: {
+        case ALT_F4:
             if(record->event.pressed){
                 if(is_windows){
                     tap_code16(A(KC_F4));
@@ -381,8 +378,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return false;
-        }
-        case DMENU: {
+        case DMENU:
             if(record->event.pressed){
                 if(is_windows){
                     tap_code(KC_LGUI); // start menu, kde applauncher
@@ -391,7 +387,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return false;
-        }
         case MD_LINK:
             if (record->event.pressed) {
                 uint8_t mod_state = get_mods();
@@ -400,6 +395,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("[]()");
                 triple_tap(KC_LEFT);
 
+                set_mods(mod_state);
+            }
+            return false;
+        case MD_CODE:
+            if(record ->event.pressed) {
+                // clear shift temporarily
+                uint8_t mod_state = get_mods();
+                del_mods(MOD_MASK_SHIFT);
+                del_oneshot_mods(MOD_MASK_SHIFT);
+
+                // ``` ```|
+                SEND_STRING("``` ```");
+
+                // ```| ```
+                triple_tap(KC_LEFT);
+                tap_code(KC_LEFT);
+
+                // restore previous shift state
                 set_mods(mod_state);
             }
             return false;

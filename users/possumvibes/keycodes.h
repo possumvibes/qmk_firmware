@@ -6,11 +6,13 @@ enum layers {
     _COMBOREF,
     _QWERTY,
     _APTHD,
+    _APTMAK,
     _FUNC,
     _NUM,
     _MACRO,
     _SYM,
     _NAV,
+    _NAVLEFT,
     _SYSTEM
 };
 
@@ -44,12 +46,13 @@ enum custom_keycodes {
     KY_V1,    // V1
     KY_V2,    // V2
     KY_V3,    // V3
+    KY_QU,    // qu
     VI_ZZ,    // ZZ
     VI_ZQ,    // ZQ
-    VI_AW,    // aw aW
-    VI_IW,    // iw iW
-    VI_YAW,     // ya
-    VI_YIW,     // yi
+    VI_YA,    // ya
+    VI_YI,    // yi
+    VI_YAW,     // yaw
+    VI_YIW,     // yiw
 
     // macros
     ALT_F4,   // per is_windows Close Application
@@ -101,6 +104,8 @@ enum custom_keycodes {
 // layer toggles
 #define NUM_OSL     OSL(_NUM)
 #define SYS_OSL     OSL(_SYSTEM)
+#define NAV_E       LT(_NAVLEFT, KC_E)
+#define NAV_SPC     LT(_NAV, KC_SPC)
 
 #define LCLICK      KC_BTN1
 #define RCLICK      KC_BTN2
@@ -128,6 +133,7 @@ enum custom_keycodes {
 #define QWERTY      DF(_QWERTY)
 #define APT         DF(_APT)
 #define APTHD       DF(_APTHD)
+#define APTMAK      DF(_APTMAK)
 
 // Shortcuts
 #define S_CUT       S(KC_DEL)
@@ -175,12 +181,13 @@ enum custom_keycodes {
 #define KY_6        LSFT_T(KC_6)
 
 // l upper middle
-#define KS_H        LGUI_T(KC_H)
-#define KH_D        LGUI_T(KC_D)
-#define KH_G        LGUI_T(KC_G)
-#define KH_Y        LGUI_T(KC_Y)
-#define KY_E        LGUI_T(KC_E)
-#define KY_8        LGUI_T(KC_8)
+#define KS_H        LGUI_T(KC_H) // Semimak, Canary
+#define KH_D        LGUI_T(KC_D) // APTv3
+#define KH_F        LGUI_T(KC_F) // AptMod
+#define KH_G        LGUI_T(KC_G) // AptHD variant
+#define KH_Y        LGUI_T(KC_Y) // AptHD
+#define KY_E        LGUI_T(KC_E) // QWERTY
+#define KY_8        LGUI_T(KC_8) // numbers.
 
 // r upper middle
 #define KS_O        RGUI_T(KC_O)
@@ -193,6 +200,7 @@ enum custom_keycodes {
 #define KY_J        RSFT_T(KC_J)
 
 // r middle
+#define KM_A        RCTL_T(KC_A)
 #define KH_E        RCTL_T(KC_E)
 #define KY_K        RCTL_T(KC_K)
 
