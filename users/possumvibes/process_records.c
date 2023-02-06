@@ -438,14 +438,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         case COMMENT: {
             if(record->event.pressed){
-                SEND_STRING(SS_LCTRL("kc"));
+                SEND_STRING(SS_LCTL("kc"));
                 tap_code16(C(KC_S));
             }
             return false;
         }
         case UNCOMNT: {
             if(record->event.pressed){
-                SEND_STRING(SS_LCTRL("ku"));
+                SEND_STRING(SS_LCTL("ku"));
                 tap_code16(C(KC_S));
             }
             return false;
