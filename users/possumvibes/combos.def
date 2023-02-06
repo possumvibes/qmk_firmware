@@ -34,20 +34,19 @@ COMB(r_crx_dn,          KC_UNDS,    KC_M, KC_DOT)
 COMB(r_hrz_dn_rng_mid,  KC_BSPC,    KC_COMM, KC_DOT)
 
 /* --- TOP-HOME VERTICALS --- */
-COMB(l_vert_up_ring,    KC_RABK,    KC_S, KC_W)
+COMB(l_vert_up_ring,    KC_AT,      KC_S, KC_W)
 COMB(l_vert_up_ind,     KC_PERC,    KC_F, KC_R)
-COMB(l_vert_up_lat,     KC_AT,      KC_G, KC_T)
+COMB(l_vert_up_lat,     KC_RABK,    KC_G, KC_T)
 
-COMB(r_vert_up_lat,     KC_GRV,     KC_H, KC_Y)
+COMB(r_vert_up_lat,     KC_LABK,    KC_H, KC_Y)
 COMB(r_vert_up_ind,     KC_DLR,     KC_J, KC_U)
 
 /* --- HOME-BOTTOM VERTICALS --- */
-COMB(l_vert_hm_ring,    KC_LABK,    KC_S, KC_X)
+COMB(l_vert_hm_ring,    KC_GRV,    KC_S, KC_X)
 COMB(click_l,           LCLICK,     KC_D, KC_C)
 COMB(click_r,           RCLICK,     KC_F, KC_V)
-/* COMB(l_vert_hm_lat,     KC_RABK,    KC_G, KC_B)  */
+COMB(l_vert_hm_lat,     C(KC_W),    KC_G, KC_B) 
 
-/* COMB(r_vert_hm_lat,     KC_LABK,    KC_H, KC_N) */
 COMB(r_vert_hm_ind,     KC_HASH,    KC_J, KC_M)
 COMB(r_vert_hm_mid,     KC_SLSH,    KC_K, KC_COMM)
 COMB(r_vert_hm_rng,     KC_BSLS,    KC_L, KC_DOT)
