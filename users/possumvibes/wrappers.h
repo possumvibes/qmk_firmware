@@ -103,7 +103,7 @@
 #define _________________MACRO_L3__________________       XXXXXXX, VI_YIW,  VI_YI,   KC_W,    XXXXXXX
 #define ____MACRO_LT____                                  _______, OSR_SFT
 
-#define _________________MACRO_R1__________________       XXXXXXX, GET_SET, KC_AT,   BRCKETS, XXXXXXX
+#define _________________MACRO_R1__________________       XXXXXXX, GET_SET, XXXXXXX, BRCKETS, XXXXXXX
 #define _________________MACRO_R2__________________       XXXXXXX, LMBD_FN, ANGLEBR, MD_LINK, XXXXXXX
 #define _________________MACRO_R3__________________       XXXXXXX, RPR_SCL, MD_CODE, XXXXXXX, XXXXXXX
 #define ____MACRO_RT____                                  OSR_SFT, _______

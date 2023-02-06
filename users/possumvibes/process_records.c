@@ -216,6 +216,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_AMPR:
         case KC_ASTR:
         case KC_AT:
+        case KC_BSLS:
         case KC_CIRC:
         case KC_EQL:
         case KC_HASH:
