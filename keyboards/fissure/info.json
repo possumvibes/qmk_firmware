@@ -1,0 +1,9 @@
+{
+  "keyboard_name": "Fissure-v3.0",
+  "manufacturer": "Crides",
+  "usb": {
+    "vid": "0xFEED",
+    "pid": "0x6063",
+    "device_version": "3.0.0"
+    }
+}
