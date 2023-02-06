@@ -21,13 +21,6 @@
 
 #include "config_common.h"
 
-/* USB Device descriptor parameter */
-#define VENDOR_ID       0xBEEF
-#define PRODUCT_ID      0x5051
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    Smores
-#define PRODUCT         Clog
-
 /* key matrix size */
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 5

@@ -1,0 +1,9 @@
+{ 
+  "keyboard_name": "Clog",
+  "manufacturer": "Smores",
+  "usb": {
+    "vid": "0xBEEF",
+    "pid": "0x5051",
+    "device_version": "0.0.1"
+  }
+}
