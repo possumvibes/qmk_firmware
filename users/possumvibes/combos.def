@@ -23,7 +23,7 @@ COMB(r_hrz_hm_mid_ind,  KC_COLN,    KC_J, KC_K)
 COMB(r_crx_hm,          KC_SCLN,    KC_J, KC_L)
 
 /*---- BOTTOM ROW HORIZONTAL----*/
-COMB(l_hrz_dn_rng_mid,  KC_DEL,     KC_X, KC_C)
+COMB(l_hrz_dn_rng_mid,  KC_Q,       KC_X, KC_C)
 COMB(l_hrz_dn_mid_ind,  KC_ASTR,    KC_C, KC_V)
 COMB(enter,             KC_ENT,     KC_X, KC_V)
 COMB(l_ful_dn,          CW_TOGG,    KC_X, KC_C, KC_V)
@@ -58,7 +58,7 @@ COMB(wheel_up,          KC_WH_U,    KC_R, KC_G)
 
 COMB(page_up,           KC_PGUP,    KC_U, KC_H)
 COMB(r_diag_up_mid,     KC_RBRC,    KC_I, KC_J)
-/* COMB(r_diag_up_pnk,     KC_DEL,     KC_P, KC_L) */
+COMB(r_diag_up_pnk,     KC_DEL,     KC_P, KC_L)
 
 /*---- HOME-BOTTOM ADJACENT DIAGONALS ----*/
 COMB(l_diag_hm_pnk,     C(KC_W),    KC_A, KC_X)
@@ -69,7 +69,7 @@ COMB(wheel_dn,          KC_WH_D,    KC_F, KC_B)
 COMB(page_dn,           KC_PGDN,    KC_J, KC_N)
 COMB(r_diag_hm_mid,     KC_RPRN,    KC_K, KC_M)
 COMB(dmenu,             DMENU,      KC_L, KC_M)
-/* COMB(r_diag_hm_pnk,     C(KC_W),    KC_DOT, KC_SCLN) */
+COMB(r_diag_hm_pnk,     KC_DEL,     KC_DOT, KC_SCLN)
 
 /*---- THUMBS ----*/
 #ifdef VERTICAL_THUMB_COMBO
