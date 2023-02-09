@@ -26,7 +26,7 @@ COMB(r_crx_hm,          KC_SCLN,    KC_J, KC_L)
 COMB(l_hrz_dn_rng_mid,  KC_Q,       KC_X, KC_C)
 COMB(l_hrz_dn_mid_ind,  KC_ASTR,    KC_C, KC_V)
 COMB(enter,             KC_ENT,     KC_X, KC_V)
-COMB(l_ful_dn,          CW_TOGG,    KC_X, KC_C, KC_V)
+COMB(l_ful_dn,          OS_LGLC,    KC_X, KC_C, KC_V)
 
 COMB(r_ful_dn,          CW_TOGG,    KC_M, KC_COMM, KC_DOT)
 COMB(r_hrz_dn_mid_ind,  KC_MINS,    KC_M, KC_COMM)
