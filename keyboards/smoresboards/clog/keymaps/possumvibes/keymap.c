@@ -53,11 +53,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    _APTHD2_THUMB_L_, _APTHD2_THUMB_R_
     )
 
-    ,[_APTMAK] = LAYOUT_possum_wrapper(
-        ________________APTMAK_L1__________________, ________________APTMAK_R1__________________,
-        ________________APTMAK_L2__________________, ________________APTMAK_R2__________________,
-        ________________APTMAK_L3__________________, ________________APTMAK_R3__________________,
-                                   _APTMAK_THUMB_L_, _APTMAK_THUMB_R_
+    ,[_HDLIKE] = LAYOUT_possum_wrapper(
+        ________________HDLIKE_L1__________________, ________________HDLIKE_R1__________________,
+        ________________HDLIKE_L2__________________, ________________HDLIKE_R2__________________,
+        ________________HDLIKE_L3__________________, ________________HDLIKE_R3__________________,
+                                   _HDLIKE_THUMB_L_, _HDLIKE_THUMB_R_
     )
 
     ,[_FUNC] = LAYOUT_possum_wrapper(

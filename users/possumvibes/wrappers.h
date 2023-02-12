@@ -36,7 +36,7 @@
 #define ________________COMBOREF_R2________________       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
 #define ________________COMBOREF_R3________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  XXXXXXX
 
-// AptMod (Aptbomination)
+// APTHD2!
 #define ________________APTHD2_L1__________________       XXXXXXX, KC_F,    KH_G,    KC_D,    KC_B
 #define ________________APTHD2_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
 #define ________________APTHD2_L3__________________       KC_X,    KC_C,    KC_Y,    KC_P,    KC_V
@@ -47,16 +47,16 @@
 #define ________________APTHD2_R3__________________       XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX
 #define _APTHD2_THUMB_R_                                  KC_QUOT, KC_SPC
 
-// AptMak 
-#define ________________APTMAK_L1__________________       KC_Q,    KC_W,    KH_F,    KC_P,    KC_B
-#define ________________APTMAK_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
-#define ________________APTMAK_L3__________________       KC_X,    KC_C,    KC_G,    KC_D,    KC_V
-#define _APTMAK_THUMB_L_                                  KC_SPC,  NAVMODE
+// HDLIKE apt variant
+#define ________________HDLIKE_L1__________________       KC_X,    KC_C,    KH_D,    KC_L,    KC_K
+#define ________________HDLIKE_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_J
+#define ________________HDLIKE_L3__________________       KC_X,    KC_G,    KC_B,    KC_M,    KC_V
+#define _HDLIKE_THUMB_L_                                  NAVMODE, OSR_SFT
 
-#define ________________APTMAK_R1__________________       KC_Z,    KC_L,    KH_U,    KC_Y,    KC_QUOT
-#define ________________APTMAK_R2__________________       KC_J,    KH_N,    KM_A,    KS_I,    KC_O
-#define ________________APTMAK_R3__________________       XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX
-#define _APTMAK_THUMB_R_                                  OS_LSFT, KC_E
+#define ________________HDLIKE_R1__________________       KC_W,    KC_Y,    KH_U,    KC_O,    XXXXXXX 
+#define ________________HDLIKE_R2__________________       KC_P,    KH_N,    KH_E,    KH_A,    KH_I
+#define ________________HDLIKE_R3__________________       XXXXXXX, KC_F,    KC_COMM, KC_DOT,  XXXXXXX
+#define _HDLIKE_THUMB_R_                                  KC_QUOT, KC_SPC
 
 // APTv3. Daily driver. 
 #define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
@@ -66,15 +66,6 @@
 #define __________________APTv3_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
 #define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
 #define __________________APTv3_R3_________________       XXXXXXX, KC_QUOT, KC_COMM, KC_DOT,  XXXXXXX
-
-// APT26. 
-#define __________________APT26_L1_________________       KC_W,    KC_F,    KH_G,    KC_D,    KC_B
-#define __________________APT26_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
-#define __________________APT26_L3_________________       KC_Q,    KC_C,    KC_M,    KC_P,    KC_V
-
-#define __________________APT26_R1_________________       KC_J,    KC_L,    KH_U,    KC_O,    KC_Y
-#define __________________APT26_R2_________________       KC_X,    KH_N,    KH_E,    KH_A,    KH_I
-#define __________________APT26_R3_________________       KC_Z,    KC_V,    KC_COMM, KC_DOT,  XXXXXXX
 
 // Functions and Window management. Funcs are organized by number except for the debuggin' ones
 #define __________________FUNC_L1__________________       OS_LALT, WKSP_9,  LSTDESK, LSTNODE, WKSP_10
@@ -139,7 +130,7 @@
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.
 #define ___________________SYS_L1__________________       _______, _______, _______, _______, _______
-#define ___________________SYS_L2__________________       QWERTY,  APTMAK,  APTHD,   APT,     _______
+#define ___________________SYS_L2__________________       QWERTY,  HDLIKE,  APTHD,   APT,     _______
 #define ___________________SYS_L3__________________       _______, _______, _______, _______, _______
 
 #define ___________________SYS_R1__________________       QK_BOOT, XXXXXXX,  ALT_F4,  XXXXXXX, XXXXXXX
@@ -174,4 +165,15 @@
 #define ________________APTv3_HD_R1________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_QUOT
 #define ________________APTv3_HD_R2________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
 #define ________________APTv3_HD_R3________________       KC_Z,    KC_M,    KC_COMM, KC_DOT, XXXXXXX
+
+// AptMak 
+#define ________________APTMAK_L1__________________       KC_Q,    KC_W,    KH_F,    KC_P,    KC_B
+#define ________________APTMAK_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+#define ________________APTMAK_L3__________________       KC_X,    KC_C,    KC_G,    KC_D,    KC_V
+#define _APTMAK_THUMB_L_                                  KC_SPC,  NAVMODE
+
+#define ________________APTMAK_R1__________________       KC_Z,    KC_L,    KH_U,    KC_Y,    KC_QUOT
+#define ________________APTMAK_R2__________________       KC_J,    KH_N,    KM_A,    KS_I,    KC_O
+#define ________________APTMAK_R3__________________       XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX
+#define _APTMAK_THUMB_R_                                  OS_LSFT, KC_E
 

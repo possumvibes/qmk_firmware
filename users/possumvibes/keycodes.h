@@ -6,7 +6,8 @@ enum layers {
     _COMBOREF,
     _QWERTY,
     _APTHD,
-    _APTMAK,
+    // _APTMAK,
+    _HDLIKE,
     _FUNC,
     _NUM,
     _MACRO,
@@ -133,7 +134,8 @@ enum custom_keycodes {
 #define QWERTY      DF(_QWERTY)
 #define APT         DF(_APT)
 #define APTHD       DF(_APTHD)
-#define APTMAK      DF(_APTMAK)
+// #define APTMAK      DF(_APTMAK)
+#define HDLIKE      DF(_HDLIKE)
 
 // Shortcuts
 #define S_CUT       S(KC_DEL)
