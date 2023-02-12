@@ -37,15 +37,15 @@
 #define ________________COMBOREF_R3________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  XXXXXXX
 
 // AptMod (Aptbomination)
-#define ________________APTMOD_L1__________________       KC_Q,    KC_F,    KH_G,    KC_D,    KC_B
-#define ________________APTMOD_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
-#define ________________APTMOD_L3__________________       KC_X,    KC_C,    KC_M,    KC_P,    KC_V
-#define _APTMOD_THUMB_L_                                  NAVMODE, OSR_SFT
+#define ________________APTHD2_L1__________________       KC_Q,    KC_C,    KH_G,    KC_D,    KC_B
+#define ________________APTHD2_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+#define ________________APTHD2_L3__________________       KC_X,    KC_F,    KC_Y,    KC_P,    KC_V
+#define _APTHD2_THUMB_L_                                  NAVMODE, OSR_SFT
 
-#define ________________APTMOD_R1__________________       KC_J,    KC_L,    KH_U,    KC_O,    KC_Y 
-#define ________________APTMOD_R2__________________       KC_W,    KH_N,    KH_E,    KH_A,    KH_I
-#define ________________APTMOD_R3__________________       XXXXXXX, KC_QUOT, KC_COMM, KC_DOT,  XXXXXXX
-#define _APTMOD_THUMB_R_                                  KC_BSPC, KC_SPC
+#define ________________APTHD2_R1__________________       KC_J,    KC_L,    KH_U,    KC_O,    XXXXXXX 
+#define ________________APTHD2_R2__________________       KC_W,    KH_N,    KH_E,    KH_A,    KH_I
+#define ________________APTHD2_R3__________________       XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX
+#define _APTHD2_THUMB_R_                                  KC_QUOT, KC_SPC
 
 // AptMak 
 #define ________________APTMAK_L1__________________       KC_Q,    KC_W,    KH_F,    KC_P,    KC_B
