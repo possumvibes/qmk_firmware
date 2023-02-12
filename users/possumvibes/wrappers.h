@@ -37,9 +37,9 @@
 #define ________________COMBOREF_R3________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  XXXXXXX
 
 // AptMod (Aptbomination)
-#define ________________APTHD2_L1__________________       KC_Q,    KC_C,    KH_G,    KC_D,    KC_B
+#define ________________APTHD2_L1__________________       XXXXXXX, KC_F,    KH_G,    KC_D,    KC_B
 #define ________________APTHD2_L2__________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
-#define ________________APTHD2_L3__________________       KC_X,    KC_F,    KC_Y,    KC_P,    KC_V
+#define ________________APTHD2_L3__________________       KC_X,    KC_C,    KC_Y,    KC_P,    KC_V
 #define _APTHD2_THUMB_L_                                  NAVMODE, OSR_SFT
 
 #define ________________APTHD2_R1__________________       KC_J,    KC_L,    KH_U,    KC_O,    XXXXXXX 
