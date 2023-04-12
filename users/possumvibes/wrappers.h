@@ -25,7 +25,7 @@
 
 #define _________________QWERTY_R1_________________       KC_Y,    KC_U,    KY_I,    KC_O,    KC_P
 #define _________________QWERTY_R2_________________       KC_H,    KY_J,    KY_K,    KY_L,    KY_QUOT
-#define _________________QWERTY_R3_________________       KC_N,    KC_M,    KC_COMM, KC_DOT, XXXXXXX
+#define _________________QWERTY_R3_________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  XXXXXXX
 
 // all the cool kids reference combos from an alpha layout they don't remember anymore
 #define ________________COMBOREF_L1________________       KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
@@ -118,16 +118,6 @@
 #define ___________________NAV_R1__________________       OS_LGLC, KC_HOME, KC_UP,   KC_END,  XXXXXXX
 #define ___________________NAV_R2__________________       F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, CLEAR
 #define ___________________NAV_R3__________________       ML_LGUI, ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI
-
-// Nav layer TWO: We Got Mods AGAIN
-#define _______________NAV_LEFT_L1_________________       OS_LGLC, KC_END,  KC_UP,   KC_HOME, XXXXXXX
-#define _______________NAV_LEFT_L2_________________       CLEAR    KC_LEFT, KC_DOWN, KC_RGHT, F5_TH, 
-#define _______________NAV_LEFT_L3_________________       XXXXXXX, ML_LALT, ML_LCTL, ML_LSFT, ML_LGUI
-
-#define _______________NAV_LEFT_R1_________________       XXXXXXX, KC_FWD,  OS_LGUI, KC_BACK, XXXXXXX
-#define _______________NAV_LEFT_R2_________________       XXXXXXX, OS_LSFT, OS_LCTL, OS_LALT, XXXXXXX
-#define _______________NAV_LEFT_R3_________________       XXXXXXX, TS_LCTL, F12_TH,  XXXXXXX, XXXXXXX
-
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.
 #define ___________________SYS_L1__________________       _______, _______, _______, _______, _______

@@ -13,11 +13,11 @@ COMB(r_hrz_up_mid_ind,  KC_TAB,     KC_U, KC_I)
 COMB(r_crx_up_ring,     KC_DQUO,    KC_U, KC_O)
 
 /*---- HOME ROW HORIZONTAL----*/
-COMB(cut,               S_CUT,      KC_S, KC_F)         // Shift+Del (cut)
-COMB(copy,              S_COPY,     KC_S, KC_D)         // Ctrl+Ins (copy)
-COMB(paste,             S_PASTE,    KC_F, KC_G)         // Shift+Del (paste)
+COMB(cut,               S_CUT,      KC_S, KC_F)
+COMB(copy,              S_COPY,     KC_S, KC_D)
+COMB(paste,             S_PASTE,    KC_F, KC_G)
 
-COMB(panic_time,        PANIC,      KC_D, KC_K)         // panic!
+COMB(panic_time,        PANIC,      KC_D, KC_K)
 
 COMB(r_hrz_hm_ind_lat,  KC_CIRC,    KC_H, KC_J)
 COMB(r_hrz_hm_mid_ind,  KC_COLN,    KC_J, KC_K)
@@ -63,7 +63,6 @@ COMB(r_diag_up_mid,     KC_RBRC,    KC_I, KC_J)
 COMB(r_diag_up_pnk,     KC_DEL,     KC_P, KC_L)
 
 /*---- HOME-BOTTOM ADJACENT DIAGONALS ----*/
-COMB(l_diag_hm_pnk,     C(KC_W),    KC_A, KC_X)
 COMB(l_dcr_hm,          KC_CAPS,    KC_S, KC_V)
 COMB(l_diag_hm_mid,     KC_LPRN,    KC_D, KC_V)
 COMB(wheel_dn,          KC_WH_D,    KC_F, KC_B)
