@@ -35,6 +35,8 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record) {
         case KC_ASTR:
         case KC_EQL:
         case KC_PLUS:
+        case BRCKETS:
+        case KC_V:
         case KC_X:
             // process the code and stay in the mode *dabs*
             break;

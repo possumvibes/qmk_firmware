@@ -8,6 +8,7 @@ COMB(l_ful_up,          KY_QU,      KC_W, KC_E, KC_R)
 COMB(l_hrz_up_ind_lat,  KC_TILD,    KC_R, KC_T)
 
 COMB(r_hrz_up_ind_lat,  UND_RED,    KC_Y, KC_U)
+COMB(r_ful_up,          VI_YI,      KC_U, KC_I, KC_O)
 COMB(r_hrz_up_mid_ind,  KC_TAB,     KC_U, KC_I)
 COMB(r_crx_up_ring,     KC_DQUO,    KC_U, KC_O)
 
@@ -16,7 +17,7 @@ COMB(cut,               S_CUT,      KC_S, KC_F)         // Shift+Del (cut)
 COMB(copy,              S_COPY,     KC_S, KC_D)         // Ctrl+Ins (copy)
 COMB(paste,             S_PASTE,    KC_F, KC_G)         // Shift+Del (paste)
 
-COMB(panic,             PANIC,      KC_D, KC_K)         // panic!
+COMB(panic_time,        PANIC,      KC_D, KC_K)         // panic!
 
 COMB(r_hrz_hm_ind_lat,  KC_CIRC,    KC_H, KC_J)
 COMB(r_hrz_hm_mid_ind,  KC_COLN,    KC_J, KC_K)
@@ -26,7 +27,7 @@ COMB(r_crx_hm,          KC_SCLN,    KC_J, KC_L)
 COMB(l_hrz_dn_rng_mid,  KC_Q,       KC_X, KC_C)
 COMB(l_hrz_dn_mid_ind,  KC_ASTR,    KC_C, KC_V)
 COMB(enter,             KC_ENT,     KC_X, KC_V)
-COMB(l_ful_dn,          OS_LGLC,    KC_X, KC_C, KC_V)
+COMB(l_ful_dn,          BRCKETS,    KC_X, KC_C, KC_V)
 
 COMB(r_ful_dn,          CW_TOGG,    KC_M, KC_COMM, KC_DOT)
 COMB(r_hrz_dn_mid_ind,  KC_MINS,    KC_M, KC_COMM)
@@ -40,6 +41,7 @@ COMB(l_vert_up_lat,     KC_RABK,    KC_G, KC_T)
 
 COMB(r_vert_up_lat,     KC_LABK,    KC_H, KC_Y)
 COMB(r_vert_up_ind,     KC_DLR,     KC_J, KC_U)
+COMB(r_vert_up_ring,    BRCKETS,    KC_L, KC_O)
 
 /* --- HOME-BOTTOM VERTICALS --- */
 COMB(l_vert_hm_ring,    KC_GRV,    KC_S, KC_X)
@@ -81,12 +83,10 @@ COMB(rthumbs,           MCRMODE,    KC_SPC, KC_BSPC)
 #endif
 
 /*---- DIAGONAL THUMBS ----*/
-COMB(lt_out_up_ring,    NAVMODE,    KC_TAB, KC_W)
-COMB(lt_out_ring,       MCRMODE,    KC_TAB, KC_S)
-COMB(lt_out_middle,     SYMMODE,    KC_TAB, KC_D)
+COMB(lt_out_ring,       SYMMODE,    KC_TAB, KC_S)
+COMB(lt_out_middle,     MCRMODE,    KC_TAB, KC_D)
 COMB(lt_out_index,      FUNMODE,    KC_TAB, KC_F)
 
 COMB(rt_out_index,      FUNMODE,    KC_BSPC, KC_J)
 COMB(rt_out_middle,     NUM_OSL,    KC_BSPC, KC_K)
 COMB(rt_out_ring,       NUMMODE,    KC_BSPC, KC_L)
-COMB(rt_out_up_ring,    MCRMODE,    KC_BSPC, KC_O)

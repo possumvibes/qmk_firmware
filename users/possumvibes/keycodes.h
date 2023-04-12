@@ -52,14 +52,17 @@ enum custom_keycodes {
     VI_ZQ,    // ZQ
     VI_YA,    // ya
     VI_YI,    // yi
-    VI_YAW,     // yaw
-    VI_YIW,     // yiw
+    VI_AW,    // aw
+    VI_IW,    // iw
+    VI_YAW,   // yaw
+    VI_YIW,   // yiw
 
     // macros
     ALT_F4,   // per is_windows Close Application
     DMENU,    // application finder (dmenu, start, etc)
     QMKCOMP,  // qmk compile
     QMKFLSH,  // qmk flash
+    QMKSTRN,  // qmk
     COMMENT,  // C(KC)
     UNCOMNT,  // C(KU)
 

@@ -85,8 +85,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case KY_QU:
             if(record->event.pressed){
-                tap_code(KC_Q);
+                if(is_caps_word_on()){
+                    tap_code16(S(KC_Q));
+                    tap_code16(S(KC_U));
+                    return false;
+                }
 
+                tap_code(KC_Q);
+                
                 if(is_shifted){
                     uint8_t mod_state = get_mods();
                     del_oneshot_mods(MOD_MASK_SHIFT);
@@ -117,21 +123,38 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         case VI_YI:
-        case VI_YA:
             if(record->event.pressed){
                 if(host_keyboard_led_state().caps_lock){
                     tap_code16(KC_CAPS);
                 }
-
-                uint8_t code = keycode == VI_YI ? KC_I : KC_A;
 
                 if(is_shifted){
                     del_oneshot_mods(MOD_MASK_SHIFT);
                     del_mods(MOD_MASK_SHIFT);
                 }
 
+                uint8_t code = is_shifted ? KC_A : KC_I;
                 tap_code(KC_Y);
                 tap_code(code);
+            }
+            return false;
+        case VI_AW:
+        case VI_IW:
+            if(record->event.pressed){
+                if(host_keyboard_led_state().caps_lock){
+                    tap_code16(KC_CAPS);
+                }
+
+                uint8_t textobject = keycode == VI_AW ? KC_A : KC_I;
+                uint16_t word_code = is_shifted ? S(KC_W) : KC_W;
+
+                if(is_shifted){
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    del_mods(MOD_MASK_SHIFT);
+                }
+
+                tap_code(textobject);
+                tap_code16(word_code);
             }
             return false;
         case VI_YAW:
@@ -437,6 +460,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
+        case QMKSTRN:
+            if(record->event.pressed){
+                if(host_keyboard_led_state().caps_lock){
+                    tap_code16(KC_CAPS);
+                }
+                SEND_STRING("qmk");
+            }
+            return false;
         case COMMENT: {
             if(record->event.pressed){
                 SEND_STRING(SS_LCTL("kc"));

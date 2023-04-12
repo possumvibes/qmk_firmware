@@ -15,7 +15,7 @@
 #define __ALPHATHUMB_L__        THM_LH0, THM_LH1
 
 #define THM_RH0     KC_SPC
-#define THM_RH1     KC_NO
+#define THM_RH1     SYMMODE
 #define __ALPHATHUMB_R__        THM_RH1, THM_RH0
 
 // fun fact: i literally do not remember qwerty anymore
@@ -77,9 +77,9 @@
 #define __________________FUNC_R3__________________       KC_F1,   KC_F2,   KC_F3,   KC_F4,   XXXXXXX
 
 // Numpad left, mods, some punc, and jkG right.
-#define _________________NUMPADL_L1________________       XXXXXXX, KC_7,    KY_8,    KC_9,    KC_PERC
-#define _________________NUMPADL_L2________________       XXXXXXX, KY_4,    KY_5,    KY_6,    KC_DLR
-#define _________________NUMPADL_L3________________       KC_X,    KC_1,    KC_2,    KC_3,    KC_0
+#define _________________NUMPADL_L1________________       KC_W,    KC_7,    KY_8,    KC_9,    KC_PERC
+#define _________________NUMPADL_L2________________       KC_V,    KY_4,    KY_5,    KY_6,    KC_DLR
+#define _________________NUMPADL_L3________________       KC_X,    KC_1,    KC_2,    KC_3,    XXXXXXX
 #define ____NUMPAD_LT___                                  _______, KC_0
 
 
@@ -88,25 +88,26 @@
 #define _________________NUMPADL_R3________________       XXXXXXX, _______, _______, _______, XXXXXXX
 #define ____NUMPAD_RT___                                  _______, _______
 
-// Macro layer: so i can put the v2 macros somewhere shiftable
-#define _________________MACRO_L1__________________       XXXXXXX, KY_V1,   KY_V2,   KY_V3,   XXXXXXX
-#define _________________MACRO_L2__________________       XXXXXXX, VI_YAW,  VI_YA,   KC_Y,    XXXXXXX
-#define _________________MACRO_L3__________________       XXXXXXX, VI_YIW,  VI_YI,   KC_W,    XXXXXXX
+// Macro layer: it's got macros
+#define _________________MACRO_L1__________________       _______, KY_V1,   KY_V2,   KY_V3,   _______
+#define _________________MACRO_L2__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define ____MACRO_LT____                                  _______, OSR_SFT
 
-#define _________________MACRO_R1__________________       XXXXXXX, GET_SET, XXXXXXX, BRCKETS, XXXXXXX
-#define _________________MACRO_R2__________________       XXXXXXX, LMBD_FN, ANGLEBR, MD_LINK, XXXXXXX
-#define _________________MACRO_R3__________________       XXXXXXX, RPR_SCL, MD_CODE, XXXXXXX, XXXXXXX
+#define _________________MACRO_R1__________________       XXXXXXX, VI_YIW,  KC_W,    VI_YAW,  XXXXXXX
+#define _________________MACRO_R2__________________       XXXXXXX, VI_IW,   MD_LINK, VI_AW,   XXXXXXX
+#define _________________MACRO_R3__________________       XXXXXXX, MD_CODE, ANGLEBR, XXXXXXX, XXXXXXX
 #define ____MACRO_RT____                                  OSR_SFT, _______
 
-#define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______
-#define ___________________SYM_L2__________________       _______, OS_LALT, OS_LCTL, OS_LSFT, _______
-#define ___________________SYM_L3__________________       _______, _______, _______, _______, _______
+// Sym layer: There are four symbols.
+#define ___________________SYM_L1__________________       _______, KY_V1,   KY_V2,   KY_V3,   _______
+#define ___________________SYM_L2__________________       _______, _______, KC_AMPR, KC_PLUS, _______
+#define ___________________SYM_L3__________________       _______, _______, KC_PIPE, KC_EQL,  _______
 #define _____SYM_LT_____                                  _______, OSR_SFT
 
-#define ___________________SYM_R1__________________       KC_EXLM, KC_PLUS, KC_AMPR, KC_PIPE, XXXXXXX
-#define ___________________SYM_R2__________________       XXXXXXX, KC_EQL,  KC_BSLS, KC_GRV,  XXXXXXX
-#define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, _______, _______, XXXXXXX
+#define ___________________SYM_R1__________________       _______, _______, OS_LGUI, _______, _______
+#define ___________________SYM_R2__________________       _______, OS_LSFT, OS_LCTL, OS_LSFT, _______
+#define ___________________SYM_R3__________________       XXXXXXX, RPR_SCL, LMBD_FN, GET_SET, XXXXXXX
 #define _____SYM_RT_____                                  OSR_SFT, _______
 
 // Nav layer: We Got Mods
@@ -133,7 +134,7 @@
 #define ___________________SYS_L2__________________       QWERTY,  HDLIKE,  APTHD,   APT,     _______
 #define ___________________SYS_L3__________________       _______, _______, _______, _______, _______
 
-#define ___________________SYS_R1__________________       QK_BOOT, XXXXXXX,  ALT_F4,  XXXXXXX, XXXXXXX
+#define ___________________SYS_R1__________________       QK_BOOT, QMKSTRN, ALT_F4,  XXXXXXX, XXXXXXX
 #define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, VI_ZQ,   _______
 #define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, VI_ZZ,   _______
 
