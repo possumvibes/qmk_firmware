@@ -15,7 +15,7 @@
 #define __ALPHATHUMB_L__        THM_LH0, THM_LH1
 
 #define THM_RH0     KC_SPC
-#define THM_RH1     SYMMODE
+#define THM_RH1     MCRMODE
 #define __ALPHATHUMB_R__        THM_RH1, THM_RH0
 
 // fun fact: i literally do not remember qwerty anymore
@@ -94,19 +94,19 @@
 #define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define ____MACRO_LT____                                  _______, OSR_SFT
 
-#define _________________MACRO_R1__________________       XXXXXXX, VI_YIW,  KC_W,    VI_YAW,  XXXXXXX
-#define _________________MACRO_R2__________________       XXXXXXX, VI_IW,   MD_LINK, VI_AW,   XXXXXXX
-#define _________________MACRO_R3__________________       XXXXXXX, MD_CODE, ANGLEBR, XXXXXXX, XXXXXXX
+#define _________________MACRO_R1__________________       XXXXXXX, KC_W,    VI_YIW,  VI_YAW,  XXXXXXX
+#define _________________MACRO_R2__________________       XXXXXXX, KC_Y,    VI_IW,   VI_AW,   XXXXXXX
+#define _________________MACRO_R3__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define ____MACRO_RT____                                  OSR_SFT, _______
 
 // Sym layer: There are four symbols.
-#define ___________________SYM_L1__________________       _______, KY_V1,   KY_V2,   KY_V3,   _______
-#define ___________________SYM_L2__________________       _______, _______, KC_AMPR, KC_PLUS, _______
-#define ___________________SYM_L3__________________       _______, _______, KC_PIPE, KC_EQL,  _______
+#define ___________________SYM_L1__________________       _______, _______, OS_LGUI, _______, _______
+#define ___________________SYM_L2__________________       _______, OS_LALT, OS_LCTL, OS_LSFT, _______
+#define ___________________SYM_L3__________________       _______, _______, OS_LALT, _______, _______
 #define _____SYM_LT_____                                  _______, OSR_SFT
 
-#define ___________________SYM_R1__________________       _______, _______, OS_LGUI, _______, _______
-#define ___________________SYM_R2__________________       _______, OS_LSFT, OS_LCTL, OS_LSFT, _______
+#define ___________________SYM_R1__________________       _______, KC_EQL,  KC_PIPE, MD_CODE, _______
+#define ___________________SYM_R2__________________       _______, KC_PLUS, KC_AMPR, MD_LINK, _______
 #define ___________________SYM_R3__________________       XXXXXXX, RPR_SCL, LMBD_FN, GET_SET, XXXXXXX
 #define _____SYM_RT_____                                  OSR_SFT, _______
 
