@@ -96,7 +96,7 @@
 
 #define _________________MACRO_R1__________________       XXXXXXX, KC_W,    VI_YIW,  VI_YAW,  XXXXXXX
 #define _________________MACRO_R2__________________       XXXXXXX, KC_Y,    VI_IW,   VI_AW,   XXXXXXX
-#define _________________MACRO_R3__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________MACRO_R3__________________       XXXXXXX, RPR_SCL, LMBD_FN, GET_SET, XXXXXXX
 #define ____MACRO_RT____                                  OSR_SFT, _______
 
 // Sym layer: There are four symbols.
@@ -105,9 +105,9 @@
 #define ___________________SYM_L3__________________       _______, _______, OS_LALT, _______, _______
 #define _____SYM_LT_____                                  _______, OSR_SFT
 
-#define ___________________SYM_R1__________________       _______, KC_EQL,  KC_PIPE, MD_CODE, _______
+#define ___________________SYM_R1__________________       _______, KC_EQL,  KC_PIPE, ANGLEBR, _______
 #define ___________________SYM_R2__________________       _______, KC_PLUS, KC_AMPR, MD_LINK, _______
-#define ___________________SYM_R3__________________       XXXXXXX, RPR_SCL, LMBD_FN, GET_SET, XXXXXXX
+#define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, MD_CODE, XXXXXXX, XXXXXXX
 #define _____SYM_RT_____                                  OSR_SFT, _______
 
 // Nav layer: We Got Mods
@@ -124,7 +124,7 @@
 #define ___________________SYS_L2__________________       QWERTY,  HDLIKE,  APTHD,   APT,     _______
 #define ___________________SYS_L3__________________       _______, _______, _______, _______, _______
 
-#define ___________________SYS_R1__________________       QK_BOOT, QMKSTRN, ALT_F4,  XXXXXXX, XXXXXXX
+#define ___________________SYS_R1__________________       QK_BOOT, XXXXXXX, ALT_F4,  XXXXXXX, XXXXXXX
 #define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, VI_ZQ,   _______
 #define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, VI_ZZ,   _______
 
