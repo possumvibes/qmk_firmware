@@ -90,13 +90,13 @@
 
 // Macro layer: it's got macros
 #define _________________MACRO_L1__________________       _______, KY_V1,   KY_V2,   KY_V3,   _______
-#define _________________MACRO_L2__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+#define _________________MACRO_L2__________________       XXXXXXX, VI_AW,   VI_IW,   XXXXXXX, XXXXXXX
 #define _________________MACRO_L3__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define ____MACRO_LT____                                  _______, OSR_SFT
 
 #define _________________MACRO_R1__________________       XXXXXXX, KC_W,    VI_YIW,  VI_YAW,  XXXXXXX
 #define _________________MACRO_R2__________________       XXXXXXX, KC_Y,    VI_IW,   VI_AW,   XXXXXXX
-#define _________________MACRO_R3__________________       XXXXXXX, RPR_SCL, LMBD_FN, GET_SET, XXXXXXX
+#define _________________MACRO_R3__________________       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define ____MACRO_RT____                                  OSR_SFT, _______
 
 // Sym layer: There are four symbols.
@@ -105,9 +105,9 @@
 #define ___________________SYM_L3__________________       _______, _______, OS_LALT, _______, _______
 #define _____SYM_LT_____                                  _______, OSR_SFT
 
-#define ___________________SYM_R1__________________       _______, KC_EQL,  KC_PIPE, ANGLEBR, _______
-#define ___________________SYM_R2__________________       _______, KC_PLUS, KC_AMPR, MD_LINK, _______
-#define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, MD_CODE, XXXXXXX, XXXXXXX
+#define ___________________SYM_R1__________________       MD_CODE, KC_EQL,  KC_PIPE, ANGLEBR, _______
+#define ___________________SYM_R2__________________       LMBD_FN, KC_PLUS, KC_AMPR, MD_LINK, _______
+#define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, RPR_SCL, GET_SET, XXXXXXX
 #define _____SYM_RT_____                                  OSR_SFT, _______
 
 // Nav layer: We Got Mods
