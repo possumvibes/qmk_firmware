@@ -121,7 +121,7 @@
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.
 #define ___________________SYS_L1__________________       _______, _______, _______, _______, _______
-#define ___________________SYS_L2__________________       QWERTY,  HDLIKE,  APTHD,   APT,     _______
+#define ___________________SYS_L2__________________       QWERTY,  APT,     _______, _______, _______
 #define ___________________SYS_L3__________________       _______, _______, _______, _______, _______
 
 #define ___________________SYS_R1__________________       QK_BOOT, XXXXXXX, ALT_F4,  XXXXXXX, XXXXXXX
