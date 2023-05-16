@@ -15,7 +15,7 @@
 #define __ALPHATHUMB_L__        THM_LH0, THM_LH1
 
 #define THM_RH0     KC_SPC
-#define THM_RH1     XXXXXXX
+#define THM_RH1     KC_SPC
 #define __ALPHATHUMB_R__        THM_RH1, THM_RH0
 
 // fun fact: i literally do not remember qwerty anymore
