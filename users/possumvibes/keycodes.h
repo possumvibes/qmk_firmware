@@ -147,12 +147,9 @@ enum custom_keycodes {
 #define S_UNDO      C(KC_Z)
 #define S_REDO      C(KC_Y)
 #define S_SAVE      C(KC_S)
-#define S_ALL       C(KC_A)
 #define S_BACK      A(KC_LEFT)
 #define S_FWD       A(KC_RIGHT)
 #define C_BSPC      C(KC_BSPC)
-#define CTL_U       C(KC_U)
-#define CTL_GRV     C(KC_GRV)
 
 #define F3_TH       TH(KC_F3)
 #define F5_TH       TH(KC_F5)

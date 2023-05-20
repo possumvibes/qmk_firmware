@@ -113,13 +113,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     tap_code16(KC_CAPS);
                 }
 
-                uint8_t exitcode = keycode == VI_ZZ ? KC_Z : KC_Q;
+                if(is_shifted){
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    del_mods(MOD_MASK_SHIFT);
+                }
 
                 tap_code(KC_ESC);
-                register_code(KC_LSFT);
-                tap_code(KC_Z);
-                tap_code(exitcode);
-                unregister_code(KC_LSFT);
+                
+                if (keycode == VI_ZZ)
+                {
+                    SEND_STRING(":wq");
+                }
+                else
+                {
+                    SEND_STRING(":q!");
+                }
+                
+                tap_code16(KC_ENT);
             }
             return false;
         case VI_YI:
