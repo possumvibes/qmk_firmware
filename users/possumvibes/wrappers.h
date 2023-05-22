@@ -5,7 +5,7 @@
 /*
    Wrappers approach is from users/drashna.
    By defining row sections in blocks like this,
-   they are easily reusable in very different keyboard layouts.
+   they are reusable across differently sized boards.
 */
 
 // Primary thumbs. isn't this illuminating?
