@@ -1,8 +1,8 @@
 # Enable common features
-COMBO_ENABLE 		 = yes 	# Enables use of combos
-MOUSEKEY_ENABLE  = yes	  # Enables mouse keys
-CAPS_WORD_ENABLE = yes	  # Enables shift-based caps word
-LTO_ENABLE       = yes   # Longer compile, smaller file; disables deprecated functionality
+COMBO_ENABLE 		 = yes 
+MOUSEKEY_ENABLE  = yes 
+CAPS_WORD_ENABLE = yes 
+LTO_ENABLE       = yes 
 
 # Disable unused features
 MAGIC_ENABLE	      = no
@@ -17,6 +17,12 @@ VPATH += keyboards/gboards/ # using gboards combo code: see https://combos.gboar
 INTROSPECTION_KEYMAP_C = process_records.c
 SRC += possumvibes.c
 
+# Add custom features
+SRC += features/mod_lock.c
+SRC += features/nshot_mod.c
+SRC += features/smart_layer.c
+
+# Add configuration for built-in features
 ifeq ($(strip $(COMBOS_ENABLE)), yes)
 	SRC += combos.c
 endif
@@ -31,8 +37,3 @@ endif
 
 SRC += tap_holds.c
 
-# Add custom features
-SRC += features/mod_lock.c
-SRC += features/nshot_mod.c
-SRC += features/smart_layer.c
-SRC += features/swapper.c

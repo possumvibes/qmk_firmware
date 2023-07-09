@@ -15,7 +15,6 @@ bool process_custom_key( bool is_shifted,
 
             set_mods(mod_state);
         } else {
-            // regular: /
             register_code16(tap_keycode);
         }
         return false;

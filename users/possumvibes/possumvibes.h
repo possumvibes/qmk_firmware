@@ -9,7 +9,6 @@
 #include "features/mod_lock.h"
 #include "features/nshot_mod.h"
 #include "features/smart_layer.h"
-#include "features/swapper.h"
 
 // Interfaces
 bool process_custom_key(bool is_shifted,

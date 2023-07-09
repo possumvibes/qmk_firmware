@@ -17,7 +17,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     // Process the functions
     process_mod_lock(keycode, record);
-    process_swappers(keycode, record);
     process_nshot_state(keycode, record);
     process_layermodes(keycode, record);
 
