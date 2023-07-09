@@ -17,7 +17,7 @@ enum layers {
     _SYSTEM
 };
 
-#define PLACEHOLDER_SAFE_RANGE SAFE_RANGE
+#define PLACEHOLDER_SAFE_RANGE QK_USER
 enum custom_keycodes {
 
     // Shortcuts and Macros

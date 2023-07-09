@@ -4,8 +4,6 @@
 #include "g/keymap_combo.h"
 #endif
 
-__attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) { return true; }
-
 bool is_windows = ISWIN_DF;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE
