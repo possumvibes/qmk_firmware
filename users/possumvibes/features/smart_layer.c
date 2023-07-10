@@ -124,13 +124,6 @@ void nav_mode_process(uint16_t keycode, keyrecord_t *record){
         // case F12_TH:
         // case CTL_U:
             break;
-        case NAV_SPC:
-        case NAV_E:
-            // if nav THs are tapped, cancel, otherwise continue.
-            if (record -> event.pressed) {
-                nav_mode_disable();
-            }
-            break;
         default:
             // All other keys disable the layer mode.
             if (!record->event.pressed) {

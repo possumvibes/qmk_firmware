@@ -5,15 +5,11 @@ enum layers {
     _APT = 0,
     _COMBOREF,
     _QWERTY,
-    _APTHD,
-    // _APTMAK,
-    _HDLIKE,
     _FUNC,
     _NUM,
     _MACRO,
     _SYM,
     _NAV,
-    _NAVLEFT,
     _SYSTEM
 };
 
@@ -108,7 +104,6 @@ enum custom_keycodes {
 // layer toggles
 #define NUM_OSL     OSL(_NUM)
 #define SYS_OSL     OSL(_SYSTEM)
-#define NAV_E       LT(_NAVLEFT, KC_E)
 #define NAV_SPC     LT(_NAV, KC_SPC)
 
 #define LCLICK      KC_BTN1
@@ -136,20 +131,14 @@ enum custom_keycodes {
 // Default Layer States
 #define QWERTY      DF(_QWERTY)
 #define APT         DF(_APT)
-#define APTHD       DF(_APTHD)
-// #define APTMAK      DF(_APTMAK)
-#define HDLIKE      DF(_HDLIKE)
 
 // Shortcuts
 #define S_CUT       S(KC_DEL)
 #define S_COPY      C(KC_INS)
 #define S_PASTE     S(KC_INS)
-#define S_UNDO      C(KC_Z)
-#define S_REDO      C(KC_Y)
 #define S_SAVE      C(KC_S)
 #define S_BACK      A(KC_LEFT)
 #define S_FWD       A(KC_RIGHT)
-#define C_BSPC      C(KC_BSPC)
 
 #define F3_TH       TH(KC_F3)
 #define F5_TH       TH(KC_F5)

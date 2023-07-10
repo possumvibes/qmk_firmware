@@ -11,20 +11,6 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-// bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-//     switch(keycode) {
-//         case KH_H:
-//         case KH_N:
-//         case KS_T:
-//         case KS_D:
-//         case KY_F:
-//         case KY_J:
-//             return true;
-//         default:
-//             return false;
-//     }
-// }
-
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
     switch (keycode) {
         // Pinky
@@ -76,11 +62,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
         case KY_I:
         case KY_8:
             return TAPPING_TERM + 5;
-
-        // Thumbs I Guess
-        case NAV_E:
-        case NAV_SPC:
-            return TAPPING_TERM - 10;
 
         default:
             return TAPPING_TERM;

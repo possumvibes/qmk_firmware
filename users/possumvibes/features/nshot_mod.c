@@ -126,8 +126,6 @@ bool is_nshot_cancel_key(uint16_t keycode) {
         case PANIC:
         case CLEAR:
         case NAVMODE:
-        case NAV_SPC:
-        case NAV_E:
             return true;
         default:
             return false;
@@ -137,8 +135,6 @@ bool is_nshot_cancel_key(uint16_t keycode) {
 bool is_nshot_ignored_key(uint16_t keycode) {
     switch (keycode) {
         case NAVMODE:
-        case NAV_SPC:
-        case NAV_E:
         case NUM_OSL:
         case NUMMODE:
         case FUNMODE:

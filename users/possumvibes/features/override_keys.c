@@ -1,4 +1,4 @@
-#include "possumvibes.h"
+#include "override_keys.h"
 
 bool process_custom_key( bool is_shifted,
     uint16_t tap_keycode,
@@ -41,7 +41,6 @@ bool override_shift( bool is_shifted,
 
             set_mods(mod_state);
         } else {
-            // regular: /
             register_code16(keycode);
         }
         return false;
