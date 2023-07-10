@@ -3,8 +3,8 @@
 /*---- TOP ROW HORIZONTAL----*/
 COMB(l_crx_up,          KC_ESC,     KC_W, KC_R)
 COMB(l_hrz_up_rng_mid,  KC_Z,       KC_W, KC_E) 
-COMB(l_hrz_up_mid_ind,  S_SAVE,     KC_E, KC_R) 
-COMB(l_ful_up,          KY_QU,      KC_W, KC_E, KC_R)
+COMB(l_hrz_up_mid_ind,  KY_QU,      KC_E, KC_R) 
+COMB(l_ful_up,          KC_Q,       KC_W, KC_E, KC_R)
 COMB(l_hrz_up_ind_lat,  KC_TILD,    KC_R, KC_T)
 
 COMB(r_hrz_up_ind_lat,  UND_RED,    KC_Y, KC_U)
@@ -24,7 +24,7 @@ COMB(r_hrz_hm_mid_ind,  KC_COLN,    KC_J, KC_K)
 COMB(r_crx_hm,          KC_SCLN,    KC_J, KC_L)
 
 /*---- BOTTOM ROW HORIZONTAL----*/
-COMB(l_hrz_dn_rng_mid,  KC_Q,       KC_X, KC_C)
+COMB(l_hrz_dn_rng_mid,  KC_EQL,     KC_X, KC_C)
 COMB(l_hrz_dn_mid_ind,  KC_ASTR,    KC_C, KC_V)
 COMB(enter,             KC_ENT,     KC_X, KC_V)
 COMB(l_ful_dn,          BRCKETS,    KC_X, KC_C, KC_V)

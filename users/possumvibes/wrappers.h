@@ -83,8 +83,8 @@
 #define _____SYM_LT_____                                  _______, OSR_SFT
 
 #define ___________________SYM_R1__________________       MD_CODE, KC_EQL,  KC_PIPE, ANGLEBR, _______
-#define ___________________SYM_R2__________________       LMBD_FN, KC_PLUS, KC_AMPR, MD_LINK, _______
-#define ___________________SYM_R3__________________       XXXXXXX, KC_CIRC, RPR_SCL, GET_SET, XXXXXXX
+#define ___________________SYM_R2__________________       LMBD_FN, KC_PLUS, KC_PIPE, MD_LINK, _______
+#define ___________________SYM_R3__________________       XXXXXXX, KC_PIPE, RPR_SCL, GET_SET, XXXXXXX
 #define _____SYM_RT_____                                  OSR_SFT, _______
 
 // Nav layer: We Got Mods
@@ -101,7 +101,7 @@
 #define ___________________SYS_L2__________________       QWERTY,  APT,     _______, _______, _______
 #define ___________________SYS_L3__________________       _______, _______, _______, _______, _______
 
-#define ___________________SYS_R1__________________       QK_BOOT, XXXXXXX, ALT_F4,  XXXXXXX, XXXXXXX
+#define ___________________SYS_R1__________________       QK_BOOT, XXXXXXX, ALT_F4,  S_SAVE,  XXXXXXX
 #define ___________________SYS_R2__________________       IS_WIN,  QMKCOMP, COMMENT, VI_ZQ,   _______
 #define ___________________SYS_R3__________________       XXXXXXX, QMKFLSH, UNCOMNT, VI_ZZ,   _______
 
