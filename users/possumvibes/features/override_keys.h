@@ -19,6 +19,11 @@ bool override_bracket_pair(
     uint16_t keycode,
     keyrecord_t *record );
 
+bool send_autopair(
+  uint16_t left_keycode,
+  uint16_t right_keycode,
+  keyrecord_t *record );
+
 bool send_function_bracket_string(
     bool is_shifted,
     uint16_t keycode,

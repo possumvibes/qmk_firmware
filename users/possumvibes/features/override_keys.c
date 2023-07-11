@@ -78,6 +78,27 @@ bool override_bracket_pair(
     return false;
 }
 
+bool send_autopair(
+  uint16_t keycode,
+  uint16_t pair_keycode,
+  keyrecord_t *record  ) {
+    if(record->event.pressed) {
+      // Tap the base keycode regardless of shift state
+      tap_code16(keycode);
+      tap_code16(pair_keycode);
+
+			// clear mods before moving left
+      uint8_t mod_state = get_mods();
+      del_oneshot_mods(MOD_MASK_SHIFT);
+      del_mods(MOD_MASK_SHIFT);
+
+			// move left and reset mod state
+      tap_code(KC_LEFT);
+      set_mods(mod_state);
+    }
+    return false;
+}
+
 // TODO POSSUM all of these methods can get combined into a smarter def/dict based shift override
 // just need to figure out how to manage the strings for these
 // todo check ericgebhart and getreuer code, they've both got stuff for this specifically

@@ -370,36 +370,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case ANGLEBR:
-            if(record->event.pressed){
-                uint8_t mod_state = get_mods();
-                del_oneshot_mods(MOD_MASK_SHIFT);
-                del_mods(MOD_MASK_SHIFT);
+        case ANGLEBR: return send_autopair(KC_LABK, KC_RABK, record);
+				case BRCKETS: return send_autopair(KC_LBRC, KC_RBRC, record);
 
-                tap_code16(KC_LABK);
-                tap_code16(KC_RABK);
-                tap_code(KC_LEFT);
-
-                set_mods(mod_state);
-            }
-            return false;
-
-        case BRCKETS:
-            if(record->event.pressed){
-                // will type [unshifted] or { shifted }
-                tap_code(KC_LBRC);
-                tap_code(KC_RBRC);
-
-                // Clear mods before moving back
-                uint8_t mod_state = get_mods();
-                del_oneshot_mods(MOD_MASK_SHIFT);
-                del_mods(MOD_MASK_SHIFT);
-
-                tap_code(KC_LEFT);
-                set_mods(mod_state);
-            }
-            return false;
-
+  				
         case ALT_F4:
             if(record->event.pressed){
                 if(is_windows){
@@ -467,14 +441,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
-        case QMKSTRN:
-            if(record->event.pressed){
-                if(host_keyboard_led_state().caps_lock){
-                    tap_code16(KC_CAPS);
-                }
-                SEND_STRING("qmk");
-            }
-            return false;
         case COMMENT: {
             if(record->event.pressed){
                 SEND_STRING(SS_LCTL("kc"));
@@ -489,41 +455,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
-
-        #ifdef CAPS_WORD_ENABLE
-        case KC_CAPS:
-            if(record->event.pressed){
-                if(is_caps_word_on()){
-                    // Word OFF
-                    caps_word_off();
-                    // Lock OFF
-                    if(host_keyboard_led_state().caps_lock){
-                        tap_code16(KC_CAPS);
-                    }
-                    return false;
-                }
-                if(is_shifted){
-                    // if already caps-ing, OFF.
-                    if(host_keyboard_led_state().caps_lock){
-                        tap_code16(KC_CAPS);
-                        return false;
-                    }
-
-                    // Word ON
-                    caps_word_on();
-                    return false;
-                }
-                // Lock NORMAL
-                return true;
-            }
-            else{
-                if(is_caps_word_on() || is_shifted){
-                    return false;
-                }
-                // Lock NORMAL
-                return true;
-            }
-        #endif
     }
 
     return true;
