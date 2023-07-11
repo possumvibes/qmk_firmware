@@ -1,17 +1,24 @@
 #include QMK_KEYBOARD_H
 
-// Interfaces
-bool process_custom_key(bool is_shifted,
-    uint16_t tap_keycode,
-    uint16_t shift_override,
-    uint16_t keycode,
-    keyrecord_t *record);
+// Methods for fancy behavior overrides
 
+
+// Overrides a key's shift to a different uint16_t keycode
 bool override_shift(bool is_shifted,
-    uint16_t shift_override,
     uint16_t keycode,
+    uint16_t shift_override,
     keyrecord_t *record);
 
+// tap-hold equivalent to override_shift
+bool override_th_hold(uint16_t hold_keycode, keyrecord_t *record);
+
+// Sends an auto-closed keycode pair.
+bool send_autopair(
+  uint16_t left_keycode,
+  uint16_t right_keycode,
+  keyrecord_t *record );
+
+// Sends an auto-closed keycode pair on shift.
 bool send_autopair_on_shift(
     bool is_shifted,
     uint16_t left_keycode,
@@ -19,21 +26,20 @@ bool send_autopair_on_shift(
     uint16_t keycode,
     keyrecord_t *record );
 
-bool send_autopair(
-  uint16_t left_keycode,
-  uint16_t right_keycode,
-  keyrecord_t *record );
+bool send_double_on_shift(
+	bool is_shifted,
+	uint16_t keycode,
+	keyrecord_t *record );
 
-bool send_function_bracket_string(
+// Sends (){
+bool send_string_c_function(
     bool is_shifted,
     uint16_t keycode,
     keyrecord_t *record);
 
-bool send_link_bracket_string(
-    bool is_shifted,
-    uint16_t keycode,
+// Sends a markdown link []()
+bool send_string_markdown_link(
     keyrecord_t *record);
 
-bool override_th_hold(uint16_t hold_keycode, keyrecord_t *record);
-
+// What it says on the tin
 void triple_tap(uint16_t keycode);
