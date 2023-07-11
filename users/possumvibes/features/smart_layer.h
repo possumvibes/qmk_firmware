@@ -3,7 +3,7 @@
 
 /* -------- Number Mode -------- */
 // Turn number mode on. To be called from a custom keycode
-void num_mode_enable(keyrecord_t *record);
+bool num_mode_enable(keyrecord_t *record);
 
 // Turn number mode off.
 void num_mode_disable(void);
@@ -14,7 +14,7 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record);
 
 /* -------- Function Mode -------- */
 // Turn Func mode on. To be called from a custom keycode.
-void func_mode_enable(keyrecord_t *record);
+bool func_mode_enable(keyrecord_t *record);
 
 // Turn func mode off.
 void func_mode_disable(void);
@@ -25,7 +25,7 @@ void func_mode_process(uint16_t keycode, keyrecord_t *record);
 
 /* -------- Nav Mode -------- */
 // Turn Nav mode on. To be called from a custom keycode.
-void nav_mode_enable(keyrecord_t *record);
+bool nav_mode_enable(keyrecord_t *record);
 
 // Turn nav mode off.
 void nav_mode_disable(void);
@@ -36,7 +36,7 @@ void nav_mode_process(uint16_t keycode, keyrecord_t *record);
 
 /* -------- Sym Mode -------- */
 // Turn Sym mode on. To be called from a custom keycode.
-void sym_mode_enable(keyrecord_t *record);
+bool sym_mode_enable(keyrecord_t *record);
 
 // Turn sym mode off.
 void sym_mode_disable(void);
@@ -47,7 +47,7 @@ void sym_mode_process(uint16_t keycode, keyrecord_t *record);
 
 /* -------- Macro Mode -------- */
 // Turn Macro mode on. To be called from a custom keycode.
-void macro_mode_enable(keyrecord_t *record);
+bool macro_mode_enable(keyrecord_t *record);
 
 // Turn macro mode off.
 void macro_mode_disable(void);

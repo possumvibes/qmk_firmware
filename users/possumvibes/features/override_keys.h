@@ -12,7 +12,7 @@ bool override_shift(bool is_shifted,
     uint16_t keycode,
     keyrecord_t *record);
 
-bool override_bracket_pair(
+bool send_autopair_on_shift(
     bool is_shifted,
     uint16_t left_keycode,
     uint16_t right_keycode,

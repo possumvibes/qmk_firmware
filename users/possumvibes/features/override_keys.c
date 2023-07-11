@@ -53,7 +53,7 @@ bool override_shift( bool is_shifted,
     return true;
 }
 
-bool override_bracket_pair(
+bool send_autopair_on_shift(
     bool is_shifted,
     uint16_t left_keycode,
     uint16_t right_keycode,
@@ -61,15 +61,7 @@ bool override_bracket_pair(
     keyrecord_t *record) {
     if (record->event.pressed) {
         if (is_shifted) {
-            uint8_t mod_state = get_mods();
-            del_oneshot_mods(MOD_MASK_SHIFT);
-            del_mods(MOD_MASK_SHIFT);
-
-            tap_code16(left_keycode);
-            tap_code16(right_keycode);
-            tap_code(KC_LEFT);
-
-            set_mods(mod_state);
+			send_autopair(left_keycode, right_keycode, record);
             layer_off(_SYM);
         } else {
             tap_code16(keycode);
@@ -83,16 +75,17 @@ bool send_autopair(
   uint16_t pair_keycode,
   keyrecord_t *record  ) {
     if(record->event.pressed) {
+		// clear mods before moving left
+		uint8_t mod_state = get_mods();
+		del_oneshot_mods(MOD_MASK_SHIFT);
+		del_mods(MOD_MASK_SHIFT);
+
       // Tap the base keycode regardless of shift state
       tap_code16(keycode);
       tap_code16(pair_keycode);
 
-			// clear mods before moving left
-      uint8_t mod_state = get_mods();
-      del_oneshot_mods(MOD_MASK_SHIFT);
-      del_mods(MOD_MASK_SHIFT);
 
-			// move left and reset mod state
+		// move left and reset mod state
       tap_code(KC_LEFT);
       set_mods(mod_state);
     }

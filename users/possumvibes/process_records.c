@@ -191,15 +191,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
-        case BCK_FWD:{
-            return process_custom_key(is_shifted, A(KC_LEFT), A(KC_RGHT), keycode, record);
-        }
-        case CLEAR: {
+        
+        case CLEAR: 
             clear_oneshot_mods();
             clear_mods();
             return false;
-        }
-        case LOCKSCR: {
+        
+        case LOCKSCR: 
             if(record ->event.pressed) {
                 if(is_windows){
                     tap_code16(G(KC_L));
@@ -208,7 +206,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return false;
-        }
+        
         case PANIC: {
             clear_oneshot_mods();
             clear_mods();
@@ -219,26 +217,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             caps_word_off();
             return false;
         }
-        case UND_RED: {
-            return process_custom_key(is_shifted, C(KC_Z), C(KC_Y), keycode, record);
-        }
+        case UND_RED: return process_custom_key(is_shifted, C(KC_Z), C(KC_Y), keycode, record);
+        
 
         // Layer Modes
-        case NUMMODE:
-            num_mode_enable(record);
-            return false;
-        case FUNMODE:
-            func_mode_enable(record);
-            return false;
-        case NAVMODE:
-            nav_mode_enable(record);
-            return false;
-         case SYMMODE:
-            sym_mode_enable(record);
-            return false;
-        case MCRMODE:
-            macro_mode_enable(record);
-            return false;
+        case NUMMODE: return num_mode_enable(record);
+        case FUNMODE: return func_mode_enable(record);
+        case NAVMODE: return nav_mode_enable(record);
+        case SYMMODE: return sym_mode_enable(record);
+        case MCRMODE: return macro_mode_enable(record);
 
         // Funky Symbol Shifts
         case KC_LABK:
@@ -308,28 +295,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
 
-        case KC_DQUO: return override_bracket_pair(is_shifted, KC_DQUO, KC_DQUO, keycode, record);
-        case KC_GRV:  return override_bracket_pair(is_shifted, KC_GRV, KC_GRV, keycode, record);
-
-        // case KC_LBRC: return override_bracket_pair(is_shifted, KC_LBRC, KC_RBRC, keycode, record);
-        // case KC_LCBR: return override_bracket_pair(is_shifted, KC_LCBR, KC_RCBR, keycode, record);
-        case KC_LPRN: return override_bracket_pair(is_shifted, KC_LPRN, KC_RPRN, keycode, record);
-
-        // case KC_LABK: return override_shift(is_shifted, KC_RABK, keycode, record);
-        case KC_RPRN: return send_function_bracket_string(is_shifted, keycode, record);
-
         case KC_COMM: return override_shift(is_shifted, KC_EXLM, keycode, record);
         case KC_DOT:  return override_shift(is_shifted, KC_QUES, keycode, record);
+        case KC_DQUO: return send_autopair_on_shift(is_shifted, KC_DQUO, KC_DQUO, keycode, record);
+        case KC_GRV:  return send_autopair_on_shift(is_shifted, KC_GRV, KC_GRV, keycode, record);
+
+        case KC_LPRN: return send_autopair_on_shift(is_shifted, KC_LPRN, KC_RPRN, keycode, record);
+        case KC_RPRN: return send_function_bracket_string(is_shifted, keycode, record);
+        case ANGLEBR: return send_autopair(KC_LABK, KC_RABK, record);
+		case BRCKETS: return is_shifted 
+ 			? send_autopair(KC_LCBR, KC_RCBR, record) 
+  			: send_autopair(KC_LBRC, KC_RBRC, record);
 
         // Other
-        case SPC_SFT: {
-            if(record->event.pressed){
-                tap_code16(KC_SPC);
-                set_oneshot_mods(MOD_BIT(KC_LSFT));
-            }
-            return false;
-        }
-
         case GET_SET: {
             if(record->event.pressed){
                 if(host_keyboard_led_state().caps_lock){
@@ -370,8 +348,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
 
-        case ANGLEBR: return send_autopair(KC_LABK, KC_RABK, record);
-				case BRCKETS: return send_autopair(KC_LBRC, KC_RBRC, record);
 
   				
         case ALT_F4:

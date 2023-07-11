@@ -4,9 +4,10 @@
 /* -------- Number Mode -------- */
 static bool _num_mode_active = false;
 // Turn number mode on. To be called from a custom keycode
-void num_mode_enable(keyrecord_t *record) {
+bool num_mode_enable(keyrecord_t *record) {
     _num_mode_active = true;
     layer_on(_NUM);
+    return false;
 }
 
 // Turn number mode off.
@@ -53,9 +54,10 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record) {
 static bool _func_mode_active = false;
 
 // Turn Func mode on. To be called from a custom keycode.
-void func_mode_enable(keyrecord_t *record) {
+bool func_mode_enable(keyrecord_t *record) {
     _func_mode_active = true;
     layer_on(_FUNC);
+    return false;
 }
 
 // Turn func mode off.
@@ -91,7 +93,7 @@ void func_mode_process(uint16_t keycode, keyrecord_t *record) {
 static bool _nav_mode_active = false;
 static uint16_t nav_mode_timer;
 // Turn nav mode on. To be called from a custom keycode.
-void nav_mode_enable(keyrecord_t *record) {
+bool nav_mode_enable(keyrecord_t *record) {
     if (record->event.pressed) {
         layer_on(_NAV);
         nav_mode_timer = timer_read();
@@ -104,7 +106,7 @@ void nav_mode_enable(keyrecord_t *record) {
             layer_off(_NAV);
         }
     }
-
+	return false;
 }
 
 // Turn nav mode off.
@@ -138,7 +140,7 @@ static bool _sym_mode_active = false;
 static uint16_t sym_mode_timer;
 
 // Turn sym mode on. To be called from a custom keycode.
-void sym_mode_enable(keyrecord_t *record) {
+bool sym_mode_enable(keyrecord_t *record) {
     if (record->event.pressed) {
         layer_on(_SYM);
         sym_mode_timer = timer_read();
@@ -151,6 +153,7 @@ void sym_mode_enable(keyrecord_t *record) {
             layer_off(_SYM);
         }
     }
+    return false;
 }
 
 // Turn sym mode off.
@@ -179,9 +182,10 @@ void sym_mode_process(uint16_t keycode, keyrecord_t *record){
 /* -------- Macro Mode -------- */
 static bool _macro_mode_active = false;
 // Turn macro mode on. To be called from a custom keycode
-void macro_mode_enable(keyrecord_t *record) {
+bool macro_mode_enable(keyrecord_t *record) {
     _macro_mode_active = true;
     layer_on(_MACRO);
+    return false;
 }
 
 // Turn macro mode off.

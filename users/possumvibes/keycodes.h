@@ -18,7 +18,6 @@ enum custom_keycodes {
 
     // Shortcuts and Macros
     IS_WIN = PLACEHOLDER_SAFE_RANGE, // toggles is_windows value
-    BCK_FWD,  // Alt left and right
     CLEAR,    // Clears all mods, does not change layers.
     LOCKSCR,  // locks screen per is_windows value
     PANIC,    // Clears all One-Shot keys and returns to base layer.
@@ -32,7 +31,6 @@ enum custom_keycodes {
     MCRMODE,  // activates a smart numpad layer
 
     // custom strings
-    SPC_SFT,  // Space and OSS
     GET_SET,  // { get; set; }
     RPR_SCL,  // ); ();
     LMBD_FN,  // () =>
@@ -58,7 +56,6 @@ enum custom_keycodes {
     DMENU,    // application finder (dmenu, start, etc)
     QMKCOMP,  // qmk compile
     QMKFLSH,  // qmk flash
-    QMKSTRN,  // qmk
     COMMENT,  // C(KC)
     UNCOMNT,  // C(KU)
 
