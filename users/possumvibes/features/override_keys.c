@@ -117,6 +117,58 @@ bool send_string_c_function(
     }
     return true;
 }
+
+bool send_string_version(
+    bool is_shifted,
+    uint8_t number_keycode,
+    keyrecord_t *record) {
+    if(record->event.pressed){
+        // Tap V in whatever shift format is present
+        tap_code(KC_V);
+
+        // Remove shift before pressing the number
+        if(is_shifted){
+            del_oneshot_mods(MOD_MASK_SHIFT);
+            del_mods(MOD_MASK_SHIFT);
+        }
+
+        tap_code(number_keycode);
+    }
+    return false;
+}
+
+bool send_string_vi_yiw(
+	bool is_shifted,
+	bool is_yank,
+	uint8_t movement,
+	bool is_word,
+	keyrecord_t *record) {
+  	if (record->event.pressed){
+    	if(host_keyboard_led_state().caps_lock){
+      		tap_code(KC_CAPS);
+    	}
+
+    	del_oneshot_mods(MOD_MASK_SHIFT);
+    	del_mods(MOD_MASK_SHIFT);
+
+		// when yanking, add the y
+    	if(is_yank){
+      		tap_code(KC_Y);
+    	}
+
+		// Movement is either a or i
+    	tap_code(movement);
+
+		// and if there's a word, add the w or W.
+    	if(is_word)
+    	{
+	  		uint16_t word_code = is_shifted ? S(KC_W) : KC_W;
+	    	tap_code16(word_code);
+    	}
+	}
+	return false;
+}
+
 bool send_string_markdown_link(
     keyrecord_t *record) {
         if (record->event.pressed) {

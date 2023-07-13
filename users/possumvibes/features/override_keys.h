@@ -37,6 +37,19 @@ bool send_string_c_function(
     uint16_t keycode,
     keyrecord_t *record);
 
+bool send_string_version(
+    bool is_shifted,
+    uint8_t number_keycode,
+    keyrecord_t *record);
+
+// Send (y){i,a}{w,W}
+bool send_string_vi_yiw(
+	bool is_shifted,
+	bool is_yank,
+	uint8_t movement,
+	bool is_word,
+	keyrecord_t *record);
+
 // Sends a markdown link []()
 bool send_string_markdown_link(
     keyrecord_t *record);

@@ -144,27 +144,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
  				
         // Shortcuts and macros
-         
-        case IS_WIN: {
-            if(record->event.pressed){
-                is_windows = !is_windows;
-            }
-            return false;
-        }
         
         case CLEAR: 
             clear_oneshot_mods();
             clear_mods();
-            return false;
-        
-        case LOCKSCR: 
-            if(record ->event.pressed) {
-                if(is_windows){
-                    tap_code16(G(KC_L));
-                } else {
-                    tap_code16(C(A(KC_L))); // xflock4
-                }
-            }
             return false;
         
         case PANIC: {
@@ -177,26 +160,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             caps_word_off();
             return false;
         }
+
         case UND_RED: return override_shift(is_shifted, C(KC_Z), C(KC_Y), record);
+
+        case IS_WIN: {
+            if(record->event.pressed){
+                is_windows = !is_windows;
+            }
+            return false;
+        }
+
+        case LOCKSCR: 
+            if(record ->event.pressed) {
+                uint16_t code = is_windows ? G(KC_L): C(A(KC_L));
+              	tap_code16(code);
+            }
+            return false;
 
         case ALT_F4:
             if(record->event.pressed){
-                if(is_windows){
-                    tap_code16(A(KC_F4));
-                } else {
-                    tap_code16(G(KC_W)); // sxhkd kill window
-                }
+                uint16_t code = is_windows ? A(KC_F4) : G(KC_W);
+                tap_code16(code);
             }
             return false;
         case DMENU:
             if(record->event.pressed){
-                if(is_windows){
-                    tap_code(KC_LGUI); // start menu, kde applauncher
-                } else {
-                    tap_code16(G(KC_SPC)); // rofi shortcut
-                }
+              	uint16_t code = is_windows ? KC_LGUI : G(KC_SPC);
+              	tap_code16(code);
             }
             return false;
+
         case MD_LINK: return send_string_markdown_link(record);
 
         case MD_CODE:
@@ -252,48 +245,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
 
-        case KY_V1:
-            if(record->event.pressed){
-                // Tap V in whatever shift format is present
-                tap_code(KC_V);
+        case KY_V1: return send_string_version(is_shifted, KC_1, record);
+        case KY_V2: return send_string_version(is_shifted, KC_2, record);
+        case KY_V3: return send_string_version(is_shifted, KC_3, record);
 
-                // Remove shift before pressing the number
-                if(is_shifted){
-                    del_oneshot_mods(MOD_MASK_SHIFT);
-                    del_mods(MOD_MASK_SHIFT);
-                }
-
-                tap_code(KC_1);
-            }
-            return false;
-        case KY_V2:
-            if(record->event.pressed){
-                // Tap V in whatever shift format is present
-                tap_code(KC_V);
-
-                // Remove shift before pressing the number
-                if(is_shifted){
-                    del_oneshot_mods(MOD_MASK_SHIFT);
-                    del_mods(MOD_MASK_SHIFT);
-                }
-
-                tap_code(KC_2);
-            }
-            return false;
-        case KY_V3:
-            if(record->event.pressed){
-                // Tap V in whatever shift format is present
-                tap_code(KC_V);
-
-                // Remove shift before pressing the number
-                if(is_shifted){
-                    del_oneshot_mods(MOD_MASK_SHIFT);
-                    del_mods(MOD_MASK_SHIFT);
-                }
-
-                tap_code(KC_3);
-            }
-            return false;
         case KY_QU:
             if(record->event.pressed){
                 if(is_caps_word_on()){
@@ -317,6 +272,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code(KC_U);
             }
             return false;
+
         case VI_ZZ:
         case VI_ZQ:
             if(record->event.pressed){
@@ -343,61 +299,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code16(KC_ENT);
             }
             return false;
+
+        case VI_AW: return send_string_vi_yiw(is_shifted, false, KC_A, true, record);
+        case VI_IW: return send_string_vi_yiw(is_shifted, false, KC_I, true, record);
+        case VI_YAW: return send_string_vi_yiw(is_shifted, true, KC_A, true, record);
+        case VI_YIW: return send_string_vi_yiw(is_shifted, true, KC_I, true, record);
+
         case VI_YI:
-            if(record->event.pressed){
-                if(host_keyboard_led_state().caps_lock){
-                    tap_code16(KC_CAPS);
-                }
-
-                if(is_shifted){
-                    del_oneshot_mods(MOD_MASK_SHIFT);
-                    del_mods(MOD_MASK_SHIFT);
-                }
-
+        	if (record->event.pressed){
                 uint8_t code = is_shifted ? KC_A : KC_I;
-                tap_code(KC_Y);
-                tap_code(code);
-            }
-            return false;
-        case VI_AW:
-        case VI_IW:
-            if(record->event.pressed){
-                if(host_keyboard_led_state().caps_lock){
-                    tap_code16(KC_CAPS);
-                }
-
-                uint8_t textobject = keycode == VI_AW ? KC_A : KC_I;
-                uint16_t word_code = is_shifted ? S(KC_W) : KC_W;
-
-                if(is_shifted){
-                    del_oneshot_mods(MOD_MASK_SHIFT);
-                    del_mods(MOD_MASK_SHIFT);
-                }
-
-                tap_code(textobject);
-                tap_code16(word_code);
-            }
-            return false;
-        case VI_YAW:
-        case VI_YIW:
-            if(record->event.pressed){
-                if(host_keyboard_led_state().caps_lock){
-                    tap_code16(KC_CAPS);
-                }
-
-                uint8_t textobject = keycode == VI_YAW ? KC_A : KC_I;
-                uint16_t word_code = is_shifted ? S(KC_W) : KC_W;
-
-                if(is_shifted){
-                    del_oneshot_mods(MOD_MASK_SHIFT);
-                    del_mods(MOD_MASK_SHIFT);
-                }
-
-                tap_code(KC_Y);
-                tap_code(textobject);
-                tap_code16(word_code);
-            }
-            return false;
+                return send_string_vi_yiw(is_shifted, true, code, false, record);
+          }
+        	return false;
     }
 
     return true;
