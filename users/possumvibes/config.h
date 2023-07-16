@@ -1,6 +1,6 @@
 #pragma once
 
-#define TAPPING_TERM 250                // Base tapping term
+#define TAPPING_TERM 200                // Base tapping term
 #define QUICK_TAP_TERM TAPPING_TERM / 2 // Quick Tap Term to trigger auto-repeat
 // #define TAPPING_TERM_PER_KEY            // Adjust tapping term for finger strength
 #define PERMISSIVE_HOLD
