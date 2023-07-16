@@ -21,10 +21,6 @@ void num_mode_process(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case OS_LSFT ... OS_LGUI:
         case KC_1 ... KC_0:
-        case KY_8:
-        case KY_4:
-        case KY_5:
-        case KY_6:
         case KC_DLR:
         case KC_QUOT:
         case KC_SLSH:

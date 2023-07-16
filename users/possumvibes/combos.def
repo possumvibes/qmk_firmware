@@ -10,7 +10,7 @@ COMB(l_hrz_up_ind_lat,  KC_TILD,    KC_R, KC_T)
 COMB(r_hrz_up_ind_lat,  UND_RED,    KC_Y, KC_U)
 COMB(r_ful_up,          VI_YI,      KC_U, KC_I, KC_O)
 COMB(r_hrz_up_mid_ind,  KC_TAB,     KC_U, KC_I)
-COMB(r_crx_up_ring,     KC_DQUO,    KC_U, KC_O)
+COMB(r_crx_up,          KC_DQUO,    KC_U, KC_O)
 
 /*---- HOME ROW HORIZONTAL----*/
 COMB(cut,               S_CUT,      KC_S, KC_F)

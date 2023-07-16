@@ -103,13 +103,11 @@ enum custom_keycodes {
 #define SYS_OSL     OSL(_SYSTEM)
 #define NAV_SPC     LT(_NAV, KC_SPC)
 
+// mouse button aliases for ease of use
 #define LCLICK      KC_BTN1
 #define RCLICK      KC_BTN2
 #define MCLICK      KC_BTN3
 #define CCLICK      C(LCLICK)
-
-#define KC_BACK     A(KC_LEFT)
-#define KC_FWD      A(KC_RGHT)
 
 // window manager shortcuts
 #define LSTDESK     G(KC_TILD)
@@ -142,53 +140,4 @@ enum custom_keycodes {
 #define F6_TH       TH(KC_F6)
 #define F11_TH      TH(KC_F11)
 #define F12_TH      TH(KC_F12)
-
-/* ----Home Row Mods---- */
-// l ring
-#define KS_R        LALT_T(KC_R)
-#define KH_S        LALT_T(KC_S)
-#define KY_S        LALT_T(KC_S)
-#define KY_4        LALT_T(KC_4)
-
-
-// l middle
-#define KS_S        LCTL_T(KC_S)
-#define KH_T        LCTL_T(KC_T)
-#define KY_D        LCTL_T(KC_D)
-#define KY_5        LCTL_T(KC_5)
-
-// l index
-#define KS_T        LSFT_T(KC_T)
-#define KH_H        LSFT_T(KC_H)
-#define KY_F        LSFT_T(KC_F)
-#define KY_6        LSFT_T(KC_6)
-
-// l upper middle
-#define KS_H        LGUI_T(KC_H) // Semimak, Canary
-#define KH_D        LGUI_T(KC_D) // APTv3
-#define KH_F        LGUI_T(KC_F) // AptMod
-#define KH_G        LGUI_T(KC_G) // AptHD variant
-#define KH_Y        LGUI_T(KC_Y) // AptHD
-#define KY_E        LGUI_T(KC_E) // QWERTY
-#define KY_8        LGUI_T(KC_8) // numbers.
-
-// r upper middle
-#define KS_O        RGUI_T(KC_O)
-#define KH_U        RGUI_T(KC_U)
-#define KY_I        RGUI_T(KC_I)
-
-// r index
-#define KS_D        RSFT_T(KC_D)
-#define KH_N        RSFT_T(KC_N)
-#define KY_J        RSFT_T(KC_J)
-
-// r middle
-#define KM_A        RCTL_T(KC_A)
-#define KH_E        RCTL_T(KC_E)
-#define KY_K        RCTL_T(KC_K)
-
-// r ring
-#define KS_I        LALT_T(KC_I)
-#define KH_A        LALT_T(KC_A)
-#define KY_L        LALT_T(KC_L)
 

@@ -5,6 +5,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
     switch(index) {
         // faster combos over rolls
         case l_crx_up:
+        case r_crx_up:
         case r_crx_hm:
         case r_hrz_hm_mid_ind:
         case r_crx_dn:
