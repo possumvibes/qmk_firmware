@@ -27,13 +27,7 @@ ifeq ($(strip $(COMBOS_ENABLE)), yes)
 	SRC += combos.c
 endif
 
-ifeq ($(strip $(ENCODER_ENABLE)), yes)
-	SRC += encoders.c
-endif
-
 ifeq ($(strip $(CAPS_WORD_ENABLE)), yes)
 	SRC += capsword.c
 endif
-
-SRC += tap_holds.c
 
