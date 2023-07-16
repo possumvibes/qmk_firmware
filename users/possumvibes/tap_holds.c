@@ -4,14 +4,6 @@
 #ifdef TAPPING_TERM_PER_KEY
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
     switch (keycode) {
-        // Pinky
-        case KS_C:
-        case KH_R:
-        case KY_A:
-        case KH_I:
-        case KY_QUOT:
-            return TAPPING_TERM;
-
         // Ring
         case KS_R:
         case KY_S: // also KH_S

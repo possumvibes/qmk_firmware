@@ -144,11 +144,6 @@ enum custom_keycodes {
 #define F12_TH      TH(KC_F12)
 
 /* ----Home Row Mods---- */
-// l pinky
-#define KS_C        SYM(KC_C)
-#define KH_R        SYM(KC_R)
-#define KY_A        SYM(KC_A)
-
 // l ring
 #define KS_R        LALT_T(KC_R)
 #define KH_S        LALT_T(KC_S)
@@ -197,6 +192,3 @@ enum custom_keycodes {
 #define KH_A        LALT_T(KC_A)
 #define KY_L        LALT_T(KC_L)
 
-// r pinky
-#define KH_I        SYM(KC_I)
-#define KY_QUOT     SYM(KC_QUOT)

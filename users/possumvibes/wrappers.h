@@ -20,11 +20,11 @@
 
 // fun fact: i literally do not remember qwerty anymore
 #define _________________QWERTY_L1_________________       KC_Q,    KC_W,    KY_E,    KC_R,    KC_T
-#define _________________QWERTY_L2_________________       KY_A,    KY_S,    KY_D,    KY_F,    KC_G
+#define _________________QWERTY_L2_________________       KC_A,    KY_S,    KY_D,    KY_F,    KC_G
 #define _________________QWERTY_L3_________________       KC_Z,    KC_X,    KC_C,    KC_V,    KC_B
 
 #define _________________QWERTY_R1_________________       KC_Y,    KC_U,    KY_I,    KC_O,    KC_P
-#define _________________QWERTY_R2_________________       KC_H,    KY_J,    KY_K,    KY_L,    KY_QUOT
+#define _________________QWERTY_R2_________________       KC_H,    KY_J,    KY_K,    KY_L,    KC_QUOT
 #define _________________QWERTY_R3_________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  XXXXXXX
 
 // all the cool kids reference combos from an alpha layout they don't remember anymore
@@ -38,11 +38,11 @@
 
 // APTv3. Daily driver. 
 #define __________________APTv3_L1_________________       KC_W,    KC_G,    KH_D,    KC_F,    KC_B
-#define __________________APTv3_L2_________________       KH_R,    KH_S,    KH_T,    KH_H,    KC_K
+#define __________________APTv3_L2_________________       KC_R,    KH_S,    KH_T,    KH_H,    KC_K
 #define __________________APTv3_L3_________________       KC_X,    KC_C,    KC_M,    KC_P,    KC_V
 
 #define __________________APTv3_R1_________________       KC_Q,    KC_L,    KH_U,    KC_O,    KC_Y
-#define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KH_I
+#define __________________APTv3_R2_________________       KC_J,    KH_N,    KH_E,    KH_A,    KC_I
 #define __________________APTv3_R3_________________       XXXXXXX, KC_QUOT, KC_COMM, KC_DOT,  XXXXXXX
 
 // Functions and Window management. Funcs are organized by number except for the debuggin' ones
