@@ -11,3 +11,7 @@
 #include "features/smart_layer.h"
 #include "features/override_keys.h"
 
+#ifdef COMBO_ENABLE
+#include "g/keymap_combo.h"
+#endif
+

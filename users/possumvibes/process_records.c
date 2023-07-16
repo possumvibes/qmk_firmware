@@ -1,9 +1,5 @@
 #include "possumvibes.h"
 
-#ifdef COMBO_ENABLE
-#include "g/keymap_combo.h"
-#endif
-
 bool is_windows = ISWIN_DF;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE

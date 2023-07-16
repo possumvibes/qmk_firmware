@@ -1,16 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "keycodes.h"
 
-bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case KY_A:
-        case KH_A:
-            return false;
-        default:
-            return true;
-    }
-}
-
+#ifdef TAPPING_TERM_PER_KEY
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
     switch (keycode) {
         // Pinky
@@ -67,3 +58,4 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record){
             return TAPPING_TERM;
     }
 }
+#endif
