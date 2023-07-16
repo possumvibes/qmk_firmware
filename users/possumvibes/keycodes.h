@@ -27,7 +27,7 @@ enum custom_keycodes {
     NUMMODE,  // activates a "num-word" smart layer toggle
     FUNMODE,  // activates a smart layer toggle for func
     NAVMODE,  // activates a smart nav layer
-    SYMMODE,  // activates a smart mouse layer
+    SYMMODE,  // activates a smart symbol layer
     MCRMODE,  // activates a smart numpad layer
 
     // custom strings

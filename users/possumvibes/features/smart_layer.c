@@ -137,22 +137,11 @@ void nav_mode_process(uint16_t keycode, keyrecord_t *record){
 
 /*--------- Sym Mode ---------------*/
 static bool _sym_mode_active = false;
-static uint16_t sym_mode_timer;
 
 // Turn sym mode on. To be called from a custom keycode.
 bool sym_mode_enable(keyrecord_t *record) {
-    if (record->event.pressed) {
-        layer_on(_SYM);
-        sym_mode_timer = timer_read();
-    } else {
-        if (timer_elapsed(sym_mode_timer) < TAPPING_TERM) {
-            // Tapping enables layer mode
-            _sym_mode_active = true;
-        } else {
-            // Holding treats as a normal LT
-            layer_off(_SYM);
-        }
-    }
+    _sym_mode_active = true;
+    layer_on(_SYM);
     return false;
 }
 
