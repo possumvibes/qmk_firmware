@@ -46,32 +46,31 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_LPRN: return send_autopair_on_shift(is_shifted, KC_LPRN, KC_RPRN, keycode, record);
         case KC_RPRN: return send_string_c_function(is_shifted, keycode, record);
         case ANGLEBR: return send_autopair(KC_LABK, KC_RABK, record);
-		case BRCKETS: return is_shifted 
- 			? send_autopair(KC_LCBR, KC_RCBR, record) 
-  			: send_autopair(KC_LBRC, KC_RBRC, record);
+        case BRCKETS: return is_shifted 
+            ? send_autopair(KC_LCBR, KC_RCBR, record) 
+            : send_autopair(KC_LBRC, KC_RBRC, record);
 
-        case KC_LABK:
-        case KC_RABK:
-        case KC_AMPR:
-        case KC_ASTR:
-        case KC_AT:
-        case KC_BSLS:
-        case KC_CIRC:
-        case KC_EQL:
-        case KC_HASH:
-        case KC_MINS:
-        case KC_PERC:
-        case KC_PIPE:
-        case KC_PLUS:
-        case KC_QUES:
-        case KC_SLSH:
-			return send_double_on_shift(is_shifted, keycode, record);
+        case KC_LABK: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_RABK: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_AMPR: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_ASTR: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_AT:   return send_double_on_shift(is_shifted, keycode, record);
+        case KC_BSLS: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_CIRC: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_EQL:  return send_double_on_shift(is_shifted, keycode, record);
+        case KC_HASH: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_MINS: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_PERC: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_PIPE: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_PLUS: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_QUES: return send_double_on_shift(is_shifted, keycode, record);
+        case KC_SLSH: return send_double_on_shift(is_shifted, keycode, record);
 
         #ifdef CAPS_WORD_ENABLE
         case KC_DLR:
             if (record->event.pressed) {
                 if (is_shifted) {
-                    del_mods(MOD_MASK_SHIFT);
+                    ensure_lowercase(is_shifted);
 
                     register_code16(KC_DLR);
                     caps_word_on();
@@ -89,7 +88,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if(record->event.pressed) {
                 if (is_shifted) {
                     uint8_t mod_state = get_mods();
-                    del_mods(MOD_MASK_SHIFT);
+                    clear_shift(is_shifted);
 
                     SEND_STRING("~/");
                     set_mods(mod_state);
@@ -101,9 +100,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         // Other
         case GET_SET: {
             if(record->event.pressed){
-                if(host_keyboard_led_state().caps_lock){
-                    tap_code16(KC_CAPS);
-                }
+                ensure_lowercase(is_shifted);
                 SEND_STRING("{ get; set; }");
             }
             return false;
@@ -112,8 +109,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case RPR_SCL: {
             if(record->event.pressed){
                 uint8_t mod_state = get_mods();
-                del_oneshot_mods(MOD_MASK_SHIFT);
-                del_mods(MOD_MASK_SHIFT);
+                clear_shift(is_shifted);
 
                 if(is_shifted){
                     tap_code16(KC_LPRN);
@@ -129,8 +125,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if(record->event.pressed){
                 if(is_shifted){
                     uint8_t mod_state = get_mods();
-                    del_oneshot_mods(MOD_MASK_SHIFT);
-                    del_mods(MOD_MASK_SHIFT);
+                    clear_shift(is_shifted);
                     SEND_STRING("() =>");
                     set_mods(mod_state);
                 } else {
@@ -138,7 +133,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return false;
- 				
+        
         // Shortcuts and macros
         
         case CLEAR: 
@@ -169,7 +164,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LOCKSCR: 
             if(record ->event.pressed) {
                 uint16_t code = is_windows ? G(KC_L): C(A(KC_L));
-              	tap_code16(code);
+                tap_code16(code);
             }
             return false;
 
@@ -181,8 +176,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case DMENU:
             if(record->event.pressed){
-              	uint16_t code = is_windows ? KC_LGUI : G(KC_SPC);
-              	tap_code16(code);
+                uint16_t code = is_windows ? KC_LGUI : G(KC_SPC);
+                tap_code16(code);
             }
             return false;
 
@@ -192,8 +187,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if(record ->event.pressed) {
                 // clear shift temporarily
                 uint8_t mod_state = get_mods();
-                del_mods(MOD_MASK_SHIFT);
-                del_oneshot_mods(MOD_MASK_SHIFT);
+                clear_shift(is_shifted);
 
                 // ``` ```|
                 SEND_STRING("``` ```");
@@ -208,9 +202,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case QMKCOMP: {
             if(record->event.pressed){
-                if(host_keyboard_led_state().caps_lock){
-                    tap_code16(KC_CAPS);
-                }
+                clear_caps();
                 SEND_STRING("qmk compile");
                 tap_code16(KC_ENT);
             }
@@ -218,9 +210,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         case QMKFLSH: {
             if(record->event.pressed){
-                if(host_keyboard_led_state().caps_lock){
-                    tap_code16(KC_CAPS);
-                }
+                clear_caps();
                 SEND_STRING("qmk flash");
                 tap_code16(KC_ENT);
             }
@@ -248,65 +238,46 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KY_QU:
             if(record->event.pressed){
                 if(is_caps_word_on()){
+                    // tapping keys to keep caps word enabled; note that KY_QU must be a continue-uncapitalized key for caps_word
                     tap_code16(S(KC_Q));
                     tap_code16(S(KC_U));
                     return false;
                 }
 
                 tap_code(KC_Q);
-                
-                if(is_shifted){
-                    uint8_t mod_state = get_mods();
-                    del_oneshot_mods(MOD_MASK_SHIFT);
-                    del_mods(MOD_MASK_SHIFT);
 
-                    tap_code(KC_U);
-                    set_mods(mod_state);
-                    return false;
-                }
-                
+                uint8_t mod_state = get_mods();
+                clear_shift(is_shifted);
+
                 tap_code(KC_U);
+                set_mods(mod_state);
             }
             return false;
 
         case VI_ZZ:
+            if (record ->event.pressed) {
+              ensure_lowercase(is_shifted);
+              SEND_STRING("\e:wq\n");
+            }
+            return false;
         case VI_ZQ:
             if(record->event.pressed){
-                if(host_keyboard_led_state().caps_lock){
-                    tap_code16(KC_CAPS);
-                }
-
-                if(is_shifted){
-                    del_oneshot_mods(MOD_MASK_SHIFT);
-                    del_mods(MOD_MASK_SHIFT);
-                }
-
-                tap_code(KC_ESC);
-                
-                if (keycode == VI_ZZ)
-                {
-                    SEND_STRING(":wq");
-                }
-                else
-                {
-                    SEND_STRING(":q!");
-                }
-                
-                tap_code16(KC_ENT);
+                ensure_lowercase(is_shifted);
+                SEND_STRING("\e:q!\n");
             }
             return false;
 
-        case VI_AW: return send_string_vi_yiw(is_shifted, false, KC_A, true, record);
-        case VI_IW: return send_string_vi_yiw(is_shifted, false, KC_I, true, record);
+        case VI_AW:  return send_string_vi_yiw(is_shifted, false, KC_A, true, record);
+        case VI_IW:  return send_string_vi_yiw(is_shifted, false, KC_I, true, record);
         case VI_YAW: return send_string_vi_yiw(is_shifted, true, KC_A, true, record);
         case VI_YIW: return send_string_vi_yiw(is_shifted, true, KC_I, true, record);
 
         case VI_YI:
-        	if (record->event.pressed){
+          if (record->event.pressed){
                 uint8_t code = is_shifted ? KC_A : KC_I;
                 return send_string_vi_yiw(is_shifted, true, code, false, record);
-          }
-        	return false;
+            }
+          return false;
     }
 
     return true;

@@ -56,3 +56,8 @@ bool send_string_markdown_link(
 
 // What it says on the tin
 void triple_tap(uint16_t keycode);
+
+// lowercase helper methods
+void clear_caps(void); 
+void clear_shift(bool is_shifted); 
+void ensure_lowercase(bool is_shifted); 
