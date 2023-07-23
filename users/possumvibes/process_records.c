@@ -203,16 +203,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case QMKCOMP: {
             if(record->event.pressed){
                 clear_caps();
-                SEND_STRING("qmk compile");
-                tap_code16(KC_ENT);
+                SEND_STRING("qmk compile\n");
             }
             return false;
         }
         case QMKFLSH: {
             if(record->event.pressed){
                 clear_caps();
-                SEND_STRING("qmk flash");
-                tap_code16(KC_ENT);
+                SEND_STRING("qmk flash\n");
             }
             return false;
         }
