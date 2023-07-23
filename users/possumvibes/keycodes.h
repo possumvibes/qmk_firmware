@@ -13,11 +13,10 @@ enum layers {
     _SYSTEM
 };
 
-#define PLACEHOLDER_SAFE_RANGE QK_USER
 enum custom_keycodes {
 
     // Shortcuts and Macros
-    IS_WIN = PLACEHOLDER_SAFE_RANGE, // toggles is_windows value
+    IS_WIN =  QK_USER, // toggles is_windows value
     CLEAR,    // Clears all mods, does not change layers.
     LOCKSCR,  // locks screen per is_windows value
     PANIC,    // Clears all One-Shot keys and returns to base layer.
@@ -87,7 +86,6 @@ enum custom_keycodes {
 
 /* ---------- Aliases ---------- */
 #define TH(k)       LT(0,k)
-#define SYM(k)      LT(_SYM, k)
 
 // aliases to keep things short in layouts
 #define NON     XXXXXXX
