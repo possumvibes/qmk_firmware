@@ -1,5 +1,35 @@
 #include "possumvibes.h"
 
+static uint16_t next_keycode;
+static keyrecord_t next_record;
+static uint16_t prev_keycode;
+bool pre_process_record_user(uint16_t keycode, keyrecord_t *record) {
+	// static uint16_t prev_keycode;
+	if (record->event.pressed) {
+    	// store previous keycode for instant tap decisions
+    	prev_keycode = next_keycode;
+
+        // Cache the next input for mod-tap decisions
+        next_keycode = keycode;
+        next_record  = *record;
+	}
+	// todo this interferes with combos over mod taps
+	// if (IS_QK_MOD_TAP(keycode) && !IS_QK_LAYER_TAP(prev_keycode)) {
+ //        // Tap the mod-tap key instantly when it follows a short interval
+ //        if (record->event.pressed && last_input_activity_elapsed() < INSTANT_TAP_TERM) {
+ //            record->keycode = keycode & 0xff;
+ //            action_tapping_process(*record);
+ //            return false;
+ //        } else { // Send the base keycode key up event
+ //            keyrecord_t base_record   = *record;
+ //            base_record.keycode       = keycode & 0xff;
+ //            base_record.event.pressed = false;
+ //            action_tapping_process(base_record);
+ //        }
+	// }
+	return true;
+}
+
 bool is_windows = ISWIN_DF;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE

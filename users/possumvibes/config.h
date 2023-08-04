@@ -1,9 +1,8 @@
 #pragma once
 
-#define TAPPING_TERM 200                // Base tapping term
-#define QUICK_TAP_TERM TAPPING_TERM / 2 // Quick Tap Term to trigger auto-repeat
-// #define TAPPING_TERM_PER_KEY            // Adjust tapping term for finger strength
-// #define PERMISSIVE_HOLD
+// Tapping settings
+#define TAPPING_TERM 200                 // Base tapping term
+#define QUICK_TAP_TERM TAPPING_TERM / 2  // Quick Tap Term to trigger auto-repeat
 
 // Allows media codes to properly register in macros and rotary encoder code
 #define TAP_CODE_DELAY 15               // Introduces delay between code taps so no keys get eaten.
