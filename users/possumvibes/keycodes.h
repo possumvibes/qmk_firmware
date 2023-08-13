@@ -121,6 +121,8 @@ enum custom_keycodes {
 #define WKSP_9      G(KC_9)
 #define WKSP_10     G(KC_0)
 
+#define TMUXPRE     C(KC_SPC)
+
 // Default Layer States
 #define QWERTY      DF(_QWERTY)
 #define APT         DF(_APT)

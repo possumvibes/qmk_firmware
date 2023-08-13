@@ -9,6 +9,8 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case r_crx_hm:
         case r_hrz_hm_mid_ind:
         case r_crx_dn:
+        case l_ful_hm:
+        case r_ful_hm:
             return COMBO_TERM - 22; // 14 ms
 
         // top row shortcuts

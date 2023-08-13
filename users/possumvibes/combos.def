@@ -16,9 +16,11 @@ COMB(r_crx_up,          KC_DQUO,    KC_U, KC_O)
 COMB(cut,               S_CUT,      KC_S, KC_F)
 COMB(copy,              S_COPY,     KC_S, KC_D)
 COMB(paste,             S_PASTE,    KC_F, KC_G)
+COMB(l_ful_hm,          TMUXPRE,    KC_S, KC_D, KC_F)
 
 COMB(panic_time,        PANIC,      KC_D, KC_K)
 
+COMB(r_ful_hm,          TMUXPRE,    KC_J, KC_K, KC_L)
 COMB(r_hrz_hm_ind_lat,  KC_CIRC,    KC_H, KC_J)
 COMB(r_hrz_hm_mid_ind,  KC_COLN,    KC_J, KC_K)
 COMB(r_crx_hm,          KC_SCLN,    KC_J, KC_L)
