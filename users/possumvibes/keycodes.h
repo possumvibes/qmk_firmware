@@ -1,88 +1,46 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
-enum layers {
-    _APT = 0,
-    _COMBOREF,
-    _QWERTY,
-    _FUNC,
-    _NUM,
-    _MACRO,
-    _SYM,
-    _NAV,
-    _SYSTEM
-};
+enum layers { _APT = 0, _COMBOREF, _QWERTY, _FUNC, _NUM, _MACRO, _SYM, _NAV, _SYSTEM };
 
 enum custom_keycodes {
+    // OS-specific utilities
+    IS_WIN =  QK_USER, 
+    LOCKSCR, ALT_F4, DMENU,
 
-    // Shortcuts and Macros
-    IS_WIN =  QK_USER, // toggles is_windows value
-    CLEAR,    // Clears all mods, does not change layers.
-    LOCKSCR,  // locks screen per is_windows value
-    PANIC,    // Clears all One-Shot keys and returns to base layer.
-    UND_RED,  // Ctrl Z and Y
+    // Layer modes and how to escape them
+    NUMMODE, FUNMODE, NAVMODE, SYMMODE, MCRMODE, PANIC,
 
-    // Layer modes
-    NUMMODE,  // activates a "num-word" smart layer toggle
-    FUNMODE,  // activates a smart layer toggle for func
-    NAVMODE,  // activates a smart nav layer
-    SYMMODE,  // activates a smart symbol layer
-    MCRMODE,  // activates a smart numpad layer
+    // "Paired" macros: Undo/Redo, Comment/Uncomment, QMK Compile/Flash
+    UND_RED, QMKCOMP, QMKFLSH, COMMENT, UNCOMNT,
 
-    // custom strings
+	// Custom markup and programming syntax
+    ANGLEBR, BRCKETS, // self-closing brackets: <|>, [|]  {|}
+    MD_LINK, MD_CODE, // Markdown: [links|]() and ```codeblocks|  ```
     GET_SET,  // { get; set; }
     RPR_SCL,  // ); ();
     LMBD_FN,  // () =>
-    ANGLEBR,  // <|>
-    BRCKETS,  // [|]  {|}
-    MD_LINK,  // [|]()
-    MD_CODE,  // ```| ```
-    KY_V1,    // V1
-    KY_V2,    // V2
-    KY_V3,    // V3
-    KY_QU,    // qu
-    VI_ZZ,    // ZZ
-    VI_ZQ,    // ZQ
-    VI_YA,    // ya
-    VI_YI,    // yi
-    VI_AW,    // aw
-    VI_IW,    // iw
-    VI_YAW,   // yaw
-    VI_YIW,   // yiw
 
-    // macros
-    ALT_F4,   // per is_windows Close Application
-    DMENU,    // application finder (dmenu, start, etc)
-    QMKCOMP,  // qmk compile
-    QMKFLSH,  // qmk flash
-    COMMENT,  // C(KC)
-    UNCOMNT,  // C(KU)
+    // Quick "not typing all that" strings
+    KY_QU, KY_V1, KY_V2, KY_V3,
 
-    // Swapper keys
-    SW_REV,  // Dead key, reverse direction for swapper
-    SW_WIN,   // Alt+Tab time!
-    SW_TAB,   // Ctl+Tab time!
+    // Vim macros: exactly what it says on the tin (words shiftable to Words)
+    VI_ZZ, VI_ZQ,   VI_YAW, VI_YIW,   VI_YA, VI_YI,   VI_AW, VI_IW,
 
-    // Locking Mods
-    ML_LCTL,  // Locking Mods
-    ML_LSFT,  // Locking Mods
-    ML_LALT,  // Locking Mods
-    ML_LGUI,  // Locking Mods
+    // Swapper keys: Windows, tabs, and generic Reverse
+    SW_WIN, SW_TAB, SW_REV,
 
-    // N-Shot Mods
-    OS_LSFT,   // OS Mods
-    OSR_SFT,   // OS mod immune to rolling
-    OS_LCTL,   // OS Mods
-    TS_LCTL,   // Two-shot ctrl,
-    OS_LALT,   // OS Mods
-    OS_LGUI,   // OS Mods
-    OS_LGLC,   // OS G+C
+    // Locking Mods and how to escape them
+    ML_LCTL, ML_LSFT, ML_LALT, ML_LGUI, CLEAR, 
+
+    // N-Shot Mods: "normal" callum-style n-shot mods (now featuring MULTI MODS!!!)
+    OS_LSFT, OS_LCTL, OS_LALT, OS_LGUI, OS_LGLC, TS_LCTL,
+    OSR_SFT, // and also n-shot Thumbshift (see n-shot mods for rolling differences)
 
     NEW_SAFE_RANGE  // Use for keymap-specific codes
 };
 
 /* ---------- Aliases ---------- */
-#define TH(k)       LT(0,k)
 
 // layer toggles
 #define NUM_OSL     OSL(_NUM)
@@ -92,7 +50,6 @@ enum custom_keycodes {
 #define LCLICK      KC_BTN1
 #define RCLICK      KC_BTN2
 #define MCLICK      KC_BTN3
-#define CCLICK      C(LCLICK)
 
 // window manager shortcuts
 #define LSTDESK     G(KC_TILD)
@@ -112,6 +69,8 @@ enum custom_keycodes {
 #define S_BACK      A(KC_LEFT)
 #define S_FWD       A(KC_RIGHT)
 
+// Macros
+#define TH(k)       LT(0,k)
 #define F3_TH       TH(KC_F3)
 #define F5_TH       TH(KC_F5)
 #define F6_TH       TH(KC_F6)
