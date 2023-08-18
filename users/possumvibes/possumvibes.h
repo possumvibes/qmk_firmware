@@ -16,7 +16,3 @@
 #include "g/keymap_combo.h"
 #endif
 
-/* ------  Setup ---------- */
-// Defaults
-#define ISWIN_DF    false
-
