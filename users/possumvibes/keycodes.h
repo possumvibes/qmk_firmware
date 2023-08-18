@@ -81,25 +81,12 @@ enum custom_keycodes {
     NEW_SAFE_RANGE  // Use for keymap-specific codes
 };
 
-/* ------ Default Values ---------- */
-#define ISWIN_DF    false
-
 /* ---------- Aliases ---------- */
 #define TH(k)       LT(0,k)
-
-// aliases to keep things short in layouts
-#define NON     XXXXXXX
-#define CAP     KC_CAPS
-#define DEL     KC_DEL
-#define TL0     THM_LH0
-#define TL1     THM_LH1
-#define TR0     THM_RH0
-#define TR1     THM_RH1
 
 // layer toggles
 #define NUM_OSL     OSL(_NUM)
 #define SYS_OSL     OSL(_SYSTEM)
-#define NAV_SPC     LT(_NAV, KC_SPC)
 
 // mouse button aliases for ease of use
 #define LCLICK      KC_BTN1

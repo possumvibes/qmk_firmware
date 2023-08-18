@@ -2,14 +2,7 @@
 
 #include "keycodes.h"
 
-/*
-   Wrappers approach is from users/drashna.
-   By defining row sections in blocks like this,
-   they are reusable across differently sized boards.
-*/
-
-// Primary thumbs. isn't this illuminating?
-// Thumb Keys
+// Primary Thumb Keys
 #define THM_LH0     NAVMODE
 #define THM_LH1     OSR_SFT
 
@@ -49,7 +42,7 @@
     KC_W,    KC_7,    KC_8,    KC_9,    KC_PERC, KC_EQL,  KC_PLUS, KC_G,    KC_LSFT, XXXXXXX, \
     KC_V,    KC_4,    KC_5,    KC_6,    KC_DLR,  S(KC_G), KC_J,    KC_K,    KC_L,    XXXXXXX, \
     KC_X,    KC_1,    KC_2,    KC_3,    XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, \
-                               _______, KC_0,    _______, _______
+                               _______, KC_0,    OSR_SFT, _______
 
 // Macro layer: it's got macros
 #define LAYER_MACRO \
