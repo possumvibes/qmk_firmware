@@ -39,9 +39,9 @@
 
 // Functions and Window management. Funcs are organized by number except for the debuggin' ones
 #define LAYER_FUNC \
-    OS_LALT, WKSP_9,  LSTDESK, LSTNODE, WKSP_10, KC_F5,  KC_F6,   KC_F7,   KC_F8,   OS_LGUI, \
-    OS_LCTL, WKSP_1,  WKSP_2,  WKSP_3,  WKSP_4,  KC_F9,  F11_TH,  KC_F10,  F6_TH,   OS_LCTL, \
-    XXXXXXX, WKSP_5,  WKSP_6,  WKSP_7,  WKSP_8,  KC_F1,  KC_F2,   KC_F3,   KC_F4,   XXXXXXX, \
+    OS_LALT, G(KC_9), LSTDESK, LSTNODE, G(KC_0), KC_F5,  KC_F6,   KC_F7,   KC_F8,   OS_LGUI, \
+    OS_LCTL, G(KC_1), G(KC_2), G(KC_3), G(KC_4), KC_F9,  F11_TH,  KC_F10,  F6_TH,   OS_LCTL, \
+    XXXXXXX, G(KC_5), G(KC_6), G(KC_7), G(KC_8), KC_F1,  KC_F2,   KC_F3,   KC_F4,   XXXXXXX, \
                                _______, _______, _______, _______
 
 // Numpad left, mods, some punc, and jkG right.

@@ -110,16 +110,6 @@ enum custom_keycodes {
 // window manager shortcuts
 #define LSTDESK     G(KC_TILD)
 #define LSTNODE     G(KC_GRV)
-#define WKSP_1      G(KC_1)
-#define WKSP_2      G(KC_2)
-#define WKSP_3      G(KC_3)
-#define WKSP_4      G(KC_4)
-#define WKSP_5      G(KC_5)
-#define WKSP_6      G(KC_6)
-#define WKSP_7      G(KC_7)
-#define WKSP_8      G(KC_8)
-#define WKSP_9      G(KC_9)
-#define WKSP_10     G(KC_0)
 
 #define TMUXPRE     C(KC_SPC)
 
