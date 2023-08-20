@@ -42,7 +42,7 @@ enum custom_keycodes {
 
 /* ---------- Aliases ---------- */
 
-// layer toggles
+// oneshot layers
 #define NUM_OSL     OSL(_NUM)
 #define SYS_OSL     OSL(_SYSTEM)
 
@@ -54,6 +54,8 @@ enum custom_keycodes {
 // window manager shortcuts
 #define LSTDESK     G(KC_TILD)
 #define LSTNODE     G(KC_GRV)
+#define GC_LEFT     G(C(KC_LEFT))
+#define GC_RGHT     G(C(KC_RGHT))
 
 #define TMUXPRE     C(KC_SPC)
 

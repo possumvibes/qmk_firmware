@@ -60,9 +60,9 @@
 
 // Nav layer: We Got Mods
 #define LAYER_NAV \
-    XXXXXXX, S_BACK,  OS_LGUI, S_FWD,   OS_LGLC, OS_LGLC, KC_HOME, KC_UP,   KC_END,  XXXXXXX,  \
+    XXXXXXX, S_BACK,  OS_LGUI, S_FWD,   OS_LGLC, GC_LEFT, KC_HOME, KC_UP,   KC_END,  GC_RGHT,  \
     XXXXXXX, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX, F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, CLEAR,    \
-    XXXXXXX, XXXXXXX, F12_TH,  TS_LCTL, XXXXXXX, ML_LGUI, ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI,  \
+    XXXXXXX, OS_LGLC, F12_TH,  TS_LCTL, XXXXXXX, ML_LGUI, ML_LSFT, ML_LCTL, ML_LALT, ML_LGUI,  \
                                _______, _______, _______, _______
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.
