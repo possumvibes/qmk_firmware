@@ -46,7 +46,7 @@ bool is_nshot_ignored_key(uint16_t keycode) {
     }
 }
 
-
+/**** Processin' Records ****/
 
 static uint16_t next_keycode;
 static keyrecord_t next_record;
