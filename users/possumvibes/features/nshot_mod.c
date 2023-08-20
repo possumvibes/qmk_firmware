@@ -1,21 +1,4 @@
 #include "nshot_mod.h"
-#include "keycodes.h"
-
-#define modbit_lclg (MOD_BIT(KC_LCTL) | MOD_BIT(KC_LGUI))
-
-// for all mods, the last key of the n-shot will always behave as such:
-// [Mod down, mod up, previous n-shot keys if extant], A down, B down, A up, B up: Mod-A b
-// For key progression A down, Mod down, A up, Mod up:
-nshot_state_t  nshot_states[] = {
-    {OS_LSFT, MOD_BIT(KC_LSFT), 1, true,  os_up_unqueued, 0, 0, false}, // S-a
-    {OS_LCTL, MOD_BIT(KC_LCTL), 1, true,  os_up_unqueued, 0, 0, false}, // C-a
-    {OS_LALT, MOD_BIT(KC_LALT), 1, true,  os_up_unqueued, 0, 0, false}, // A-a
-    {OS_LGUI, MOD_BIT(KC_LGUI), 1, true,  os_up_unqueued, 0, 0, false}, // G-a
-    {OS_LGLC, modbit_lclg,      1, true,  os_up_unqueued, 0, 0, false}, // G-C-a
-    {TS_LCTL, MOD_BIT(KC_LCTL), 2, true,  os_up_unqueued, 0, 0, false}, // C-a
-    {OSR_SFT, MOD_BIT(KC_LSFT), 1, false, os_up_unqueued, 0, 0, false}  // a
-};
-uint8_t        NUM_NSHOT_STATES = sizeof(nshot_states) / sizeof(nshot_state_t);
 
 void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
     nshot_state_t *curr_state = NULL;
@@ -121,32 +104,3 @@ void process_nshot_state(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-bool is_nshot_cancel_key(uint16_t keycode) {
-    switch (keycode) {
-        case PANIC:
-        case CLEAR:
-        case NAVMODE:
-            return true;
-        default:
-            return false;
-    }
-}
-
-bool is_nshot_ignored_key(uint16_t keycode) {
-    switch (keycode) {
-        case NAVMODE:
-        case NUM_OSL:
-        case NUMMODE:
-        case FUNMODE:
-        case SYMMODE:
-        case MCRMODE:
-        case SYS_OSL:
-        case OS_LSFT:
-        case OS_LCTL:
-        case OS_LALT:
-        case OS_LGUI:
-            return true;
-        default:
-            return false;
-    }
-}
