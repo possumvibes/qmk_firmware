@@ -1,5 +1,5 @@
 #pragma once
-#include QMK_KEYBOARD_H
+#include "quantum/keycodes.h"
 
 enum layers { _APT = 0, _COMBOREF, _QWERTY, _FUNC, _NUM, _MACRO, _SYM, _NAV, _SYSTEM };
 

@@ -18,3 +18,7 @@
 #undef LOCKING_RESYNC_ENABLE
 #define LAYER_STATE_16BIT
 
+// Layout macros
+#ifndef __ASSEMBLER__
+#   include "layout.h"
+#endif

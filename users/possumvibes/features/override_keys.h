@@ -1,3 +1,4 @@
+#pragma once
 #include QMK_KEYBOARD_H
 
 // Methods for fancy behavior overrides
