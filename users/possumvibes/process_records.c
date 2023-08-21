@@ -34,12 +34,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     process_nshot_state(keycode, record);
     process_layermodes(keycode, record);
 
-    // Process keymap-specifc keycodes, if extant;
-    // Keymap definitions of custom codes will override user definitions.
-    if(!process_record_keymap(keycode, record)){
-        return false;
-    }
-
     switch (keycode) {
         // Custom Tap/Holds
         case F3_TH: return override_th_hold(S(KC_F3), record);

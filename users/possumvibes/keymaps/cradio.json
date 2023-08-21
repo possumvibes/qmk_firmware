@@ -1,0 +1,17 @@
+{
+    "keyboard": "cradio",
+    "keymap": "possumvibes",
+    "layout": "LAYOUT_34key_w",
+    "layers": [
+        [ "HRM(LAYER_APTv3)" ],
+        [ "LAYER_COMBOREF" ],
+        [ "HRM(LAYER_QWERTY)" ],
+        [ "LAYER_FUNC" ],
+        [ "HRM(LAYER_NUM)" ],
+        [ "LAYER_MACRO" ],
+        [ "LAYER_SYM" ],
+        [ "LAYER_NAV" ],
+        [ "LAYER_SYSTEM" ]
+    ],
+    "notes": "layer order must be: _APT = 0, _COMBOREF, _QWERTY, _FUNC, _NUM, _MACRO, _SYM, _NAV, _SYSTEM "
+}
