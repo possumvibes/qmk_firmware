@@ -14,7 +14,7 @@ GRAVE_ESC_ENABLE       = no
 AUDIO_ENABLE 	       = no
 
 VPATH += keyboards/gboards/ # using gboards combo code: see https://combos.gboards.ca/
-INTROSPECTION_KEYMAP_C = process_records.c
+INTROSPECTION_KEYMAP_C = possumvibes.c
 
 # Add custom features
 SRC += features/mod_lock.c
