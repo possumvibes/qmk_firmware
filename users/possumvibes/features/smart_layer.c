@@ -19,7 +19,7 @@ void num_mode_disable(void) {
 void num_mode_process(uint16_t keycode, keyrecord_t *record) {
     // Assess if we should exit layermode or continue processing normally.
     switch (keycode) {
-        case OS_LSFT ... OS_LGUI:
+        case OS_LSFT ... OSR_SFT:
         case KC_1 ... KC_0:
         case LGUI_T(KC_8):
         case LALT_T(KC_4):
@@ -78,7 +78,7 @@ void func_mode_process(uint16_t keycode, keyrecord_t *record) {
         case KC_F10:
         case F11_TH:
         case F12_TH:
-        case OS_LSFT ... OS_LGUI:
+        case OS_LSFT ... OSR_SFT:
             break;
         default:
             // All other keys disable the layer mode.
@@ -118,7 +118,7 @@ void nav_mode_disable(void) {
 void nav_mode_process(uint16_t keycode, keyrecord_t *record){
     // Assess if we should exit layermode or continue processing normally.
     switch (keycode) {
-        case OS_LSFT ... OS_LGUI:
+        case OS_LSFT ... OSR_SFT:
         case ML_LCTL ... ML_LGUI:
         case KC_HOME ... KC_UP:
         case KC_MS_U ... KC_ACL2:
@@ -157,7 +157,7 @@ void sym_mode_process(uint16_t keycode, keyrecord_t *record){
     // Assess if we should exit layermode or continue processing normally.
     switch (keycode) {
         // SYMMODE is a glorified oneshot layer that lets you hit shift without breaking.
-        case OS_LSFT ... OS_LGUI:
+        case OS_LSFT ... OSR_SFT:
             break;
         default:
             // All other keys disable the layer mode.
@@ -186,7 +186,7 @@ void macro_mode_disable(void) {
 void macro_mode_process(uint16_t keycode, keyrecord_t *record) {
     // Assess if we should exit layermode or continue processing normally.
     switch (keycode) {
-        case OS_LSFT ... OS_LGUI:
+        case OS_LSFT ... OSR_SFT:
             break;
         default:
             // All other keys disable the layer mode on keyup.
